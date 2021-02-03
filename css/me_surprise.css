@@ -8,3 +8,31 @@
     margin: 0;
     padding: 0;
 }
+
+.par-1 {
+    text-transform: none !important;
+    font-weight: 500 !important;
+}
+
+.nombre-rec {
+    text-transform: capitalize;
+    font-weight: 900 !important;
+}
+
+.mess-rec {
+    text-transform: none !important;
+    font-weight: 100 !important;
+}
+
+.img-portico {
+    width: 45px;
+}
+
+.txt-btn {
+    cursor: auto;
+}
+
+.txt-sub {
+    color: #EC6460;
+    font-weight: 200;
+}

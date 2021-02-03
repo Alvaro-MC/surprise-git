@@ -6,6 +6,15 @@ if (!isset($_GET['i'])) {
 
 require_once 'modelo/conexion.php';
 
+$resp = null;
+
+$query = "SELECT * FROM invitacion I JOIN usuario U JOIN video V ON I.id_usuario = U.id_usuario AND I.id_video = V.id_video WHERE I.id_invitacion = :id_invitacion";
+$prepared = $pdo->prepare($query);
+$prepared->execute([
+    'id_invitacion' => $_GET['i']
+]);
+$resp = $prepared->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -47,15 +56,21 @@ require_once 'modelo/conexion.php';
                 <div class="container-fluid mt-4">
                     <div class="row text-center">
                         <div class="col-12">
-                            <h1 class="texto-rec"><strong>NOMBRE,</strong></h1>
+                            <h1 class="nombre-rec"><strong><?php echo $resp['nombre_i'] ?>,</strong></h1>
                         </div>
                         <div class="col-12">
-                            <p class="par-1"><strong>NOMBRE 2 te ha dejado una sorpresa para este 14 de febrero:</strong></p>
-                            <p class="mess-rec">TEXTO DE RECEPTOR</p>
+                            <p class="par-1"><strong><?php echo $resp['nombre'] ?> te ha dejado una sorpresa para este 14 de febrero:</strong></p>
+                            <p class="mess-rec"><?php echo $resp['mensaje_i'] ?></p>
                         </div>
                         <div class="col-12 mt-5 mb-2">
-                            <a class="btn btn-melon text-center mt-2">
+                            <a class="btn btn-melon text-center mt-2 txt-btn">
                                 <h3>Acercate el 14 de febrero a nuestro Pórtico ubicado en:</h3>
+                            </a>
+                        </div>
+                        <div class="col-12 mb-2 flex justify-content-center">
+                            <img class="img-portico" src="css/img/iconos/ic_portico.svg" alt="Icono de un pórtico">
+                            <a class="text-center mt-2 txt-btn mx-4">
+                                <h4 class="txt-sub"><?php echo $resp['ubicacion'] ?></h4>
                             </a>
                         </div>
                     </div>
