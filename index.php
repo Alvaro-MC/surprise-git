@@ -1,5 +1,5 @@
 <?php @session_start();
-
+$user2 = null;
 $user = null;
 $query = null;
 $url  = null;
