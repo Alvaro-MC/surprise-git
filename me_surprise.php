@@ -65,7 +65,7 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
                         <div class="col-12 mt-5 mb-2">
                             <a class="btn btn-melon text-center mt-2 txt-btn">
                                 <h3>Acercate el 14 de febrero a nuestro Pórtico ubicado en:</h3>
-                            </a>
+                            </a> 
                         </div>
                         <div class="col-12 mb-2 flex justify-content-center">
                             <img class="img-portico" src="css/img/iconos/ic_portico.svg" alt="Icono de un pórtico">
@@ -75,7 +75,15 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                 </div>
-
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
