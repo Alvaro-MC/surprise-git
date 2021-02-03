@@ -1,4 +1,4 @@
-<?php @session_start();
+<?php
 
 if (!isset($_GET['i'])) {
     header('Location: index.php');
@@ -14,6 +14,10 @@ $prepared->execute([
     'id_invitacion' => $_GET['i']
 ]);
 $resp = $prepared->fetch(PDO::FETCH_ASSOC);
+
+if (!isset($resp['id_invitacion'])) {
+    header('Location: index.php');
+}
 
 ?>
 
@@ -66,20 +70,20 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
                         <div class="col-12 mt-5 mb-2">
                             <a class="text-center mt-2">
                                 <h3 class="font-ine txt-acer">Acercate el 14 de febrero a nuestro Pórtico ubicado en:</h3>
-                            </a> 
+                            </a>
                         </div>
-                        <div class="col-12 mb-2 flex justify-content-center btn-melon align-items-center">
+                        <div class="col-12 mb-2 flex justify-content-evenly justify-content-md-center btn-melon align-items-center">
                             <img class="img-portico" src="css/img/iconos/<?php
-                                if($resp['id_panel']==5 || $resp['id_panel']==6){
-                                    echo <<< ZZZ
-                                    ic_paradero.svg
+                                                                            if ($resp['id_panel'] == 5 || $resp['id_panel'] == 6) {
+                                                                                echo <<< ZZZ
+                                    ic_paradero.svg"
                                     ZZZ;
-                                }else{
-                                    echo <<< DDD
-                                    ic_portico.svg
+                                                                            } else {
+                                                                                echo <<< DDD
+                                    ic_portico.svg" style="width: 40px !important;"
                                     DDD;
-                                }
-                            ?>" alt="Icono de un pórtico">
+                                                                            }
+                                                                            ?> alt=" Icono de un pórtico">
                             <a class="text-center mt-2 txt-btn mx-1 txt-btn">
                                 <h4 class="txt-sub font-ine"><?php echo $resp['ubicacion'] ?></h4>
                             </a>
@@ -88,7 +92,7 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
                 </div>
                 <div class="container px-0">
                     <div class="row justify-content-center mt-4">
-                        <div class="col-12 flex justify-content-center col-img px-0">
+                        <div class="col-12 flex justify-content-center col-img px-0 mx-0">
                             <div class="cont-par">
                                 <p class="par-img">No olvides compartir tus historias y etiquetarnos en nuestras redes sociales</p>
                             </div>

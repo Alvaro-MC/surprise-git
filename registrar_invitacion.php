@@ -28,11 +28,24 @@ if ($_POST['mensaje']) {
     $prepared->execute([]);
     $fila_v = $prepared->fetch(PDO::FETCH_ASSOC);
 
+
+
+
+
+    $key = 'grupomc';
+    $string = $fila_i['count(*)'];
+
+    $indice = md5($string,$key);
+
+
+
     $url = "me_surprise.php?i={$fila_i['count(*)']}";
-    $_SESSION['url-oficial']=$url;
-    ?>
-    <script>localStorage.setItem("link-oficial",<?php echo "".$url."" ?>)</script>
-    <?php
+    $_SESSION['url-oficial'] = $url;
+?>
+    <script>
+        localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
+    </script>
+<?php
 
     $sql = "INSERT INTO invitacion(nombre,apellido,telefono,mensaje,url,id_usuario,id_video) VALUES (:nombre,:apellido,:telefono,:mensaje,:url,:id_usuario,:id_video);";
 
