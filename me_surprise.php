@@ -30,6 +30,7 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" type="text/css" href="css/surprise.css">
     <link rel="stylesheet" type="text/css" href="css/me_surprise.css">
     <link rel="stylesheet" type="text/css" href="css/media-surprise.css">
+    <link rel="stylesheet" type="text/css" href="css/media-me-surprise.css">
 
     <script src="js/index.js"></script>
 
@@ -54,32 +55,45 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
             </div>
             <div class="texto">
                 <div class="container-fluid mt-4">
-                    <div class="row text-center">
+                    <div class="row text-center justify-content-center">
                         <div class="col-12">
                             <h1 class="nombre-rec"><strong><?php echo $resp['nombre_i'] ?>,</strong></h1>
                         </div>
                         <div class="col-12">
-                            <p class="par-1"><strong><?php echo $resp['nombre'] ?> te ha dejado una sorpresa para este 14 de febrero:</strong></p>
-                            <p class="mess-rec"><?php echo $resp['mensaje_i'] ?></p>
+                            <p class="par-1 font-ine"><strong><?php echo $resp['nombre'] ?> te ha dejado una sorpresa para este 14 de febrero:</strong></p>
+                            <p class="mess-rec font-ine"><?php echo $resp['mensaje_i'] ?></p>
                         </div>
                         <div class="col-12 mt-5 mb-2">
-                            <a class="btn btn-melon text-center mt-2 txt-btn">
-                                <h3>Acercate el 14 de febrero a nuestro Pórtico ubicado en:</h3>
+                            <a class="text-center mt-2">
+                                <h3 class="font-ine txt-acer">Acercate el 14 de febrero a nuestro Pórtico ubicado en:</h3>
                             </a> 
                         </div>
-                        <div class="col-12 mb-2 flex justify-content-center">
-                            <img class="img-portico" src="css/img/iconos/ic_portico.svg" alt="Icono de un pórtico">
-                            <a class="text-center mt-2 txt-btn mx-4">
-                                <h4 class="txt-sub"><?php echo $resp['ubicacion'] ?></h4>
+                        <div class="col-12 mb-2 flex justify-content-center btn-melon align-items-center">
+                            <img class="img-portico" src="css/img/iconos/<?php
+                                if($resp['id_panel']==5 || $resp['id_panel']==6){
+                                    echo <<< ZZZ
+                                    ic_paradero.svg
+                                    ZZZ;
+                                }else{
+                                    echo <<< DDD
+                                    ic_portico.svg
+                                    DDD;
+                                }
+                            ?>" alt="Icono de un pórtico">
+                            <a class="text-center mt-2 txt-btn mx-1 txt-btn">
+                                <h4 class="txt-sub font-ine"><?php echo $resp['ubicacion'] ?></h4>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div>
-                                <div></div>
+                <div class="container px-0">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-12 flex justify-content-center col-img px-0">
+                            <div class="cont-par">
+                                <p class="par-img">No olvides compartir tus historias y etiquetarnos en nuestras redes sociales</p>
+                            </div>
+                            <div class="circle-img">
+                                <img class="img-mano" src="css/img/iconos/mano.png" alt="">
                             </div>
                         </div>
                     </div>
