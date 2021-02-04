@@ -39,14 +39,14 @@ body {
 }
 
 .header .header-content .navbar .btn-sm {
-	color: #824A97;
-	background-color: #fff;
-	border-color: #824A97;
-	border-radius: 20px;
-	padding: 5px 1em;
-	margin: 0.5em 3em 0.5em 0px;
-	font-family: montserrat;
-	font-weight: 500;
+    color: #824A97;
+    background-color: #fff;
+    border-color: #824A97;
+    border-radius: 20px;
+    padding: 5px 1em;
+    margin: 0.5em 3em 0.5em 0px;
+    font-family: montserrat;
+    font-weight: 500;
 }
 
 .logo-head {
@@ -336,10 +336,9 @@ body {
     */
 
 footer {
-	border-radius: 50px 50px 0 0;
-	background-color: #824A97;
-	width: 98% !important;
-	height: 200px;
+    border-radius: 50px 50px 0 0;
+    background-color: #824A97;
+    width: 98% !important;
 }
 
 
@@ -478,11 +477,11 @@ ul li {
 }
 
 .social-radius {
-	width: 3em;
-	height: 3em;
-	border-radius: 50px;
-	background-color: #fff;
-	color: #824A97;
+    width: 3em;
+    height: 3em;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #824A97;
 }
 
 

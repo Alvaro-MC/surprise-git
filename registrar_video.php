@@ -30,7 +30,7 @@ if ($_POST['mensaje']) {
     ]);
     $panel_q = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "INSERT INTO video(ubicacion,fecha,mensaje,nro_video,id_usuario,id_panel) VALUES (:ubicacion,:fecha,:mensaje,:video,:id_usuario,:id_panel);";
+    $sql = "insert into video(ubicacion,fecha,mensaje,nro_video,id_usuario,id_panel) values (:ubicacion,:fecha,:mensaje,:video,:id_usuario,:id_panel);";
 
     $query = $pdo->prepare($sql);
     $resultAdd = $query->execute([
@@ -43,7 +43,7 @@ if ($_POST['mensaje']) {
     ]);
 
     if ($resultAdd) {
-        $query = "update panel SET stock_videos=stock_videos+1 WHERE id_panel = :id_panel";
+        $query = "update panel set stock_videos=stock_videos+1 where id_panel = :id_panel";
         $prepared = $pdo->prepare($query);
         $prepared->execute([
             'id_panel' => $panel

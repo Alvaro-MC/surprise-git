@@ -133,11 +133,11 @@ function boton_panel() {
     if (paneles[localStorage.getItem("panel")] < 10) {
         //Si hay stock
         document.getElementById('btn-stock-panel').innerHTML = '<a class="flex caja-btn-crear crear-panel" href="home.php?b=0"><p><strong>Crear</strong></p><img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg"></a>'
-        console.log(paneles[localStorage.getItem("panel")])
+        document.getElementById('btn-stock-panel-mobile').innerHTML = '<a class="flex caja-btn-crear crear-panel" href="home.php?b=0"><p><strong>Crear</strong></p><img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg"></a>'
     } else {
         //Stock Agotado
         document.getElementById('btn-stock-panel').innerHTML = '<p style="color:red;"><strong>Este panel ya alcanzó su máximo de videos</strong></p>'
-        console.log(paneles[localStorage.getItem("panel")])
+        document.getElementById('btn-stock-panel-mobile').innerHTML = '<p style="color:red;"><strong>Este panel ya alcanzó su máximo de videos</strong></p>'
     }
 }
 

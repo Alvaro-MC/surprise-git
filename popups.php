@@ -213,9 +213,8 @@ echo <<< BBB
                             <div class="container-fluid">
                                 <div class="row mb-3">
                                     <div class="col-3"></div>
-                                    <a class="col-6 caja-btn-crear crear-panel" href="home.php?b=0">
-                                        <p><strong>Crear</strong></p>
-                                    </a>
+                                    <div class="col-6 text-center" id="btn-stock-panel-mobile">
+                                    </div>
                                     <div class="col-3"></div>
                                 </div>
                             </div>
