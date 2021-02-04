@@ -11,7 +11,7 @@ $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
 if (!empty($_POST)) {
 
-	$sql = "INSERT INTO usuario(nombre,apellido,correo,telefono,contrasena) VALUES (:nombre,:apellido,:correo,:telefono,:pass);";
+	$sql = "insert into usuario(nombre,apellido,correo,telefono,contrasena) values (:nombre,:apellido,:correo,:telefono,:pass);";
 	$query = $pdo->prepare($sql);
 	$resultAdd = $query->execute([
 		'nombre' => $_POST['nombre'],

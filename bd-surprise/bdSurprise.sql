@@ -15,15 +15,16 @@ CREATE TABLE panel(
     nombre varchar(40),
     ubicacion text NOT NULL,
     tipo varchar(20),
-    descripcion text
+    descripcion text,
+    stock_videos int NOT NULL
 );
 
 CREATE TABLE video(
     id_video int AUTO_INCREMENT PRIMARY KEY,
-    url text NOT NULL UNIQUE,
     ubicacion varchar(60) NOT NULL,
     fecha DATE NOT NULL,
     mensaje TEXT,
+    nro_video INT,
     id_usuario int NOT NULL,
     id_panel int NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
@@ -38,6 +39,7 @@ CREATE TABLE invitacion(
     apellido varchar(40) NOT NULL,
     telefono varchar(11) NOT NULL,
     mensaje TEXT NOT NULL,
+    url TEXT NOT NULL UNIQUE,
     id_usuario int NOT NULL,
     id_video int NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
@@ -45,3 +47,6 @@ CREATE TABLE invitacion(
     FOREIGN KEY (id_video) REFERENCES video(id_video)
     ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+#################### POR AGREGAR ####################
+insert into panel(nombre,ubicacion,tipo,descripcion,stock_videos) values (:nombre,:apellido,:telefono,:mensaje,:url,:id_usuario,:id_video);

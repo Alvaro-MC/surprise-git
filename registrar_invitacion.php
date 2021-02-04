@@ -17,29 +17,18 @@ if ($_POST['mensaje']) {
     $mensaje = $_POST['mensaje'];
     $video = $_POST['video'];
 
-    $query = "SELECT count(*) FROM invitacion";
+    $query = "select count(*) as cantidad_invitacion from invitacion";
     $prepared = $pdo->prepare($query);
     $prepared->execute([]);
     $fila_i = $prepared->fetch(PDO::FETCH_ASSOC);
-    $fila_i['count(*)'] += 1;
+    $fila_i['cantidad_invitacion'] += 1;
 
-    $query = "SELECT count(*) FROM video";
+    $query = "select count(*) as cantidad_video from video";
     $prepared = $pdo->prepare($query);
     $prepared->execute([]);
     $fila_v = $prepared->fetch(PDO::FETCH_ASSOC);
 
-
-
-
-
-    $key = 'grupomc';
-    $string = $fila_i['count(*)'];
-
-    $indice = md5($string,$key);
-
-
-
-    $url = "me_surprise.php?i={$fila_i['count(*)']}";
+    $url = "me_surprise.php?i={$fila_i['cantidad_invitacion']}";
     $_SESSION['url-oficial'] = $url;
 ?>
     <script>
@@ -47,7 +36,7 @@ if ($_POST['mensaje']) {
     </script>
 <?php
 
-    $sql = "INSERT INTO invitacion(nombre,apellido,telefono,mensaje,url,id_usuario,id_video) VALUES (:nombre,:apellido,:telefono,:mensaje,:url,:id_usuario,:id_video);";
+    $sql = "insert into invitacion(nombre,apellido,telefono,mensaje,url,id_usuario,id_video) values (:nombre,:apellido,:telefono,:mensaje,:url,:id_usuario,:id_video);";
 
     $query = $pdo->prepare($sql);
     $resultAdd = $query->execute([
@@ -57,7 +46,7 @@ if ($_POST['mensaje']) {
         'mensaje' => $mensaje,
         'url' => $url,
         'id_usuario' => $_SESSION['id_usuario'],
-        'id_video' => $fila_v['count(*)']
+        'id_video' => $fila_v['cantidad_video']
     ]);
 } else {
     echo "No se pudo registrar la invitacion";

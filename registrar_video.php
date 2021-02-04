@@ -30,7 +30,7 @@ if ($_POST['mensaje']) {
     ]);
     $panel_q = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "INSERT INTO video(ubicacion,fecha,mensaje,video,id_usuario,id_panel) VALUES (:ubicacion,:fecha,:mensaje,:video,:id_usuario,:id_panel);";
+    $sql = "INSERT INTO video(ubicacion,fecha,mensaje,nro_video,id_usuario,id_panel) VALUES (:ubicacion,:fecha,:mensaje,:video,:id_usuario,:id_panel);";
 
     $query = $pdo->prepare($sql);
     $resultAdd = $query->execute([

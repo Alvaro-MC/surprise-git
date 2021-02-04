@@ -8,7 +8,7 @@ require_once 'modelo/conexion.php';
 
 $resp = null;
 
-$query = "SELECT * FROM invitacion I JOIN usuario U JOIN video V ON I.id_usuario = U.id_usuario AND I.id_video = V.id_video WHERE I.id_invitacion = :id_invitacion";
+$query = "select u.nombre as nombre_user, i.nombre as nombre_rec, i.mensaje as mensaje_inv, v.ubicacion as ubicacion_video from invitacion i join usuario u on i.id_usuario = u.id_usuario join video v on i.id_video = v.id_video where i.id_invitacion = :id_invitacion";
 $prepared = $pdo->prepare($query);
 $prepared->execute([
     'id_invitacion' => $_GET['i']
@@ -61,11 +61,11 @@ if (!isset($resp['id_invitacion'])) {
                 <div class="container-fluid mt-4">
                     <div class="row text-center justify-content-center">
                         <div class="col-12">
-                            <h1 class="nombre-rec"><strong><?php echo $resp['nombre_i'] ?>,</strong></h1>
+                            <h1 class="nombre-rec"><strong><?php echo $resp['nombre_rec'] ?>,</strong></h1>
                         </div>
                         <div class="col-12">
-                            <p class="par-1 font-ine"><strong><?php echo $resp['nombre'] ?> te ha dejado una sorpresa para este 14 de febrero:</strong></p>
-                            <p class="mess-rec font-ine"><?php echo $resp['mensaje_i'] ?></p>
+                            <p class="par-1 font-ine"><strong><?php echo $resp['nombre_user'] ?> te ha dejado una sorpresa para este 14 de febrero:</strong></p>
+                            <p class="mess-rec font-ine"><?php echo $resp['mensaje_inv'] ?></p>
                         </div>
                         <div class="col-12 mt-5 mb-2">
                             <a class="text-center mt-2">
@@ -85,7 +85,7 @@ if (!isset($resp['id_invitacion'])) {
                                                                             }
                                                                             ?> alt=" Icono de un pórtico">
                             <a class="text-center mt-2 txt-btn mx-1 txt-btn">
-                                <h4 class="txt-sub font-ine"><?php echo $resp['ubicacion'] ?></h4>
+                                <h4 class="txt-sub font-ine"><?php echo $resp['ubicacion_video'] ?></h4>
                             </a>
                         </div>
                     </div>
