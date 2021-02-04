@@ -7,7 +7,9 @@ CREATE TABLE usuario(
     apellido varchar(40) NOT NULL,
     correo varchar(50) NOT NULL UNIQUE,
     telefono varchar(11) NOT NULL,
-    contrasena TEXT NOT NULL
+    contrasena TEXT NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+    ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE panel(
@@ -16,7 +18,9 @@ CREATE TABLE panel(
     ubicacion text NOT NULL,
     tipo varchar(20),
     descripcion text,
-    stock_videos int NOT NULL
+    stock_videos int NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+    ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE video(
@@ -30,7 +34,9 @@ CREATE TABLE video(
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (id_panel) REFERENCES panel(id_panel)
-    ON DELETE RESTRICT ON UPDATE CASCADE
+    ON DELETE RESTRICT ON UPDATE CASCADE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+    ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE invitacion(
@@ -45,7 +51,9 @@ CREATE TABLE invitacion(
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (id_video) REFERENCES video(id_video)
-    ON DELETE CASCADE ON UPDATE CASCADE
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+    ON UPDATE CURRENT_TIMESTAMP
 );
 
 

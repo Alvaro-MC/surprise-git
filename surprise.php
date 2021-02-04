@@ -50,7 +50,7 @@ require_once 'modelo/conexion.php';
                             <h1><strong>GRACIAS</strong></h1>
                         </div>
                         <div class="col-12">
-                            <p class="mayus">Por confiarnos tu felicidad y la de ese alguien especial</p>
+                            <p class="mayus">Por confiarnos tu felicidad y la de tu persona especial</p>
                             <p class="mayus">Nos alegra que ya sean parte de la familia de <strong>surprise</strong></p>
                         </div>
                         <div class="col-12 mt-5 mb-2">

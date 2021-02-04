@@ -489,35 +489,7 @@ if (!empty($_POST)) {
                         </div>
                         <div class="row pt-4">
                             <div class="col-md-4"></div>
-                            <div class="col-4 text-center">
-                                <script>
-                                if(paneles[localStorage.getItem("panel")] < 10){
-                                    //Si hay stock
-                                    a = 
-                                    document.write()
-                                }else{
-                                    //Stock Agotado
-                                }
-                                
-                                </script>
-                                <?php
-                                if ($paneles[1] < 10) {
-                                    echo <<< SSS
-                                    <a class="flex caja-btn-crear crear-panel" href="home.php?b=0">
-                                        <p><strong>Crear</strong></p>
-                                        <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
-                                    </a>
-                                    SSS;
-                                } else {
-                                    echo <<< SSS
-                                    <p class="flex caja-btn-crear crear-panel" href="home.php?b=0">
-                                        <p><strong>Crear</strong></p>
-                                        <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
-                                    </p>
-                                    SSS;
-                                }
-                                ?>
-
+                            <div class="col-4 text-center" id="btn-stock-panel">
 
                             </div>
                             <div class="col-md-4"></div>
