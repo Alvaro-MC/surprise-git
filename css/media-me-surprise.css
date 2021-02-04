@@ -2,6 +2,9 @@
     .circle-img {
         margin-left: -5% !important;
     }
+    .texto {
+        margin: 0% 0 5% 0 !important;
+    }
 }
 
 @media (max-width: 768px) {

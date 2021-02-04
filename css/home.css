@@ -222,18 +222,22 @@ video {
 
 .texto-1-h {
     font-family: "Enchanting_Celebrations" !important;
-    color: #000 !important;
+    color: #D22344!important;
     font-size: 30px !important;
 }
 
 .texto-2-h {
     font-family: 'amarillo' !important;
-    color: #ffebd5 !important;
+    color: #E04A3B !important;
     font-size: 20px !important;
 }
 
 .texto-3-h {
     font-family: 'Lavanderia' !important;
-    color: #fff !important;
+    color: #ffffff !important;
     font-size: 28px !important;
+}
+
+.mc-panel {
+    width: auto !important;
 }

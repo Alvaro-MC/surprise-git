@@ -22,27 +22,18 @@ if ($_POST['mensaje']) {
     $mensaje = $_POST['mensaje'];
     $video = $_POST['video'];
 
-    $query = "select count(*) as cantidad_invitacion from invitacion";
+    //Consulta para saber el id del video al que se le asignara a la invitacion
+    $query = "  select max(id_video) as id_video from usuario u join video v on v.id_usuario = u.id_usuario where u.id_usuario = :id_usuario";
     $prepared = $pdo->prepare($query);
-    $prepared->execute([]);
-    $fila_i = $prepared->fetch(PDO::FETCH_ASSOC);
-    $fila_i['cantidad_invitacion'] += 1;
+    $prepared->execute([
+        'id_usuario' => $_SESSION['id_usuario']
+    ]);
+    $video = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    $query = "select count(*) as cantidad_video from video";
-    $prepared = $pdo->prepare($query);
-    $prepared->execute([]);
-    $fila_v = $prepared->fetch(PDO::FETCH_ASSOC);
+    $url = 'me_surprise.php';
 
-    $url = "me_surprise.php?i={$fila_i['cantidad_invitacion']}";
-    $_SESSION['url-oficial'] = $url;
-?>
-    <script>
-        localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
-    </script>
-    <?php
-
+    //Inserción de datos a la tabla invitacion
     $sql = "insert into invitacion(nombre,apellido,telefono,mensaje,url,id_usuario,id_video) values (:nombre,:apellido,:telefono,:mensaje,:url,:id_usuario,:id_video);";
-
     $query = $pdo->prepare($sql);
     $resultAdd = $query->execute([
         'nombre' => $nombre,
@@ -51,8 +42,38 @@ if ($_POST['mensaje']) {
         'mensaje' => $mensaje,
         'url' => $url,
         'id_usuario' => $_SESSION['id_usuario'],
-        'id_video' => $fila_v['cantidad_video']
+        'id_video' => $video['id_video']
     ]);
+
+    //Consulta para saber el id de la invitacion para asignarla a la url
+    $query = "select max(id_invitacion) as id_invitacion from invitacion i join usuario u on i.id_usuario = u.id_usuario where i.id_usuario = :id_usuario and i.id_video = :id_video";
+    $prepared = $pdo->prepare($query);
+    $prepared->execute([
+        'id_usuario' => $_SESSION['id_usuario'],
+        'id_video' => $video['id_video']
+    ]);
+    $invitacion = $prepared->fetch(PDO::FETCH_ASSOC);
+
+    $url = "me_surprise.php?i={$invitacion['id_invitacion']}";
+    $_SESSION['url-oficial'] = $url;
+
+
+    $query = "update invitacion i set url = :url where i.id_invitacion = :id_invitacion;";
+    $prepared = $pdo->prepare($query);
+    $prepared->execute([
+        'url' => $url,
+        'id_invitacion' => $invitacion['id_invitacion']
+    ]);
+
+?>
+    <script>
+        localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
+    </script>
+<?php
+
+
+
+
     if ($resultAdd) {
     ?>
         <script>

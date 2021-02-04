@@ -91,7 +91,7 @@ if (!isset($resp['invitacion'])) {
                     </div>
                 </div>
                 <div class="container px-0">
-                    <div class="row justify-content-center mt-4">
+                    <div class="row justify-content-center mt-4 mx-0">
                         <div class="col-12 flex justify-content-center col-img px-0 mx-0">
                             <div class="cont-par">
                                 <p class="par-img">No olvides compartir tus historias y etiquetarnos en nuestras redes sociales</p>

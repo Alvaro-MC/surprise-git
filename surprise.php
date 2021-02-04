@@ -160,8 +160,6 @@ require_once 'modelo/conexion.php';
         if (localStorage.getItem("res") == 'true') {
             document.getElementById('success').click()
         }
-
-
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
         });
@@ -209,9 +207,7 @@ require_once 'modelo/conexion.php';
                         apellido_r.value = ""
                         telefono_r.value = ""
                         mensaje_r.value = ""
-                    },
-                    error: function(data) {
-                        localStorage.setItem("res", false)
+                        location.reload()
                     }
                 });
             }

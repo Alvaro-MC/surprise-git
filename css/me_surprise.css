@@ -25,7 +25,7 @@
     }
     
     .img-portico {
-        width: 30px;
+        width: 20px;
         margin-right: 10px;
     }
     
@@ -71,4 +71,8 @@
     
     .txt-acer {
         color: #EC6460 !important;
+    }
+    
+    .texto {
+        margin: 0% 0 5% 0 !important;
     }

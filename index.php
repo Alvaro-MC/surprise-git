@@ -1,12 +1,12 @@
 <?php @session_start();
-$user2 = null;
+
 $user = null;
 $query = null;
 $url  = null;
 
-if (!empty($_POST)) {
+require_once 'modelo/conexion.php';
 
-    require_once 'modelo/conexion.php';
+if (!empty($_POST)) {
 
     $query = "SELECT * FROM usuario WHERE correo = :correo";
     $prepared = $pdo->prepare($query);
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
             else
                 $url = "index.php";
 
-            header("Location: http://localhost/surprise/index.php");
+            header("Location: http://localhost/surprise-git/index.php");
         } else {
             $url = null;
         }
@@ -38,7 +38,9 @@ if (!empty($_POST)) {
         //No hay correo
     }
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -421,6 +423,111 @@ if (!empty($_POST)) {
         </div>
 
     </section>
+
+    <script>
+        var paneles = []
+    </script>
+
+    <?php
+    $queryResult = $pdo->prepare("SELECT id_panel,stock_videos as stock from panel");
+    $queryResult->execute([]);
+
+    while ($pan = $queryResult->fetch(PDO::FETCH_ASSOC)) {
+    ?>
+        <script>
+            paneles[<?php echo $pan['id_panel']; ?>] = <?php echo $pan['stock']; ?>
+        </script>
+    <?php
+    }
+    ?>
+
+    <!-- PopUp de Panel 1 -->
+    <div class="modal fade" id="ventanaModalPanel1" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content mc-panel">
+                <div class="modal-body">
+                    <div class="container-fluid cont-modal-panel">
+                        <div class="row row-up">
+                            <div class="col-md-8">
+                                <div class="sombra-panel">
+                                    <img src="css/img/ubicacion-1.jpg" class="img-fluid" id="img-left-popup-variable-web">
+                                </div>
+                            </div>
+                            <div class="col-md-4 ms-auto sombra-panel pt-3">
+                                <img id="img-right-popup-variable-web" src="css/img/mapa-1.png" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-3 ms-auto">
+                                <div class="cont-modal-img-panel sombra-panel">
+                                    <img src="css/img/panel-1.png" class="img-fluid" id="img-down-popup-variable-web">
+                                </div>
+                            </div>
+                            <div class="col-md-9 ms-auto">
+                                <div class="div-list-panel sombra-panel">
+                                    <ol class="list-panel px-4 pt-4 pb-3">
+                                        <form action="home.php" method="post">
+                                            <li class="item-list-panel" style="display:none;">
+                                                <input class="item-pop-up mayus ml-0 ml-md-4 text-center" id="text-title-popup-variable-web" value="" name="titulo" disabled="">
+                                            </li>
+                                            <li class="item-list-panel">
+                                                <img src="css/img/iconos/ICONOS-01.svg">
+                                                <input class="item-pop-up" id="text-first-popup-variable-web" name="horario" value="" disabled="">
+                                            </li>
+                                            <li class="item-list-panel">
+                                                <img src="css/img/iconos/ICONOS-02.svg">
+                                                <input class="item-pop-up" id="text-second-popup-variable-web" name="direccion" value="" disabled="">
+                                            </li>
+                                            <li class="item-list-panel">
+                                                <img src="css/img/iconos/ICONOS-03.svg">
+                                                <input class="item-pop-up" id="text-third-popup-variable-web" name="tamano" value="" disabled="">
+                                            </li>
+                                        </form>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-4">
+                            <div class="col-md-4"></div>
+                            <div class="col-4 text-center">
+                                <script>
+                                if(paneles[localStorage.getItem("panel")] < 10){
+                                    //Si hay stock
+                                    a = 
+                                    document.write()
+                                }else{
+                                    //Stock Agotado
+                                }
+                                
+                                </script>
+                                <?php
+                                if ($paneles[1] < 10) {
+                                    echo <<< SSS
+                                    <a class="flex caja-btn-crear crear-panel" href="home.php?b=0">
+                                        <p><strong>Crear</strong></p>
+                                        <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
+                                    </a>
+                                    SSS;
+                                } else {
+                                    echo <<< SSS
+                                    <p class="flex caja-btn-crear crear-panel" href="home.php?b=0">
+                                        <p><strong>Crear</strong></p>
+                                        <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
+                                    </p>
+                                    SSS;
+                                }
+                                ?>
+
+
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <?php require_once 'footer.php'; ?>
 

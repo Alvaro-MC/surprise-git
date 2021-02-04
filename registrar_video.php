@@ -23,7 +23,7 @@ if ($_POST['mensaje']) {
     $fila = $prepared->fetch(PDO::FETCH_ASSOC);
     $fila['count(*)'] += 1;
 
-    $query = "SELECT * FROM panel WHERE id_panel=:id_panel";
+    $query = "select * from panel where id_panel=:id_panel";
     $prepared = $pdo->prepare($query);
     $prepared->execute([
         'id_panel' => $panel
@@ -43,6 +43,7 @@ if ($_POST['mensaje']) {
     ]);
 
     if ($resultAdd) {
+
         header('Location: surprise.php');
     }
 } else {

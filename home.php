@@ -52,6 +52,7 @@ if (!empty($_POST)) {
     <link rel="stylesheet" type="text/css" href="css/media-home.css">
 
     <script src="js/index.js"></script>
+    <script src="js/home.js"></script>
 
     <?php require_once 'head.php' ?>
 
@@ -155,6 +156,7 @@ if (!empty($_POST)) {
                                         <div style="background-color: #fff; border-radius:20px">
                                             <video class="img-fluid" id="v1" alt="..." autoplay loop>
                                                 <script>
+                                                    var panel = localStorage.getItem("panel")
                                                     if ((localStorage.getItem("panel") == 5) || (localStorage.getItem("panel") == 6)) {
                                                         document.write('<source id="source-video-1" src="css/video/videos-amor/amistad-vertical.mp4">')
                                                     } else {
@@ -165,7 +167,7 @@ if (!empty($_POST)) {
                                         </div>
                                     </button>
                                     <div class="text-center">
-                                        <button class="btn btn-melon btn-pre-video">
+                                        <button class="btn btn-melon btn-pre-video" onclick=previsualizar(1,panel)>
                                             <i class="fas fa-eye"></i>
                                             Previsualizar
                                         </button>
@@ -178,6 +180,7 @@ if (!empty($_POST)) {
                                         <div style="background-color: #fff; border-radius:20px">
                                             <video class="img-fluid" id="v3" alt="..." autoplay>
                                                 <script>
+                                                    var panel = localStorage.getItem("panel")
                                                     if ((localStorage.getItem("panel") == 5) || (localStorage.getItem("panel") == 6)) {
                                                         document.write('<source id="source-video-3" src="css/video/videos-amor/amor-vertical-1.mp4">')
                                                     } else {
@@ -188,7 +191,7 @@ if (!empty($_POST)) {
                                         </div>
                                     </button>
                                     <div class="text-center">
-                                        <button class="btn btn-melon btn-pre-video">
+                                        <button class="btn btn-melon btn-pre-video" onclick=previsualizar(2,panel)>
                                             <i class="fas fa-eye"></i>
                                             Previsualizar
                                         </button>
@@ -201,6 +204,7 @@ if (!empty($_POST)) {
                                         <div style="background-color: #fff; border-radius:20px">
                                             <video class="img-fluid" id="v3" alt="..." autoplay>
                                                 <script>
+                                                    var panel = localStorage.getItem("panel")
                                                     if ((localStorage.getItem("panel") == 5) || (localStorage.getItem("panel") == 6)) {
                                                         document.write('<source id="source-video-3" src="css/video/videos-amor/amor-vertical-2.mp4">')
                                                     } else {
@@ -211,7 +215,7 @@ if (!empty($_POST)) {
                                         </div>
                                     </button>
                                     <div class="text-center">
-                                        <button class="btn btn-melon btn-pre-video">
+                                        <button class="btn btn-melon btn-pre-video" onclick=previsualizar(3,panel)>
                                             <i class="fas fa-eye"></i>
                                             Previsualizar
                                         </button>
@@ -223,6 +227,7 @@ if (!empty($_POST)) {
                 </div>
             </div>
         </div>
+        <button id="btn-prev" class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaPrevisualizar" style="display:none;">ModalPop</button>
     </div>
 
 
@@ -296,13 +301,13 @@ if (!empty($_POST)) {
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                     echo <<< TTT
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-3" src="css/video/videos-amor/amor-vertical-1.mp4">
+                                            <source id="source-video-1" src="css/video/videos-amor/amor-vertical-1.mp4">
                                         </video>
                                         TTT;
                                 } else {
                                     echo <<< TTT
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-3" src="css/video/videos-amor/amor-horizontal-1.mp4">
+                                            <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-1.mp4">
                                         </video>
                                         TTT;
                                 }
@@ -311,13 +316,13 @@ if (!empty($_POST)) {
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                     echo <<< TTT
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-3" src="css/video/videos-amor/amor-vertical-2.mp4">
+                                            <source id="source-video-1" src="css/video/videos-amor/amor-vertical-2.mp4">
                                         </video>
                                         TTT;
                                 } else {
                                     echo <<< TTT
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-3" src="css/video/videos-amor/amor-horizontal-2.mp4">
+                                            <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-2.mp4">
                                         </video>
                                         TTT;
                                 }
@@ -330,33 +335,33 @@ if (!empty($_POST)) {
                                 case 1:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         echo <<< TTT
-                                        <textarea id="texto-panel-v" class="texto-1-v">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-1-v">Escribe aqui tu mensaje</textarea>
                                         TTT;
                                     } else {
                                         echo <<< TTT
-                                        <textarea id="texto-panel-h" class="texto-1-h">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-1-h">Escribe aqui tu mensaje</textarea>
                                         TTT;
                                     }
                                     break;
                                 case 2:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         echo <<< TTT
-                                        <textarea id="texto-panel-v" class="texto-2-v">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="20" id="texto-panel-v" class="texto-2-v">Escribe aqui tu mensaje</textarea>
                                         TTT;
                                     } else {
                                         echo <<< TTT
-                                        <textarea id="texto-panel-h" class="texto-2-h">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="20" id="texto-panel-h" class="texto-2-h">Escribe aqui tu mensaje</textarea>
                                         TTT;
                                     }
                                     break;
                                 case 3:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         echo <<< TTT
-                                        <textarea id="texto-panel-v" class="texto-3-v">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-3-v">Escribe aqui tu mensaje</textarea>
                                         TTT;
                                     } else {
                                         echo <<< TTT
-                                        <textarea id="texto-panel-h" class="texto-3-h">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-3-h">Escribe aqui tu mensaje</textarea>
                                         TTT;
                                     }
                                     break;
@@ -384,6 +389,35 @@ if (!empty($_POST)) {
             </div>
         </div>
     </section>
+
+
+    <!-- PopUp de Panel 1 -->
+    <div class="modal fade" id="ventanaPrevisualizar" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center" role="document">
+            <div class="modal-content mc-panel p-0">
+                <div class="modal-body p-0">
+                    <div class="container-fluid cont-modal-panel p-0">
+                        <div class="row row-up">
+                            <div class="col-12">
+                                <div class="sombra-panel" style="
+                                width: 100%;
+                                background-color: #f5e2d3;">
+                                    <script>
+                                        if (panel == 5 || panel == 6) {
+                                            document.write('<video id="video-popup-pre" class="video-ini" style="height:80vh;" autoplay loop controls></video>')
+                                        } else {
+                                            document.write('<video id="video-popup-pre" class="video-ini" style="width:100%;" autoplay loop controls></video>')
+                                        }
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php require_once 'footer.php'; ?>
 
@@ -424,12 +458,12 @@ if (!empty($_POST)) {
         function send_message() {
             var mensaje
 
-            if(localStorage.getItem("panel")==5 || localStorage.getItem("panel")==6){
+            if (localStorage.getItem("panel") == 5 || localStorage.getItem("panel") == 6) {
                 mensaje = $("#texto-panel-v").val();
-            }else{
+            } else {
                 mensaje = $("#texto-panel-h").val();
             }
-            
+
             if (mensaje != '') {
                 $.ajax({
                     url: "registrar_video.php",
@@ -440,8 +474,8 @@ if (!empty($_POST)) {
                         video: localStorage.getItem("boton2")
                     },
                     success: function(data) {
-                        localStorage.setItem("res",false)
-                        location.href="surprise.php"
+                        localStorage.setItem("res", false)
+                        location.href = "surprise.php"
                     }
                 });
             }
