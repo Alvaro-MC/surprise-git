@@ -43,8 +43,11 @@ if ($_POST['mensaje']) {
     ]);
 
     if ($resultAdd) {
-
-        header('Location: surprise.php');
+        $query = "update panel SET stock_videos=stock_videos+1 WHERE id_panel = :id_panel";
+        $prepared = $pdo->prepare($query);
+        $prepared->execute([
+            'id_panel' => $panel
+        ]);
     }
 } else {
     echo "No se pudo registrar el video";

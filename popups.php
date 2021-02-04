@@ -111,6 +111,64 @@ echo <<< BBB
     </div>
 </div>
 
+<!-- PopUp de Panel 1 -->
+    <div class="modal fade" id="ventanaModalPanel1" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content mc-panel">
+                <div class="modal-body">
+                    <div class="container-fluid cont-modal-panel">
+                        <div class="row row-up">
+                            <div class="col-md-8">
+                                <div class="sombra-panel">
+                                    <img src="css/img/ubicacion-1.jpg" class="img-fluid" id="img-left-popup-variable-web">
+                                </div>
+                            </div>
+                            <div class="col-md-4 ms-auto sombra-panel pt-3">
+                                <img id="img-right-popup-variable-web" src="css/img/mapa-1.png" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-3 ms-auto">
+                                <div class="cont-modal-img-panel sombra-panel">
+                                    <img src="css/img/panel-1.png" class="img-fluid" id="img-down-popup-variable-web">
+                                </div>
+                            </div>
+                            <div class="col-md-9 ms-auto">
+                                <div class="div-list-panel sombra-panel">
+                                    <ol class="list-panel px-4 pt-4 pb-3">
+                                        <form action="home.php" method="post">
+                                            <li class="item-list-panel" style="display:none;">
+                                                <input class="item-pop-up mayus ml-0 ml-md-4 text-center" id="text-title-popup-variable-web" value="" name="titulo" disabled="">
+                                            </li>
+                                            <li class="item-list-panel">
+                                                <img src="css/img/iconos/ICONOS-01.svg">
+                                                <input class="item-pop-up" id="text-first-popup-variable-web" name="horario" value="" disabled="">
+                                            </li>
+                                            <li class="item-list-panel">
+                                                <img src="css/img/iconos/ICONOS-02.svg">
+                                                <input class="item-pop-up" id="text-second-popup-variable-web" name="direccion" value="" disabled="">
+                                            </li>
+                                            <li class="item-list-panel">
+                                                <img src="css/img/iconos/ICONOS-03.svg">
+                                                <input class="item-pop-up" id="text-third-popup-variable-web" name="tamano" value="" disabled="">
+                                            </li>
+                                        </form>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-4">
+                            <div class="col-md-4"></div>
+                            <div class="col-4 text-center" id="btn-stock-panel">
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <!-- PopPup Mobile Panel -->
 <div class="modal fade" id="modalMobilePanel" tabindex="-1" role="dialog" aria-labelledby="">
     <div class="modal-dialog modal-dialog-centered" role="document">

@@ -4,9 +4,9 @@ $user = null;
 $query = null;
 $url  = null;
 
-if (!empty($_POST)) {
+require_once 'modelo/conexion.php';
 
-    require_once 'modelo/conexion.php';
+if (!empty($_POST)) {
 
     $query = "SELECT * FROM usuario WHERE correo = :correo";
     $prepared = $pdo->prepare($query);
@@ -376,13 +376,27 @@ if (!empty($_POST)) {
                 <div class="col text-center">
                     <?php
                     if ($_GET['b'] != 0) {
-                        echo <<< TTT
+
+                        $query = "select id_panel,stock_videos as stock from panel where id_panel = :id_panel";
+                        $prepared = $pdo->prepare($query);
+                        $prepared->execute([
+                            'id_panel' => $_GET['p']
+                        ]);
+                        $resp_panel = $prepared->fetch(PDO::FETCH_ASSOC);
+
+                        if ($resp_panel['stock'] < 10) {
+                            echo <<< TTT
                                 <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion">Programar</button>
                                 TTT;
+                        } else {
+                            echo <<< RRR
+                                    <p style="color:#fff;">Este panel ya alcanzó su máximo de videos</p>
+                                RRR;
+                        }
                     } else {
                         echo <<< TTT
-                                <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion" disabled>Programar</button>
-                                TTT;
+                        <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion" disabled>Programar</button>
+                        TTT;
                     }
                     ?>
                 </div>
