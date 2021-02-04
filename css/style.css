@@ -39,10 +39,14 @@ body {
 }
 
 .header .header-content .navbar .btn-sm {
-    color: #824A97;
-    background-color: #fff;
-    border-color: #824A97;
-    border-radius: 20px;
+	color: #824A97;
+	background-color: #fff;
+	border-color: #824A97;
+	border-radius: 20px;
+	padding: 5px 1em;
+	margin: 0.5em 3em 0.5em 0px;
+	font-family: montserrat;
+	font-weight: 500;
 }
 
 .logo-head {
