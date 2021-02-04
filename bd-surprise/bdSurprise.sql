@@ -48,5 +48,14 @@ CREATE TABLE invitacion(
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-#################### POR AGREGAR ####################
-insert into panel(nombre,ubicacion,tipo,descripcion,stock_videos) values (:nombre,:apellido,:telefono,:mensaje,:url,:id_usuario,:id_video);
+
+insert into panel(nombre,ubicacion,tipo,descripcion,stock_videos)
+values
+('Panel Parque Eterno','Av.Chan Chan (Altura Camposanto Parque Eterno) - HUANCHACO','Paradero','1024px X 384px',0),
+('Panel La Esperanza','Av.José G. Condorcanqui Cdra 10 - LA ESPERANZA','Paradero','1024px X 384px',0),
+('Panel La Esperanza','Av.José G. Condorcanqui Cdra 12 - LA ESPERANZA','Paradero','1024px X 384px',0),
+('Panel Mall Aventura','Av.América oeste Cuadra 7 - MALL AVENTURA','Paradero','1024px X 384px',0),
+('Panel El Golf','Prol.Vallejo con Av.El golf - VICTOR LARCO','Pórtico','540px de ancho x 1080px de alto',0),
+('Panel Av. Fátima','Av.Larco con A.Fátima - VICTOR LARCO','Pórtico','540px de ancho x 1080px de alto',0),
+('Panel Real Plaza','Prol.Cesar Vallejo cuadra 13 - REAL PLAZA','Paradero','1024px X 384px',0),
+('Panel El Porvenir','Av.Pumacahua Cdra 13 - EL PORVENIR','Paradero','1024px X 384px',0);

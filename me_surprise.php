@@ -8,14 +8,14 @@ require_once 'modelo/conexion.php';
 
 $resp = null;
 
-$query = "select u.nombre as nombre_user, i.nombre as nombre_rec, i.mensaje as mensaje_inv, v.ubicacion as ubicacion_video from invitacion i join usuario u on i.id_usuario = u.id_usuario join video v on i.id_video = v.id_video where i.id_invitacion = :id_invitacion";
+$query = "select u.nombre as nombre_user, i.nombre as nombre_rec, i.id_invitacion as invitacion, i.mensaje as mensaje_inv, v.ubicacion as ubicacion_video, v.id_panel as panel from invitacion i join usuario u on i.id_usuario = u.id_usuario join video v on i.id_video = v.id_video where i.id_invitacion = :id_invitacion";
 $prepared = $pdo->prepare($query);
 $prepared->execute([
     'id_invitacion' => $_GET['i']
 ]);
 $resp = $prepared->fetch(PDO::FETCH_ASSOC);
 
-if (!isset($resp['id_invitacion'])) {
+if (!isset($resp['invitacion'])) {
     header('Location: index.php');
 }
 
@@ -74,7 +74,7 @@ if (!isset($resp['id_invitacion'])) {
                         </div>
                         <div class="col-12 mb-2 flex justify-content-evenly justify-content-md-center btn-melon align-items-center">
                             <img class="img-portico" src="css/img/iconos/<?php
-                                                                            if ($resp['id_panel'] == 5 || $resp['id_panel'] == 6) {
+                                                                            if ($resp['panel'] == 5 || $resp['panel'] == 6) {
                                                                                 echo <<< ZZZ
                                     ic_paradero.svg"
                                     ZZZ;

@@ -9,6 +9,11 @@ $indice_i = null;
 $query = null;
 
 $resultAdd = false;
+?>
+<script>
+    localStorage.setItem("res", false)
+</script>
+<?php
 
 if ($_POST['mensaje']) {
     $nombre = $_POST['nombre'];
@@ -34,7 +39,7 @@ if ($_POST['mensaje']) {
     <script>
         localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
     </script>
-<?php
+    <?php
 
     $sql = "insert into invitacion(nombre,apellido,telefono,mensaje,url,id_usuario,id_video) values (:nombre,:apellido,:telefono,:mensaje,:url,:id_usuario,:id_video);";
 
@@ -48,6 +53,13 @@ if ($_POST['mensaje']) {
         'id_usuario' => $_SESSION['id_usuario'],
         'id_video' => $fila_v['cantidad_video']
     ]);
+    if ($resultAdd) {
+    ?>
+        <script>
+            localStorage.setItem("res", true)
+        </script>
+<?php
+    }
 } else {
     echo "No se pudo registrar la invitacion";
 }
