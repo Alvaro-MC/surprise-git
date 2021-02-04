@@ -1,4 +1,33 @@
+
+
 a {
-    color: #fff !important;
-    text-decoration: none !important;
+	color: #fff !important;
+	text-decoration: none !important;
+	font-size: 0.9em;
+	font-family: poppins;
+	font-weight: 300;
+	padding-top: 5px;
+}
+
+.icon-footer {
+	padding-top: .25rem !important;
+	margin: 0px 10px;
+	background-color: #ffffff38 !important;
+}
+
+a:hover {
+    font-size: 1.0em;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.fab, .far {
+	font-weight: 400;
+	/* height: 3em; */
+	/* width: 3em; */
+	font-size: 1.7em;
+	padding-top: 0.08em;
+}
+.p-6 {
+	padding: 2rem 3em !important;
 }

@@ -336,8 +336,10 @@ body {
     */
 
 footer {
-    border-radius: 60px 60px 0 0;
-    background-color: #824A97;
+	border-radius: 50px 50px 0 0;
+	background-color: #824A97;
+	width: 98% !important;
+	height: 200px;
 }
 
 
@@ -476,11 +478,11 @@ ul li {
 }
 
 .social-radius {
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    background-color: #fff;
-    color: #824A97;
+	width: 3em;
+	height: 3em;
+	border-radius: 50px;
+	background-color: #fff;
+	color: #824A97;
 }
 
 
