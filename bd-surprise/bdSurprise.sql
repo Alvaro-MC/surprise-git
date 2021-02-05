@@ -45,7 +45,7 @@ CREATE TABLE invitacion(
     apellido varchar(40) NOT NULL,
     telefono varchar(11) NOT NULL,
     mensaje TEXT NOT NULL,
-    url TEXT NOT NULL UNIQUE,
+    url TEXT NOT NULL,
     id_usuario int NOT NULL,
     id_video int NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
