@@ -23,8 +23,6 @@ if (!empty($_POST)) {
             $_SESSION['usuario'] = $user['correo'];
             $_SESSION['nombre'] = $user['nombre'];
 
-            //echo "URL : " . $_SESSION['url'];
-
             if (isset($_SESSION['url']))
                 $url = $_SESSION['url'];
             else
@@ -49,7 +47,7 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise</title>
 
-    <?php require_once 'head.php'; ?>
+    <?php //require_once 'head.php'; ?>
 
 </head>
 
