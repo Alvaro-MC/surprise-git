@@ -424,7 +424,7 @@ if (!empty($_POST)) {
     </script>
 
     <?php
-    $queryResult = $pdo->prepare("SELECT id_panel,stock_videos as stock from panel");
+    $queryResult = $pdo->prepare("select id_panel,stock_videos as stock from panel");
     $queryResult->execute([]);
 
     while ($pan = $queryResult->fetch(PDO::FETCH_ASSOC)) {
