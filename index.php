@@ -49,13 +49,13 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise</title>
 
-    <?php require_once 'head.php' ?>
+    <?php require_once 'head.php'; ?>
 
 </head>
 
 <body>
 
-    <?php require_once 'popups.php' ?>
+    <?php require_once 'popups.php'; ?>
 
     <!-- Cabecera -> Video - NavBar - SliderNotas -->
     <header id="hero" class="header content">
@@ -87,27 +87,25 @@ if (!empty($_POST)) {
                     <?php
 
                     //if (!isset($_SESSION)) {
-                    if (!isset($_SESSION['id_usuario'])) {
+                    if (!isset($_SESSION['id_usuario'])) { ?>
                         //echo "No hay sesion";
-                        echo <<< AAC
+
                                 <div>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
                                 </div>
-                                AAC;
+                                <?php
                     } else {
                         //echo 'Si hay sesion';
-                        echo <<< LNH
+                        ?>
                                 <div>
-                                    <p class="mb-0">Bienvenido
-                                LNH;
-                        echo "  " . $_SESSION['nombre'];
-                        echo <<< AAA
+                                    <p class="mb-0">Bienvenido <?php $_SESSION['nombre']; ?>
+                            
                                 </p>
                                 <a href="cerrar.php">Cerrar Sesion</a>
                                 </div>
-                                AAA;
-                    }
+                                <?php 
+                    } 
                     ?>
 
                 </div>
