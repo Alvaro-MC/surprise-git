@@ -1,6 +1,5 @@
 runtime: php72 # Replace with php74 to use PHP 7.4
 
-service: otro
 handlers:
 # Serve a directory as a static resource.
 - url: /stylesheets

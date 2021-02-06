@@ -1,9 +1,9 @@
-<?php
-session_start();
+<?php @session_start();
 
 $user = null;
 $query = null;
 $url  = null;
+
 
 if (isset($_GET['r'])) {
     if($_GET['r']==0){
@@ -14,7 +14,9 @@ if (isset($_GET['r'])) {
 }
 
 if (!empty($_POST)) {
+    
     require_once 'modelo/conexion.php';
+
     $query = "SELECT * FROM usuario WHERE correo = :correo";
     $prepared = $pdo->prepare($query);
     $prepared->execute([
@@ -37,7 +39,7 @@ if (!empty($_POST)) {
             else
                 $url = "index.php";
 
-            header("Location: http://surprise.adarve-peru.com/");
+            header("Location: surprise-git/index.php");
         } else {
             $url = null;
         }
@@ -57,8 +59,7 @@ if (!empty($_POST)) {
     <title>Surprise</title>
 
     <?php require_once 'head.php'; ?>
-    
-    
+
 </head>
 
 <body>
@@ -104,7 +105,7 @@ if (!empty($_POST)) {
                     } else {
                         ?>
                                 <div>
-                                    <p class="mb-0">Bienvenido <?php echo $_SESSION['nombre'];?>
+                                    <p class="mb-0">Bienvenido <?php $_SESSION['nombre'];?>
                         
                                 </p>
                                 <a href="cerrar.php">Cerrar Sesion</a>
@@ -259,7 +260,7 @@ if (!empty($_POST)) {
         </div>
 
         <map name="mapa-panel">
-            <area shape="rect" coords="846,32,870,88" href="javascript:modal_mobile_panel(8,1)">
+            <area shape="rect" coords="846,32,870,88" onclic="javascript:modal_mobile_panel(8,1)">
             <area shape="rect" coords="313,53,357,91" href="javascript:modal_mobile_panel(3,1)">
             <area shape="rect" coords="269,5,313,53" href="javascript:modal_mobile_panel(2,1)">
             <area shape="rect" coords="110,99,136,158" href="javascript:modal_mobile_panel(1,1)">
@@ -451,7 +452,7 @@ if (!empty($_POST)) {
     </div>
     <button type="button" id="prueba-btn-1" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaModalPanel1" style="display:none;"></button>
     <button type="button" id="prueba-btn-2" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#modalMobilePanel" style="display:none;"></button>
-    
+
     <?php require_once 'footer.php'; ?>
 
     <script>
