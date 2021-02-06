@@ -1,8 +1,8 @@
+ 
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/media.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
 
-        <script src="js/index.js"></script>
         
         <!-- FONTAWESOME -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,3 +30,6 @@
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script src="js/index.js"></script>
+        

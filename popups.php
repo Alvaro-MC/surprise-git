@@ -117,7 +117,7 @@
                         <div class="row row-up">
                             <div class="col-md-8">
                                 <div class="sombra-panel">
-                                    <img src="css/img/ubicacion-1.jpg" class="img-fluid" id="img-left-popup-variable-web">
+                                    <img src="css/img/portico-mallplaza.jpg" class="img-fluid" id="img-left-popup-variable-web">
                                 </div>
                             </div>
                             <div class="col-md-4 ms-auto sombra-panel pt-3">
@@ -180,7 +180,7 @@
                 <div class="container">
                     <div class="row px-3">
                         <div class="col-12 text-center p-2 caja-img-mobile-card" style="background-color: #EC6460; transform: scale(1);">
-                            <img class="img-fluid" id="img-left-popup-variable-mobile" src="css/img/ubicacion-1.jpg" alt="First slide">
+                            <img class="img-fluid" id="img-left-popup-variable-mobile" src="css/img/portico-huanchaco.jpg" alt="First slide">
                         </div>
                     </div>
                     <div class="row">

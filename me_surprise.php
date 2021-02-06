@@ -22,7 +22,7 @@ if (!isset($resp['invitacion'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -73,17 +73,10 @@ if (!isset($resp['invitacion'])) {
                             </a>
                         </div>
                         <div class="col-12 mb-2 flex justify-content-evenly justify-content-md-center btn-melon align-items-center">
-                            <img class="img-portico" src="css/img/iconos/<?php
-                                                                            if ($resp['panel'] == 5 || $resp['panel'] == 6) {
-                                                                                ?>
-                                    ic_paradero.svg"
-                                    <?php
-                                                                            } else {
-                                                                                ?>
-                                    ic_portico.svg" style="width: 40px !important;"
-                                    <?php
-                                                                            }
-                                                                            ?> alt=" Icono de un pórtico">
+                            <img class="img-portico" <?php if ($resp['panel'] == 5 || $resp['panel'] == 6) { ?>
+                                src="css/img/iconos/ic_paradero.svg"
+                                    <?php } else { ?>
+                                        src="css/img/iconos/ic_portico.svg" style="width: 40px !important;" <?php } ?> alt="Icono de un pórtico">             
                             <a class="text-center mt-2 txt-btn mx-1 txt-btn">
                                 <h4 class="txt-sub font-ine"><?php echo $resp['ubicacion_video']; ?></h4>
                             </a>

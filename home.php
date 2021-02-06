@@ -64,8 +64,18 @@ if (!empty($_POST)) {
 
     <!-- Cabecera -> Video - NavBar - SliderNotas -->
     <header class="header content">
-        <div class="header-video">
-            <video src="css/video/video.mp4" autoplay loop></video>
+        <div class="header-video" id="header-video-container">
+        <script>
+            if(localStorage.getItem('panel')==1){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==2){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==3){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==4){document.write('<video src="css/video/videos-paneles/portico-mall.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==5){document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==6){document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==7){document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==8){document.write('<video src="css/video/videos-paneles/portico-elporvenir.mp4" autoplay loop></video>')}
+        </script>
+            <!--<video src="https://vimeo.com/508662668" autoplay loop></video>-->
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
@@ -78,7 +88,7 @@ if (!empty($_POST)) {
                         <div class="nav-wrap disp-true">
                             <nav class="menu mt-1">
                                 <ul>
-                                    <li><a href="index.php">Inicio</a></li>
+                                    <li class="first-border"><a class="first-item" href="index.php">Inicio</a></li>
                                     <li><a href="#contacto">Contacto</a></li>
                                 </ul>
                             </nav>
@@ -86,18 +96,18 @@ if (!empty($_POST)) {
                     </div>
 
                     <?php
-                    if (!isset($_SESSION['id_usuario'])) { ?>
-                        
+                    if (!isset($_SESSION['id_usuario'])) {
+                        ?>
                                 <div>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
-                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
+                                    <button type="button" class="btn btn-primary btn-sm mx-0" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
                                 </div>
                                 <?php
-                    } else { 
-                    ?>
+                    } else {
+                        ?>
                                 <div>
-                                    <p class="mb-0">Bienvenido 
-                                        <?php $_SESSION['nombre']; ?>
+                                    <p class="mb-0">Bienvenido <?$_SESSION['nombre'];?>
+                                    
                                 </p>
                                 <a href="cerrar.php">Cerrar Sesion</a>
                                 </div>
@@ -120,7 +130,7 @@ if (!empty($_POST)) {
             </nav>
             <div class="texto">
                 <!-- <img class="img-fluid logo-head" src="css/img/iconos/logo.svg"> -->
-                <h1 class="title-principal"><strong>
+                <h1 class="title-principal"><strong class="titulo-md">
                         <script>
                             document.write(localStorage.getItem("titulo"))
                         </script>
@@ -135,7 +145,7 @@ if (!empty($_POST)) {
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mt-3">
-                        <a href="#pre-panel"><i class="fas fa-angle-double-down"></i></a>
+                        <a href="#pre-panel"><i class="fas fa-angle-double-down blanco"></i></a>
                     </div>
                 </div>
             </div>
@@ -145,11 +155,11 @@ if (!empty($_POST)) {
     <div class="container-fluid" id="carousel-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="container-fluid caja-plantilla-principal">
-                    <div id="container-plantilla" class="container">
+                <div class="container-fluid caja-plantilla-principal px-0">
+                    <div id="container-plantilla" class="container px-0">
                         <div class="row justify-content-around">
                             <div class="col-md-3 col-6">
-                                <div class="form-check pl-0">
+                                <div class="form-check px-0">
                                     <button class="caja-plantilla" onclick=actualizar(1)>
                                         <div style="background-color: #fff; border-radius:20px">
                                             <video class="img-fluid" id="v1" alt="..." autoplay loop>
@@ -173,7 +183,7 @@ if (!empty($_POST)) {
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
-                                <div class="form-check pl-0">
+                                <div class="form-check px-0">
                                     <button class="caja-plantilla" onclick=actualizar(2)>
                                         <div style="background-color: #fff; border-radius:20px">
                                             <video class="img-fluid" id="v3" alt="..." autoplay>
@@ -197,7 +207,7 @@ if (!empty($_POST)) {
                                 </div>
                             </div>
                             <div class="col-md-3 col-6 mt-5 mt-md-0">
-                                <div class="form-check pl-0">
+                                <div class="form-check px-0">
                                     <button class="caja-plantilla" onclick=actualizar(3)>
                                         <div style="background-color: #fff; border-radius:20px">
                                             <video class="img-fluid" id="v3" alt="..." autoplay>
@@ -247,16 +257,11 @@ if (!empty($_POST)) {
                     </div>
                     <div class="row">
                         <div class="col-7 text-right">
-                            <a type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" href=<?php
-                                                                                                                if (!isset($_SESSION['id_usuario'])) {
-                                                                                                                    ?>
-                                            "javascript:no_register()"
-                                            <?php
-                                                                                                                } else {
-                                                                                                                    $_SESSION['panel'] = $_GET['p'];
-                                                                                                                    ?>
-                                            "javascript:send_message()"
-                                            <?php } ?> Confirmar</a>
+                            <a type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" <?php if (!isset($_SESSION['id_usuario'])) { ?>
+                                href="javascript:no_register()"
+                                            <?php } else {  $SESSION['panel'] = $_GET['p'];?>
+                                                href="javascript:send_message()"
+                                            <?php }  ?>  > Confirmar</a>
                         </div>
                     </div>
                 </div>
@@ -331,33 +336,33 @@ if (!empty($_POST)) {
                                 case 1:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-1-v">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-1-v text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     } else {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-1-h">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-1-h text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     }
                                     break;
                                 case 2:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                       ?>
-                                        <textarea type="text" maxlength="20" id="texto-panel-v" class="texto-2-v">Escribe aqui tu mensaje</textarea>
+                                        ?>
+                                        <textarea type="text" maxlength="20" id="texto-panel-v" class="texto-2-v text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     } else {
                                         ?>
-                                        <textarea type="text" maxlength="20" id="texto-panel-h" class="texto-2-h">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="20" id="texto-panel-h" class="texto-2-h text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     }
                                     break;
                                 case 3:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-3-v">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-3-v text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     } else {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-3-h">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-3-h text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     }
                                     break;
@@ -392,7 +397,7 @@ if (!empty($_POST)) {
                     } else {
                         ?>
                         <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion" disabled>Programar</button>
-                        <?php 
+                        <?php
                     }
                     ?>
                 </div>

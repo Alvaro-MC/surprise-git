@@ -136,12 +136,12 @@ require_once 'modelo/conexion.php';
                     <div class="container">
                         <div class="row">
                             <div class="col-12 text-center pt-3">
-                                <input class="input-link" id="url-copy" value=<?php echo $_SESSION['url-oficial']; ?> >
+                                <input class="input-link" id="url-copy" value=<?php echo $_SESSION['url-oficial'] ?>>
                             </div>
                             <div class="col-12 pt-5">
                                 <ol class="social-link justify-content-center">
                                     <li><a href="#" onclick="copy('url-copy')" class="item-link cp"><i class="fas fa-copy"></i></a></li>
-                                    <li><a class="item-link wp" href="https://web.whatsapp.com/send?text=<?php echo $_SESSION['url-oficial']; ?>" data-action="share/whatsapp/share" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a class="item-link wp" href="https://web.whatsapp.com/send?text=<?php echo $_SESSION['url-oficial'] ?>" data-action="share/whatsapp/share" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                 </ol>
                             </div>
                         </div>

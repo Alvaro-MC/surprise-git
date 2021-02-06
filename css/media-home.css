@@ -5,6 +5,22 @@
     #texto-panel {
         width: 34%;
     }
+    #texto-panel-v {
+        width: 34%;
+    }
+    .texto-1-h {
+        font-family: "Enchanting_Celebrations" !important;
+        color: #D22344!important;
+        font-size: 70px !important;
+    }
+    .texto-3-h {
+        font-size: 70px !important;
+    }
+    /*
+    .header-video video {
+        margin-top: -100px;
+    }
+    */
 }
 
 @media (max-width: 992px) {
@@ -14,6 +30,26 @@
     .btn-pre-video {
         font-size: 12px;
     }
+    #texto-panel-v {
+        width: 48%;
+    }
+    #texto-panel-h {
+        padding-top: 15px;
+    }
+    .texto-1-h {
+        font-size: 50px !important;
+    }
+    .texto-2-h {
+        font-size: 35px !important;
+    }
+    .texto-3-h {
+        font-size: 50px !important;
+    }
+    /*
+    .header-video video {
+        margin-top: -50px;
+    }
+    */
 }
 
 @media (max-width: 960px) {
@@ -50,6 +86,29 @@
     .btn-pre-video {
         font-size: 10px;
     }
+    #texto-panel-v {
+        width: 64%;
+    }
+    .texto-3-v {
+        padding-right: 14% !important;
+    }
+    .texto-1-h {
+        font-size: 35px !important;
+    }
+    .texto-2-h {
+        font-size: 25px !important;
+    }
+    .texto-3-h {
+        font-size: 40px !important;
+    }
+    .img-foo {
+        margin-left: 25%;
+    }
+    /*
+    .header-video video {
+        margin-top: 0px;
+    }
+    */
 }
 
 @media (max-width: 576px) {
@@ -68,6 +127,27 @@
     .container-plantilla {
         max-width: 100% !important;
     }
+    .titulo-md {
+        font-size: xx-large;
+    }
+    .btn-pre-video {
+        font-size: 10px !important;
+    }
+    #texto-panel-v {
+        width: 80%;
+    }
+    .texto-1-v {
+        margin-top: 16%;
+    }
+    #texto-panel-h {
+        padding-top: 10px;
+    }
+    #texto-panel-h {
+        margin: 3% 0 4% 0;
+    }
+    .texto-3-h {
+        font-size: 34px !important;
+    }
 }
 
 @media (max-width: 450px) {
@@ -77,10 +157,49 @@
     .container-plantilla {
         max-width: 100% !important;
     }
+    .video-principal-v {
+        height: 500px !important;
+        width: auto !important;
+    }
+    #texto-panel-v {
+        width: 65%;
+    }
+    .texto-1-v {
+        font-size: 48px !important;
+    }
+    .texto-2-v {
+        margin-top: 8%;
+        font-size: 34px !important;
+    }
+    .texto-3-v {
+        font-size: 60px !important;
+        margin-top: 4%;
+    }
+    .texto-1-h {
+        font-size: 25px !important;
+    }
+    .texto-2-h {
+        font-size: 18px !important;
+    }
+    .texto-3-h {
+        font-size: 25px !important;
+    }
 }
 
 @media (max-width: 360px) {
     #video-principal {
         width: 500%;
+    }
+    #texto-panel-v {
+        width: 88%;
+    }
+    .texto-1-h {
+        font-size: 16px !important;
+    }
+    .texto-2-h {
+        font-size: 12px !important;
+    }
+    .texto-3-h {
+        font-size: 18px !important;
     }
 }

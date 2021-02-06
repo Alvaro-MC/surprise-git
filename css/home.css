@@ -25,6 +25,7 @@
 .header-overlay {
     height: calc(100vh - 495px) !important;
     min-height: 485px !important;
+    background-color: #79279259 !important;
 }
 
 #carousel-fluid {
@@ -42,8 +43,13 @@
     border-radius: 20px;
 }
 
+.title-principal {
+    color: #fff !important;
+}
+
 .sub-principal {
     text-transform: none !important;
+    color: #fff !important;
 }
 
 input[type=radio] {
@@ -112,6 +118,10 @@ input[type=radio] {
 /*
     GENERAL
 */
+
+.blanco {
+    color: #fff !important;
+}
 
 .btn-melon {
     background-color: #EC6460 !important;
@@ -186,58 +196,74 @@ video {
 
 #texto-panel-v {
     width: 26%;
-    margin: 6% 0;
+    padding: 6% 0 0 0;
     border: 0px;
-    height: 80%;
+    height: 86%;
     background: transparent;
     resize: none;
+    outline: none;
 }
 
 .texto-1-v {
     font-family: "Enchanting_Celebrations" !important;
-    color: #000 !important;
-    font-size: 30px !important;
+    color: #D22344 !important;
+    font-size: 68px !important;
+    margin-top: 6%;
 }
 
 .texto-2-v {
     font-family: 'amarillo' !important;
-    color: #ffebd5 !important;
-    font-size: 20px !important;
+    color: #E04A3B !important;
+    font-size: 54px !important;
 }
 
 .texto-3-v {
     font-family: 'Lavanderia' !important;
-    color: #fff !important;
-    font-size: 28px !important;
+    color: #ffffff !important;
+    font-size: 80px !important;
+    padding-right: 8% !important;
 }
 
 #texto-panel-h {
-    width: 26%;
-    margin: 6% 0;
+    padding-top: 20px;
+    width: 50%;
+    margin: 4% 0 4% 0;
     border: 0px;
-    height: 80%;
+    height: 77%;
     background: transparent;
     resize: none;
+    outline: none;
 }
 
 .texto-1-h {
     font-family: "Enchanting_Celebrations" !important;
     color: #D22344!important;
-    font-size: 30px !important;
+    font-size: 80px !important;
 }
 
 .texto-2-h {
     font-family: 'amarillo' !important;
     color: #E04A3B !important;
-    font-size: 20px !important;
+    font-size: 50px !important;
 }
 
 .texto-3-h {
     font-family: 'Lavanderia' !important;
     color: #ffffff !important;
-    font-size: 28px !important;
+    font-size: 90px !important;
 }
 
 .mc-panel {
     width: auto !important;
 }
+
+.img-foo {
+    margin-left: 0;
+}
+
+
+/*
+.header-video video {
+    margin-top: -150px;
+}
+*/

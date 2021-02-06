@@ -1,13 +1,20 @@
-<?php @session_start();
+<?php
+session_start();
 
 $user = null;
 $query = null;
 $url  = null;
 
-require_once 'modelo/conexion.php';
+if (isset($_GET['r'])) {
+    if($_GET['r']==0){
+        ?>
+        <script>alert("Parece que ya hay una cuenta registrada con ese correo")</script>
+        <?php
+    }
+}
 
 if (!empty($_POST)) {
-
+    require_once 'modelo/conexion.php';
     $query = "SELECT * FROM usuario WHERE correo = :correo";
     $prepared = $pdo->prepare($query);
     $prepared->execute([
@@ -23,12 +30,14 @@ if (!empty($_POST)) {
             $_SESSION['usuario'] = $user['correo'];
             $_SESSION['nombre'] = $user['nombre'];
 
+            //echo "URL : " . $_SESSION['url'];
+
             if (isset($_SESSION['url']))
                 $url = $_SESSION['url'];
             else
                 $url = "index.php";
 
-            header("Location: http://localhost/surprise-git/index.php");
+            header("Location: http://surprise.adarve-peru.com/");
         } else {
             $url = null;
         }
@@ -40,7 +49,7 @@ if (!empty($_POST)) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -48,20 +57,23 @@ if (!empty($_POST)) {
     <title>Surprise</title>
 
     <?php require_once 'head.php'; ?>
-
+    
+    
 </head>
 
 <body>
 
     <?php require_once 'popups.php'; ?>
-<!--
+
+    <!-- Cabecera -> Video - NavBar - SliderNotas -->
     <header id="hero" class="header content">
         <div class="header-video">
-            <video src="css/video/video.mp4" autoplay loop></video>
+            <video src="css/video/caritas.mp4" autoplay loop></video>
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
 
+            <!-- NAVBAR -->
             <nav class="navbar navbar-dark">
                 <div class="container-fluid">
                     <div>
@@ -70,35 +82,35 @@ if (!empty($_POST)) {
                         <div class="nav-wrap disp-true">
                             <nav class="menu mt-1">
                                 <ul>
-                                    <li><a href="#paneles">Mapa</a></li>
+                                    <li class="first-border"><a class="first-item" href="#paneles">Mapa</a></li>
                                     <li><a href="#contacto">Contacto</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
 
+                    <!-- Prueba de Envio post por AJAX -->
                     <input type="text" id="texto" value="1" style="display: none;">
 
                     <?php
 
-                    if (!isset($_SESSION['id_usuario'])) { ?>
-                        //echo "No hay sesion";
-
+                    if (!isset($_SESSION['id_usuario'])) {
+                        ?>
                                 <div>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
-                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
+                                    <button type="button" class="btn btn-primary btn-sm mx-0" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
                                 </div>
                                 <?php
                     } else {
                         ?>
                                 <div>
-                                    <p class="mb-0">Bienvenido <?php $_SESSION['nombre']; ?>
-                            
+                                    <p class="mb-0">Bienvenido <?php echo $_SESSION['nombre'];?>
+                        
                                 </p>
                                 <a href="cerrar.php">Cerrar Sesion</a>
                                 </div>
-                                <?php 
-                    } 
+                                <?php
+                    }
                     ?>
 
                 </div>
@@ -130,19 +142,21 @@ if (!empty($_POST)) {
                         <p>Sorprende en ese día especial</p>
                     </div>
                     <div class="col-12">
-                        <a href="#"><i class="far fa-play-circle"></i></a>
+                        <button type="button" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaSurprise">
+                            <i class="far fa-play-circle"></i>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="container-fluid mb-4">
                 <div class="row disp-btn">
                     <div class="col-4"></div>
-                    <div class="col-md-4 text-center disp-true">
+                    <div class="col-md-4 text-center disp-true head-a">
                         <a href="#paneles"><i class="fas fa-angle-double-down"></i></a>
                     </div>
                     <div class="col-md-4 text-center text-center text-xl-right disp-true-hide">
                         <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4">
-                            <a href="#paneles" class="flex caja-btn-crear">
+                            <a href="#paneles" class="flex caja-btn-crear head-a">
                                 <p><strong>Crear</strong></p>
                                 <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
                             </a>
@@ -151,20 +165,18 @@ if (!empty($_POST)) {
                 </div>
             </div>
 
-
-
-
+            <!-- POSICION DEL CARD -->
             <div class="container mt-4 disp-none">
                 <div class="row">
                     <div class="col-12 text-center mb-3">
                         <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4">
-                            <a href="#paneles-mobile" class="flex caja-btn-crear">
+                            <a href="#paneles-mobile" class="flex caja-btn-crear head-a">
                                 <p><strong>Crear</strong></p>
                                 <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
                             </a>
                         </button>
                     </div>
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center head-a">
                         <a href="#paneles-mobile"><i class="fas fa-angle-double-down"></i></a>
                     </div>
                 </div>
@@ -191,7 +203,7 @@ if (!empty($_POST)) {
                                         <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Sorprende Free</strong></h2>
                                         <p class="carousel-card-par ml-0 ml-md-4">Este 14 de febrero inscribete en nuestra marcha blanca y sorprende gratis<br>Has que tus sentimientos repercutan en Trujillo</p>
                                     </div>
-                                    <div class="col-md-4 mb-md-0 mb-4 text-right text-md-center img-margin-n">
+                                    <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
                                         <img class="img-personal-fluid img-card-head" src="css/img/foto1.png" alt="First slide">
                                     </div>
                                 </div>
@@ -204,7 +216,7 @@ if (!empty($_POST)) {
                                         <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>En Trujillo suena tu feeling</strong></h2>
                                         <p class="carousel-card-par ml-0 ml-md-4">Hagamos juntos que este 14 de febrero, nuestro amor y amistad llene la ciudad de Trujillo de lindos mensajes</p>
                                     </div>
-                                    <div class="col-md-4 mb-md-0 mb-4 text-right text-md-center img-margin-n">
+                                    <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
                                         <img class="img-personal-fluid img-card-head" src="css/img/foto2.png" alt="Second slide">
                                     </div>
                                 </div>
@@ -217,7 +229,7 @@ if (!empty($_POST)) {
                                         <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Personaliza tu plantilla</strong></h2>
                                         <p class="carousel-card-par ml-0 ml-md-4">Escribe tu saludo y has que sea único</p>
                                     </div>
-                                    <div class="col-md-4 mb-md-0 mb-4 text-right text-md-center img-margin-n">
+                                    <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
                                         <img class="img-personal-fluid img-card-head" src="css/img/foto3.png" alt="Third slide">
                                     </div>
                                 </div>
@@ -229,9 +241,11 @@ if (!empty($_POST)) {
         </div>
     </div>
 
-
-
+    <!-- MATERIAL DE PANELES -->
     <section id="paneles" class="paneles-standard pt-3 pt-lg-5 pb-lg-2 disp-true">
+
+
+        <!-- PopUp Panel -->
         <div class="container cont-p1">
             <div class="row">
                 <div class="col-12 mt-3 mb-3 text-center">
@@ -316,6 +330,7 @@ if (!empty($_POST)) {
     </section>
 
 
+    <!-- CARDS MOBILE -->
     <section id="paneles-mobile" class="disp-none">
         <div class="container">
             <div class="row">
@@ -331,8 +346,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(1,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel Parque Eterno</strong></h4>
+                                    <img class="img-fluid" src="css/img/portico-huanchaco.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórtico Huanchaco</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -341,8 +356,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(2,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel La Esperanza</strong></h4>
+                                    <img class="img-fluid" src="css/img/portico-realplaza.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórtico Esperanza 01</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -351,8 +366,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(3,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel La Esperanza</strong></h4>
+                                    <img class="img-fluid" src="css/img/portico-realplaza.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórtico Esperanza 02</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -361,8 +376,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(4,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel Mall Aventura</strong></h4>
+                                    <img class="img-fluid" src="css/img/portico-mallplaza.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórtico Mall Aventura</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -371,8 +386,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(5,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel El Golf</strong></h4>
+                                    <img class="img-fluid" src="css/img/paradero-elgolf.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Paradero El Golf</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -381,8 +396,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(6,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel Av. Fátima</strong></h4>
+                                    <img class="img-fluid" src="css/img/paradero-larco.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Paradero Av. Larco</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -391,8 +406,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(7,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel Real Plaza</strong></h4>
+                                    <img class="img-fluid" src="css/img/portico-realplaza.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórtico Real Plaza</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -401,8 +416,8 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(8,2)">
-                                    <img class="img-fluid" src="css/img/ubicacion-1.jpg" alt="First slide">
-                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Panel El Porvenir</strong></h4>
+                                    <img class="img-fluid" src="css/img/portico-realplaza.jpg" alt="First slide">
+                                    <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórticos El Porvenir</strong></h4>
                                 </a>
                             </div>
                         </div>
@@ -413,23 +428,30 @@ if (!empty($_POST)) {
 
     </section>
 
-    <script>
-        var paneles = []
-    </script>
-
-    <?php
-    $queryResult = $pdo->prepare("select id_panel,stock_videos as stock from panel");
-    $queryResult->execute([]);
-
-    while ($pan = $queryResult->fetch(PDO::FETCH_ASSOC)) {
-    ?>
-        <script>
-            paneles[<?php echo $pan['id_panel']; ?>] = <?php echo $pan['stock']; ?>
-        </script>
-    <?php
-    }
-    ?>
-
+    <!-- PopUp Surprise -->
+    <div class="modal fade" id="ventanaSurprise" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center" role="document">
+            <div class="modal-content mc-panel p-0" style="border:0; background-color:transparent">
+                <div class="modal-body p-0">
+                    <div class="container-fluid cont-modal-panel p-0">
+                        <div class="row row-up">
+                            <div class="col-12">
+                                <div class="sombra-panel" style="
+                                width: 100%;
+                                background-color: transparent;
+                                box-shadow: none;">
+                                    <video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop.mp4" autoplay loop controls></video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" id="prueba-btn-1" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaModalPanel1" style="display:none;"></button>
+    <button type="button" id="prueba-btn-2" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#modalMobilePanel" style="display:none;"></button>
+    
     <?php require_once 'footer.php'; ?>
 
     <script>
@@ -440,7 +462,7 @@ if (!empty($_POST)) {
             $(this).parent().find('.menu').toggleClass('active');
         });
     </script>
--->
+
 </body>
 
 </html>
