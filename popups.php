@@ -1,7 +1,3 @@
-<?php
-
-echo '
-
 <!-- PopUp Inicio de Sesion -->
 <div class="modal fade" id="ventanaModalSesion" tabindex="-1" role="dialog" aria-labelledby="">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -226,5 +222,3 @@ echo '
         </div>
     </div>
 </div>
-'
-?>

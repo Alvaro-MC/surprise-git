@@ -54,8 +54,7 @@ if (!empty($_POST)) {
 <body>
 
     <?php require_once 'popups.php'; ?>
-
-    <!-- Cabecera -> Video - NavBar - SliderNotas -->
+<!--
     <header id="hero" class="header content">
         <div class="header-video">
             <video src="css/video/video.mp4" autoplay loop></video>
@@ -63,7 +62,6 @@ if (!empty($_POST)) {
         <div class="header-overlay"></div>
         <div class="header-content">
 
-            <!-- NAVBAR -->
             <nav class="navbar navbar-dark">
                 <div class="container-fluid">
                     <div>
@@ -79,12 +77,10 @@ if (!empty($_POST)) {
                         </div>
                     </div>
 
-                    <!-- Prueba de Envio post por AJAX -->
                     <input type="text" id="texto" value="1" style="display: none;">
 
                     <?php
 
-                    //if (!isset($_SESSION)) {
                     if (!isset($_SESSION['id_usuario'])) { ?>
                         
                                 <div>
@@ -93,7 +89,6 @@ if (!empty($_POST)) {
                                 </div>
                                 <?php
                     } else {
-                        //echo 'Si hay sesion';
                         ?>
                                 <div>
                                     <p class="mb-0">Bienvenido <?php $_SESSION['nombre']; ?>
@@ -155,7 +150,8 @@ if (!empty($_POST)) {
                 </div>
             </div>
 
-            <!-- POSICION DEL CARD -->
+
+
 
             <div class="container mt-4 disp-none">
                 <div class="row">
@@ -232,11 +228,9 @@ if (!empty($_POST)) {
         </div>
     </div>
 
-    <!-- MATERIAL DE PANELES -->
+
+
     <section id="paneles" class="paneles-standard pt-3 pt-lg-5 pb-lg-2 disp-true">
-
-
-        <!-- PopUp Panel -->
         <div class="container cont-p1">
             <div class="row">
                 <div class="col-12 mt-3 mb-3 text-center">
@@ -321,7 +315,6 @@ if (!empty($_POST)) {
     </section>
 
 
-    <!-- CARDS MOBILE -->
     <section id="paneles-mobile" class="disp-none">
         <div class="container">
             <div class="row">
@@ -446,7 +439,7 @@ if (!empty($_POST)) {
             $(this).parent().find('.menu').toggleClass('active');
         });
     </script>
-
+-->
 </body>
 
 </html>
