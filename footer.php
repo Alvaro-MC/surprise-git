@@ -1,6 +1,3 @@
-<?php
-
-echo <<<ZZZ
     <footer id="contacto" class="container-fluid mt-4 p-6">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-8 align-self-center text-md-left mt-3 mb-3 mt-md-0 mb-md-0">
@@ -36,4 +33,3 @@ echo <<<ZZZ
             </div>
         </div>
     </footer>
-ZZZ;
