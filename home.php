@@ -54,13 +54,13 @@ if (!empty($_POST)) {
     <script src="js/index.js"></script>
     <script src="js/home.js"></script>
 
-    <?php require_once 'head.php' ?>
+    <?php require_once 'head.php'; ?>
 
 </head>
 
 <body>
 
-    <?php require_once 'popups.php' ?>
+    <?php require_once 'popups.php'; ?>
 
     <!-- Cabecera -> Video - NavBar - SliderNotas -->
     <header class="header content">
@@ -86,24 +86,22 @@ if (!empty($_POST)) {
                     </div>
 
                     <?php
-                    if (!isset($_SESSION['id_usuario'])) {
-                        echo <<< AAC
+                    if (!isset($_SESSION['id_usuario'])) { ?>
+                        
                                 <div>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
                                 </div>
-                                AAC;
-                    } else {
-                        echo <<< LNH
+                                <?php
+                    } else { 
+                    ?>
                                 <div>
-                                    <p class="mb-0">Bienvenido
-                                LNH;
-                        echo "  " . $_SESSION['nombre'];
-                        echo <<< AAA
+                                    <p class="mb-0">Bienvenido 
+                                        <?php $_SESSION['nombre']; ?>
                                 </p>
                                 <a href="cerrar.php">Cerrar Sesion</a>
                                 </div>
-                                AAA;
+                                <?php
                     }
                     ?>
 
@@ -251,16 +249,14 @@ if (!empty($_POST)) {
                         <div class="col-7 text-right">
                             <a type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" href=<?php
                                                                                                                 if (!isset($_SESSION['id_usuario'])) {
-                                                                                                                    echo <<< CCC
+                                                                                                                    ?>
                                             "javascript:no_register()"
-                                            CCC;
+                                            <?php
                                                                                                                 } else {
                                                                                                                     $_SESSION['panel'] = $_GET['p'];
-                                                                                                                    echo <<< DDD
+                                                                                                                    ?>
                                             "javascript:send_message()"
-                                            DDD;
-                                                                                                                }
-                                                                                                                ?>>Confirmar</a>
+                                            <?php } ?> Confirmar</a>
                         </div>
                     </div>
                 </div>
@@ -276,55 +272,55 @@ if (!empty($_POST)) {
                         <?php
                         switch ($_GET['b']) {
                             case 0:
-                                echo <<< TTT
+                                ?>
                                         <div><p style="
                                             font-size: 20px;
                                             color: #fff;">Selecciona tu plantilla</p></div>
-                                        TTT;
+                                        <?php
                                 break;
                             case 1:
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                    echo <<< TTT
+                                    ?>
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
                                             <source id="source-video-1" src="css/video/videos-amor/amistad-vertical.mp4">
                                         </video>
-                                        TTT;
+                                        <?php
                                 } else {
-                                    echo <<< TTT
+                                    ?>
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
                                             <source id="source-video-1" src="css/video/videos-amor/amistad-horizontal.mp4">
                                         </video>
-                                        TTT;
+                                        <?php
                                 }
                                 break;
                             case 2:
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                    echo <<< TTT
+                                    ?>
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
                                             <source id="source-video-1" src="css/video/videos-amor/amor-vertical-1.mp4">
                                         </video>
-                                        TTT;
+                                        <?php
                                 } else {
-                                    echo <<< TTT
+                                    ?>
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
                                             <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-1.mp4">
                                         </video>
-                                        TTT;
+                                        <?php
                                 }
                                 break;
                             case 3:
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                    echo <<< TTT
+                                    ?>
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
                                             <source id="source-video-1" src="css/video/videos-amor/amor-vertical-2.mp4">
                                         </video>
-                                        TTT;
+                                        <?php
                                 } else {
-                                    echo <<< TTT
+                                    ?>
                                         <video id="video-principal" class="video-ini" autoplay loop controls>
                                             <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-2.mp4">
                                         </video>
-                                        TTT;
+                                        <?php
                                 }
                                 break;
                         }
@@ -334,35 +330,35 @@ if (!empty($_POST)) {
                             switch ($_GET['b']) {
                                 case 1:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                        echo <<< TTT
+                                        ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-1-v">Escribe aqui tu mensaje</textarea>
-                                        TTT;
+                                        <?php
                                     } else {
-                                        echo <<< TTT
+                                        ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-1-h">Escribe aqui tu mensaje</textarea>
-                                        TTT;
+                                        <?php
                                     }
                                     break;
                                 case 2:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                        echo <<< TTT
+                                       ?>
                                         <textarea type="text" maxlength="20" id="texto-panel-v" class="texto-2-v">Escribe aqui tu mensaje</textarea>
-                                        TTT;
+                                        <?php
                                     } else {
-                                        echo <<< TTT
+                                        ?>
                                         <textarea type="text" maxlength="20" id="texto-panel-h" class="texto-2-h">Escribe aqui tu mensaje</textarea>
-                                        TTT;
+                                        <?php
                                     }
                                     break;
                                 case 3:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                        echo <<< TTT
+                                        ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-3-v">Escribe aqui tu mensaje</textarea>
-                                        TTT;
+                                        <?php
                                     } else {
-                                        echo <<< TTT
+                                        ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-3-h">Escribe aqui tu mensaje</textarea>
-                                        TTT;
+                                        <?php
                                     }
                                     break;
                             }
@@ -385,18 +381,18 @@ if (!empty($_POST)) {
                         $resp_panel = $prepared->fetch(PDO::FETCH_ASSOC);
 
                         if ($resp_panel['stock'] < 10) {
-                            echo <<< TTT
+                            ?>
                                 <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion">Programar</button>
-                                TTT;
+                                <?php
                         } else {
-                            echo <<< RRR
+                            ?>
                                     <p style="color:#fff;">Este panel ya alcanzó su máximo de videos</p>
-                                RRR;
+                                <?php
                         }
                     } else {
-                        echo <<< TTT
+                        ?>
                         <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion" disabled>Programar</button>
-                        TTT;
+                        <?php 
                     }
                     ?>
                 </div>
