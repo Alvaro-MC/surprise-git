@@ -88,8 +88,7 @@ if (!empty($_POST)) {
 
                     //if (!isset($_SESSION)) {
                     if (!isset($_SESSION['id_usuario'])) { ?>
-                        //echo "No hay sesion";
-
+                        
                                 <div>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
                                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
