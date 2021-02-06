@@ -38,7 +38,7 @@ if (!isset($resp['invitacion'])) {
 
     <script src="js/index.js"></script>
 
-    <?php require_once 'head.php' ?>
+    <?php require_once 'head.php'; ?>
 </head>
 
 <body>
@@ -61,11 +61,11 @@ if (!isset($resp['invitacion'])) {
                 <div class="container-fluid mt-4">
                     <div class="row text-center justify-content-center">
                         <div class="col-12">
-                            <h1 class="nombre-rec"><strong><?php echo $resp['nombre_rec'] ?>,</strong></h1>
+                            <h1 class="nombre-rec"><strong><?php echo $resp['nombre_rec']; ?>,</strong></h1>
                         </div>
                         <div class="col-12">
-                            <p class="par-1 font-ine"><strong><?php echo $resp['nombre_user'] ?> te ha dejado una sorpresa para este 14 de febrero:</strong></p>
-                            <p class="mess-rec font-ine"><?php echo $resp['mensaje_inv'] ?></p>
+                            <p class="par-1 font-ine"><strong><?php echo $resp['nombre_user']; ?> te ha dejado una sorpresa para este 14 de febrero:</strong></p>
+                            <p class="mess-rec font-ine"><?php echo $resp['mensaje_inv']; ?></p>
                         </div>
                         <div class="col-12 mt-5 mb-2">
                             <a class="text-center mt-2">
@@ -75,17 +75,17 @@ if (!isset($resp['invitacion'])) {
                         <div class="col-12 mb-2 flex justify-content-evenly justify-content-md-center btn-melon align-items-center">
                             <img class="img-portico" src="css/img/iconos/<?php
                                                                             if ($resp['panel'] == 5 || $resp['panel'] == 6) {
-                                                                                echo <<< ZZZ
+                                                                                ?>
                                     ic_paradero.svg"
-                                    ZZZ;
+                                    <?php
                                                                             } else {
-                                                                                echo <<< DDD
+                                                                                ?>
                                     ic_portico.svg" style="width: 40px !important;"
-                                    DDD;
+                                    <?php
                                                                             }
                                                                             ?> alt=" Icono de un pórtico">
                             <a class="text-center mt-2 txt-btn mx-1 txt-btn">
-                                <h4 class="txt-sub font-ine"><?php echo $resp['ubicacion_video'] ?></h4>
+                                <h4 class="txt-sub font-ine"><?php echo $resp['ubicacion_video']; ?></h4>
                             </a>
                         </div>
                     </div>
