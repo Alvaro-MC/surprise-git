@@ -1,7 +1,7 @@
 <?php @session_start();
 
 if (!isset($_SESSION['id_usuario'])) {
-    header('Location: index.php');
+    header('Location: /index.php');
 }
 
 require_once 'modelo/conexion.php';
@@ -20,7 +20,7 @@ require_once 'modelo/conexion.php';
     <link rel="stylesheet" type="text/css" href="css/surprise.css">
     <link rel="stylesheet" type="text/css" href="css/media-surprise.css">
 
-    <script src="js/index.js"></script>
+    <script src="/js/index.js"></script>
 
     <?php require_once 'head.php'; ?>
 

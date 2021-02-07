@@ -54,7 +54,7 @@ if ($_POST['mensaje']) {
     ]);
     $invitacion = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    $url = "me_surprise.php?i={$invitacion['id_invitacion']}";
+    $url = "https://www.surprise.com.pe/me_surprise.php?i={$invitacion['id_invitacion']}";
     $_SESSION['url-oficial'] = $url;
 
 

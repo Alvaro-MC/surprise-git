@@ -2,13 +2,19 @@ runtime: php72 # Replace with php74 to use PHP 7.4
 
 handlers:
 # Serve a directory as a static resource.
-- url: /stylesheets
-  static_dir: stylesheets
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /fonts
+  static_dir: fonts
 
 # Serve images as static resources.
-- url: /(.+\.(gif|png|jpg))$
+- url: /(.+\.(gif|png|jpg|svg))$
   static_files: \1
-  upload: .+\.(gif|png|jpg)$
+  upload: .+\.(gif|png|jpg|svg)$
 
 # Serve your app through a front controller at index.php or public/index.php.
 - url: .*

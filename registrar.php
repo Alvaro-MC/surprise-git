@@ -59,7 +59,7 @@ if (!empty($_POST)) {
 			}
 
 		}else{
-			header('Location: index.php?r=0');
+			header('Location: /index.php?r=0');
 		}
 
 

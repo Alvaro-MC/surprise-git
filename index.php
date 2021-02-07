@@ -39,7 +39,7 @@ if (!empty($_POST)) {
             else
                 $url = "index.php";
 
-            header("Location: surprise-git/index.php");
+            header("Location: /index.php");
         } else {
             $url = null;
         }
@@ -260,7 +260,7 @@ if (!empty($_POST)) {
         </div>
 
         <map name="mapa-panel">
-            <area shape="rect" coords="846,32,870,88" onclic="javascript:modal_mobile_panel(8,1)">
+            <area shape="rect" coords="846,32,870,88" href="javascript:modal_mobile_panel(8,1)">
             <area shape="rect" coords="313,53,357,91" href="javascript:modal_mobile_panel(3,1)">
             <area shape="rect" coords="269,5,313,53" href="javascript:modal_mobile_panel(2,1)">
             <area shape="rect" coords="110,99,136,158" href="javascript:modal_mobile_panel(1,1)">
