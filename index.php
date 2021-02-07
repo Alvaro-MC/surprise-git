@@ -4,21 +4,6 @@ $user = null;
 $query = null;
 $url  = null;
 
-require_once 'modelo/conexion.php';
-$query = "SELECT * FROM panel";
-		$prepared = $pdo->prepare($query);
-		$prepared->execute([]);
-		$user = $prepared->fetch(PDO::FETCH_ASSOC);
-
-		echo $user['id_panel'];
-		echo $user['id_panel'];
-		echo $user['id_panel'];
-		echo $user['id_panel'];
-		echo $user['id_panel'];
-		echo $user['id_panel'];
-		echo $user['id_panel'];
-
-
 if (isset($_GET['r'])) {
     if($_GET['r']==0){
         ?>
@@ -30,6 +15,13 @@ if (isset($_GET['r'])) {
 if (!empty($_POST)) {
     
     require_once 'modelo/conexion.php';
+
+    $prepared = $pdo->prepare("SELECT stock_videos as stock FROM panel");
+	$prepared->execute([]);
+		
+    while($pane = $prepared->fetch(PDO::FETCH_ASSOC)){
+        echo $pane['stock'];
+    }
 
     $query = "SELECT * FROM usuario WHERE correo = :correo";
     $prepared = $pdo->prepare($query);
