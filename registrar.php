@@ -1,6 +1,24 @@
 <?php
 
-require_once 'modelo/conexion.php';
+
+
+
+require_once '/modelo/conexion.php';
+$query = "SELECT * FROM panel";
+		$prepared = $pdo->prepare($query);
+		$prepared->execute([]);
+		$user = $prepared->fetch(PDO::FETCH_ASSOC);
+
+		echo $user['id_panel'];
+		echo $user['id_panel'];
+		echo $user['id_panel'];
+		echo $user['id_panel'];
+		echo $user['id_panel'];
+		echo $user['id_panel'];
+		echo $user['id_panel'];
+
+
+
 
 $user = null;
 $query = null;
@@ -11,7 +29,7 @@ $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
 if (!empty($_POST)) {
 
-	$query = "SELECT * FROM usuario WHERE correo = :correo";
+		$query = "SELECT * FROM usuario WHERE correo = :correo";
 		$prepared = $pdo->prepare($query);
 		$prepared->execute([
 			'correo' => $_POST['correo']
@@ -59,7 +77,7 @@ if (!empty($_POST)) {
 			}
 
 		}else{
-			header('Location: /index.php?r=0');
+			header('Location: https://www.surprise.com.pe/index.php?r=0');
 		}
 
 
