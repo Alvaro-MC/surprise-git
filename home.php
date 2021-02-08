@@ -136,12 +136,12 @@ if (!empty($_POST)) {
                     </strong></h1>
                 <p class="sub-principal">Has que este 14 de febrero, tu amor y amistad<br>llene la ciudad de Trujillo de lindos mensajes</p>
                 <div class="col-12">
-                    <button type="button" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaPanelSurprise">
+                    <button type="button" class="btn-surprise" onclick=previsualizarPanel(panel)>
                         <i class="far fa-play-circle blanco"></i>
                     </button>
                 </div>
 
-        <button id="btn-pre-pan" class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaPanelSurprise" style="display:none;">ModalPop</button>
+                <button id="btn-pre-pan" class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaPanelSurprise" style="display:none;">ModalPop</button>
             </div>
 
             <!-- Seccion Plantillas -->
@@ -449,7 +449,7 @@ if (!empty($_POST)) {
                                 height: calc(50vh - 100px);
                                 background-color: #f5e2d3;">  
                                     <script>
-                                        document.write('<video id="video-popup-panel" class="video-ini" style="height:80vh;" playsinline autoplay muted loop></video>')
+                                        document.write('<video id="video-popup-panel" class="video-ini" style="width: inherit;;" playsinline autoplay muted loop></video>')
                                     </script>
                                 </div>
                             </div>
