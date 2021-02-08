@@ -67,7 +67,7 @@ if (!empty($_POST)) {
         <div class="header-video" id="header-video-container">
         <script>
             if(localStorage.getItem('panel')==1){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" playsinline autoplay muted loop></video>')}
-            if(localStorage.getItem('panel')==2){document.write('<img src="css/video/videos-paneles/paradero-laesperanza01.jpg" style="width:100%; height:100%;></img>')}
+            if(localStorage.getItem('panel')==2){document.write('<img src="css/video/videos-paneles/paradero-laesperanza01.jpg" style="width:100%; height:100%;">')}
             if(localStorage.getItem('panel')==3){document.write('<video src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')}
             if(localStorage.getItem('panel')==4){document.write('<video src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')}
             if(localStorage.getItem('panel')==5){document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')}

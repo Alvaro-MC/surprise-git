@@ -442,13 +442,7 @@ if (!empty($_POST)) {
                                 width: 100%;
                                 background-color: transparent;
                                 box-shadow: none;">
-                                    <script>
-                                        if (screen.width < 576)
-                                            document.write('<video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop-mobile.mp4" autoplay loop controls></video>')
-                                        else
-                                            document.write('<video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop-web.mp4" autoplay loop controls></video>')
-                                    </script>
-                                    <!--<video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop.mp4" autoplay loop controls></video>-->
+                                    <video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop-web.mp4" autoplay loop controls></video>
                                 </div>
                             </div>
                         </div>
