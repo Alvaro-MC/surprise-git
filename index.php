@@ -32,6 +32,7 @@ if (!empty($_POST)) {
             $_SESSION['id_usuario'] = $user['id_usuario'];
             $_SESSION['usuario'] = $user['correo'];
             $_SESSION['nombre'] = $user['nombre'];
+            $_SESSION['correo'] = $user['correo'];
 
             //echo "URL : " . $_SESSION['url'];
 
@@ -85,7 +86,7 @@ if (!empty($_POST)) {
                             <nav class="menu mt-1">
                                 <ul>
                                     <li class="first-border"><a class="first-item" href="#paneles">Mapa</a></li>
-                                    <li><a href="#contacto">Contacto</a></li>
+                                    <li><a class="mx-1" href="#contacto">Contacto</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -358,7 +359,7 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(2,2)">
-                                    <img class="img-fluid" src="css/img/portico-realplaza.jpg" alt="First slide">
+                                    <img class="img-fluid" src="css/img/portico-laesperanza01.jpg" alt="First slide">
                                     <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórtico Esperanza 01</strong></h4>
                                 </a>
                             </div>
@@ -368,7 +369,7 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(3,2)">
-                                    <img class="img-fluid" src="css/img/portico-realplaza.jpg" alt="First slide">
+                                    <img class="img-fluid" src="css/img/portico-laesperanza02.jpg" alt="First slide">
                                     <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórtico Esperanza 02</strong></h4>
                                 </a>
                             </div>
@@ -418,7 +419,7 @@ if (!empty($_POST)) {
                         <div class="container">
                             <div class="row px-3">
                                 <a class="col-12 text-center p-0 caja-img-mobile-card" href="javascript:modal_mobile_panel(8,2)">
-                                    <img class="img-fluid" src="css/img/portico-realplaza.jpg" alt="First slide">
+                                    <img class="img-fluid" src="css/img/portico-elporvenir.jpg" alt="First slide">
                                     <h4 class="mayus ml-0 ml-md-4 text-center mt-3"><strong>Pórticos El Porvenir</strong></h4>
                                 </a>
                             </div>

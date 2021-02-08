@@ -10,14 +10,15 @@ $fecha = "2021-02-14";
 $resultAdd = false;
 
 if ($_POST['mensaje']) {
-
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
     $mensaje = $_POST['mensaje'];
     $panel = $_POST['panel'];
     $video = $_POST['video'];
     $_SESSION['panel'] = $panel;
     $_SESSION['video'] = $video;
 
-    $mensaje = substr($mensaje,0,20);
+    $mensaje = substr($mensaje, 0, 20);
 
     $query = "SELECT count(*) FROM video";
     $prepared = $pdo->prepare($query);
@@ -50,6 +51,13 @@ if ($_POST['mensaje']) {
         $prepared->execute([
             'id_panel' => $panel
         ]);
+
+        $mensaje = 'Gracias ' . $nombre . ' por ser parte de la familia de SURPRISe';
+        $subject = 'Has creado un nuevo video';
+
+        $to = "hola@surprise.com.pe";
+
+        mail($to, $subject, $message, 'From: ' . $correo);
     }
 } else {
     echo "No se pudo registrar el video";

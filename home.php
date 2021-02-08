@@ -22,6 +22,7 @@ if (!empty($_POST)) {
             $_SESSION['id_usuario'] = $user['id_usuario'];
             $_SESSION['usuario'] = $user['correo'];
             $_SESSION['nombre'] = $user['nombre'];
+            $_SESSION['correo'] = $user['correo'];
 
             if (isset($_SESSION['url']))
                 $url = $_SESSION['url'];
@@ -148,7 +149,7 @@ if (!empty($_POST)) {
                             <nav class="menu mt-1">
                                 <ul>
                                     <li class="first-border"><a class="first-item" href="index.php">Inicio</a></li>
-                                    <li><a href="#contacto">Contacto</a></li>
+                                    <li><a href="#contacto" class="mx-1">Contacto</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -548,6 +549,8 @@ if (!empty($_POST)) {
                     url: "registrar_video.php",
                     method: "POST",
                     data: {
+                        nombre: $_SESSION['nombre'],
+                        correo: $_SESSION['correo'],
                         mensaje: mensaje,
                         panel: localStorage.getItem("panel"),
                         video: localStorage.getItem("boton2")

@@ -54,7 +54,12 @@ if ($_POST['mensaje']) {
     ]);
     $invitacion = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    $url = "https://www.surprise.com.pe/me_surprise.php?i={$invitacion['id_invitacion']}";
+    $cod = base64_encode($invitacion['id_invitacion']);
+    $code = urlencode($cod);
+
+    $url = "https://www.surprise.com.pe/me_surprise.php?i={$code}";
+
+    //$url = "https://www.surprise.com.pe/me_surprise.php?i={$invitacion['id_invitacion']}";
     $_SESSION['url-oficial'] = $url;
 
 
@@ -69,7 +74,7 @@ if ($_POST['mensaje']) {
     <script>
         localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
     </script>
-<?php
+    <?php
 
 
 

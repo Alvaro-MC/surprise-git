@@ -8,10 +8,13 @@ require_once 'modelo/conexion.php';
 
 $resp = null;
 
+$decode = urldecode($_GET['i']);
+$decod = base64_decode($decode);
+
 $query = "select u.nombre as nombre_user, i.nombre as nombre_rec, i.id_invitacion as invitacion, i.mensaje as mensaje_inv, v.ubicacion as ubicacion_video, v.id_panel as panel from invitacion i join usuario u on i.id_usuario = u.id_usuario join video v on i.id_video = v.id_video where i.id_invitacion = :id_invitacion";
 $prepared = $pdo->prepare($query);
 $prepared->execute([
-    'id_invitacion' => $_GET['i']
+    'id_invitacion' => $decod
 ]);
 $resp = $prepared->fetch(PDO::FETCH_ASSOC);
 
