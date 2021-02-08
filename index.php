@@ -5,15 +5,17 @@ $query = null;
 $url  = null;
 
 if (isset($_GET['r'])) {
-    if($_GET['r']==0){
-        ?>
-        <script>alert("Parece que ya hay una cuenta registrada con ese correo")</script>
-        <?php
+    if ($_GET['r'] == 0) {
+?>
+        <script>
+            alert("Parece que ya hay una cuenta registrada con ese correo")
+        </script>
+<?php
     }
 }
 
 if (!empty($_POST)) {
-    
+
     require_once 'modelo/conexion.php';
 
     $query = "SELECT * FROM usuario WHERE correo = :correo";
@@ -95,21 +97,21 @@ if (!empty($_POST)) {
                     <?php
 
                     if (!isset($_SESSION['id_usuario'])) {
-                        ?>
-                                <div>
-                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
-                                    <button type="button" class="btn btn-primary btn-sm mx-0" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
-                                </div>
-                                <?php
+                    ?>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
+                            <button type="button" class="btn btn-primary btn-sm mx-0" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
+                        </div>
+                    <?php
                     } else {
-                        ?>
-                                <div>
-                                    <p class="mb-0">Bienvenido <?php echo $_SESSION['nombre'];?>
-                        
-                                </p>
-                                <a href="cerrar.php">Cerrar Sesion</a>
-                                </div>
-                                <?php
+                    ?>
+                        <div>
+                            <p class="mb-0">Bienvenido <?php echo $_SESSION['nombre']; ?>
+
+                            </p>
+                            <a href="cerrar.php">Cerrar Sesion</a>
+                        </div>
+                    <?php
                     }
                     ?>
 
@@ -440,7 +442,13 @@ if (!empty($_POST)) {
                                 width: 100%;
                                 background-color: transparent;
                                 box-shadow: none;">
-                                    <video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop.mp4" autoplay loop controls></video>
+                                    <script>
+                                        if (screen.width < 576)
+                                            document.write('<video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop-mobile.mp4" autoplay loop controls></video>')
+                                        else
+                                            document.write('<video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop-web.mp4" autoplay loop controls></video>')
+                                    </script>
+                                    <!--<video id="video-pop-surprise" class="video-ini" style="height:80vh;" src="css/video/video-pop.mp4" autoplay loop controls></video>-->
                                 </div>
                             </div>
                         </div>
