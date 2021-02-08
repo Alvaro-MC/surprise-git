@@ -1,8 +1,8 @@
 <?php
 $dbHost = '75.102.57.89';
-$dbName = 'qhgawllm_bdsurprise';
-$dbUser = 'qhgawllm';
-$dbPass = 'FD,9#MF&.CtP';
+$dbName = 'bdsurprise';
+$dbUser = 'alvaro-mc';
+$dbPass = 'alvaro2021';
 
 try {
     $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
