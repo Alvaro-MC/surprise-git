@@ -446,7 +446,7 @@ if (!empty($_POST)) {
                         <div class="row row-up">
                             <div class="col-12">
                                 <div id="panel-img" class="sombra-panel" style="
-                                width: 100%;
+                                height: calc(50vh - 100px);
                                 background-color: #f5e2d3;">  
                                     <script>
                                         document.write('<video id="video-popup-panel" class="video-ini" style="height:80vh;" playsinline autoplay muted loop></video>')

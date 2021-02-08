@@ -44,7 +44,7 @@ function previsualizarPanel(panel) {
             pintar_pan(pop, 'css/video/videos-paneles/portico-huanchaco.mp4')
             break;
         case 2:
-            pintar_pan(pop, 'ss/video/videos-paneles/paradero-laesperanza02.mp4')
+            pintar_pan(pop, 'css/video/videos-paneles/paradero-laesperanza02.mp4')
             break;
         case 3:
             pintar_pan(pop, 'css/video/videos-paneles/paradero-laesperanza02.mp4')
