@@ -65,16 +65,32 @@ if (!empty($_POST)) {
     <!-- Cabecera -> Video - NavBar - SliderNotas -->
     <header class="header content">
         <div class="header-video" id="header-video-container">
-        <script>
-            if(localStorage.getItem('panel')==1){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" playsinline autoplay muted loop></video>')}
-            if(localStorage.getItem('panel')==2){document.write('<img src="css/video/videos-paneles/paradero-laesperanza01.jpg" style="width:100%; height:100%;">')}
-            if(localStorage.getItem('panel')==3){document.write('<video src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')}
-            if(localStorage.getItem('panel')==4){document.write('<video src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')}
-            if(localStorage.getItem('panel')==5){document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')}
-            if(localStorage.getItem('panel')==6){document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')}
-            if(localStorage.getItem('panel')==7){document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" playsinline autoplay muted loop></video>')}
-            if(localStorage.getItem('panel')==8){document.write('<video src="css/video/videos-paneles/portico-elporvenir.mp4" playsinline autoplay muted loop></video>')}
-        </script>
+            <script>
+                if (localStorage.getItem('panel') == 1) {
+                    document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" playsinline autoplay muted loop></video>')
+                }
+                if (localStorage.getItem('panel') == 2) {
+                    document.write('<img src="css/video/videos-paneles/paradero-laesperanza01.jpg" style="width:100%; height:100%;">')
+                }
+                if (localStorage.getItem('panel') == 3) {
+                    document.write('<video src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')
+                }
+                if (localStorage.getItem('panel') == 4) {
+                    document.write('<video src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')
+                }
+                if (localStorage.getItem('panel') == 5) {
+                    document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')
+                }
+                if (localStorage.getItem('panel') == 6) {
+                    document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')
+                }
+                if (localStorage.getItem('panel') == 7) {
+                    document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" playsinline autoplay muted loop></video>')
+                }
+                if (localStorage.getItem('panel') == 8) {
+                    document.write('<video src="css/video/videos-paneles/portico-elporvenir.mp4" playsinline autoplay muted loop></video>')
+                }
+            </script>
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
@@ -96,21 +112,22 @@ if (!empty($_POST)) {
 
                     <?php
                     if (!isset($_SESSION['id_usuario'])) {
-                        ?>
-                                <div>
-                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
-                                    <button type="button" class="btn btn-primary btn-sm mx-0" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
-                                </div>
-                                <?php
+                    ?>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
+                            <button type="button" class="btn btn-primary btn-sm mx-0" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
+                        </div>
+                    <?php
                     } else {
-                        ?>
-                                <div>
-                                    <p class="mb-0">Bienvenido <? echo $_SESSION['nombre'];?>
-                                    
-                                </p>
-                                <a href="cerrar.php">Cerrar Sesion</a>
-                                </div>
-                                <?php
+                    ?>
+                        <div>
+                            <p class="mb-0">Bienvenido
+                                <? echo $_SESSION['nombre'];?>
+
+                            </p>
+                            <a href="cerrar.php">Cerrar Sesion</a>
+                        </div>
+                    <?php
                     }
                     ?>
 
@@ -136,7 +153,10 @@ if (!empty($_POST)) {
                     </strong></h1>
                 <p class="sub-principal">Has que este 14 de febrero, tu amor y amistad<br>llene la ciudad de Trujillo de lindos mensajes</p>
                 <div class="col-12">
-                    <button type="button" class="btn-surprise" onclick=previsualizarPanel(panel)>
+                    <script>
+                        var p = localStorage.getItem("panel")
+                    </script>
+                    <button type="button" class="btn-surprise" onclick=previsualizarPanel(pa)>
                         <i class="far fa-play-circle blanco"></i>
                     </button>
                 </div>
@@ -260,11 +280,8 @@ if (!empty($_POST)) {
                     </div>
                     <div class="row">
                         <div class="col-7 text-right">
-                            <a type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" <?php if (!isset($_SESSION['id_usuario'])) { ?>
-                                href="javascript:no_register()"
-                                            <?php } else {  $SESSION['panel'] = $_GET['p'];?>
-                                                href="javascript:send_message()"
-                                            <?php }  ?>  > Confirmar</a>
+                            <a type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" <?php if (!isset($_SESSION['id_usuario'])) { ?> href="javascript:no_register()" <?php } else {
+                                                                                                                                                                                        $SESSION['panel'] = $_GET['p']; ?> href="javascript:send_message()" <?php }  ?>> Confirmar</a>
                         </div>
                     </div>
                 </div>
@@ -280,55 +297,57 @@ if (!empty($_POST)) {
                         <?php
                         switch ($_GET['b']) {
                             case 0:
-                                ?>
-                                        <div><p style="
+                        ?>
+                                <div>
+                                    <p style="
                                             font-size: 20px;
-                                            color: #fff;">Selecciona tu plantilla</p></div>
-                                        <?php
+                                            color: #fff;">Selecciona tu plantilla</p>
+                                </div>
+                                <?php
                                 break;
                             case 1:
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                    ?>
-                                        <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-1" src="css/video/videos-amor/amistad-vertical.mp4">
-                                        </video>
-                                        <?php
+                                ?>
+                                    <video id="video-principal" class="video-ini" autoplay loop controls>
+                                        <source id="source-video-1" src="css/video/videos-amor/amistad-vertical.mp4">
+                                    </video>
+                                <?php
                                 } else {
-                                    ?>
-                                        <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-1" src="css/video/videos-amor/amistad-horizontal.mp4">
-                                        </video>
-                                        <?php
+                                ?>
+                                    <video id="video-principal" class="video-ini" autoplay loop controls>
+                                        <source id="source-video-1" src="css/video/videos-amor/amistad-horizontal.mp4">
+                                    </video>
+                                <?php
                                 }
                                 break;
                             case 2:
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                    ?>
-                                        <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-1" src="css/video/videos-amor/amor-vertical-1.mp4">
-                                        </video>
-                                        <?php
+                                ?>
+                                    <video id="video-principal" class="video-ini" autoplay loop controls>
+                                        <source id="source-video-1" src="css/video/videos-amor/amor-vertical-1.mp4">
+                                    </video>
+                                <?php
                                 } else {
-                                    ?>
-                                        <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-1.mp4">
-                                        </video>
-                                        <?php
+                                ?>
+                                    <video id="video-principal" class="video-ini" autoplay loop controls>
+                                        <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-1.mp4">
+                                    </video>
+                                <?php
                                 }
                                 break;
                             case 3:
                                 if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                    ?>
-                                        <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-1" src="css/video/videos-amor/amor-vertical-2.mp4">
-                                        </video>
-                                        <?php
+                                ?>
+                                    <video id="video-principal" class="video-ini" autoplay loop controls>
+                                        <source id="source-video-1" src="css/video/videos-amor/amor-vertical-2.mp4">
+                                    </video>
+                                <?php
                                 } else {
-                                    ?>
-                                        <video id="video-principal" class="video-ini" autoplay loop controls>
-                                            <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-2.mp4">
-                                        </video>
-                                        <?php
+                                ?>
+                                    <video id="video-principal" class="video-ini" autoplay loop controls>
+                                        <source id="source-video-1" src="css/video/videos-amor/amor-horizontal-2.mp4">
+                                    </video>
+                        <?php
                                 }
                                 break;
                         }
@@ -338,35 +357,35 @@ if (!empty($_POST)) {
                             switch ($_GET['b']) {
                                 case 1:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                        ?>
+                            ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-1-v text-center txtarea">Escribe aqui tu mensaje</textarea>
-                                        <?php
+                                    <?php
                                     } else {
-                                        ?>
+                                    ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-1-h text-center txtarea">Escribe aqui tu mensaje</textarea>
-                                        <?php
+                                    <?php
                                     }
                                     break;
                                 case 2:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                        ?>
+                                    ?>
                                         <textarea type="text" maxlength="20" id="texto-panel-v" class="texto-2-v text-center txtarea">Escribe aqui tu mensaje</textarea>
-                                        <?php
+                                    <?php
                                     } else {
-                                        ?>
+                                    ?>
                                         <textarea type="text" maxlength="20" id="texto-panel-h" class="texto-2-h text-center txtarea">Escribe aqui tu mensaje</textarea>
-                                        <?php
+                                    <?php
                                     }
                                     break;
                                 case 3:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
-                                        ?>
+                                    ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-3-v text-center txtarea">Escribe aqui tu mensaje</textarea>
-                                        <?php
+                                    <?php
                                     } else {
-                                        ?>
+                                    ?>
                                         <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-3-h text-center txtarea">Escribe aqui tu mensaje</textarea>
-                                        <?php
+                            <?php
                                     }
                                     break;
                             }
@@ -389,18 +408,18 @@ if (!empty($_POST)) {
                         $resp_panel = $prepared->fetch(PDO::FETCH_ASSOC);
 
                         if ($resp_panel['stock'] < 10) {
-                            ?>
-                                <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion">Programar</button>
-                                <?php
+                    ?>
+                            <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion">Programar</button>
+                        <?php
                         } else {
-                            ?>
-                                    <p style="color:#fff;">Este panel ya alcanzó su máximo de videos</p>
-                                <?php
+                        ?>
+                            <p style="color:#fff;">Este panel ya alcanzó su máximo de videos</p>
+                        <?php
                         }
                     } else {
                         ?>
                         <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion" disabled>Programar</button>
-                        <?php
+                    <?php
                     }
                     ?>
                 </div>
@@ -445,11 +464,9 @@ if (!empty($_POST)) {
                     <div class="container-fluid cont-modal-panel p-0">
                         <div class="row row-up">
                             <div class="col-12">
-                                <div id="panel-img" class="sombra-panel" style="
-                                height: calc(50vh - 100px);
-                                background-color: #f5e2d3;">  
+                                <div id="panel-img" class="sombra-panel" style="background-color: #f5e2d3;">
                                     <script>
-                                        document.write('<video id="video-popup-panel" class="video-ini" style="width: inherit;;" playsinline autoplay muted loop></video>')
+                                        document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" playsinline autoplay muted loop></video>')
                                     </script>
                                 </div>
                             </div>
