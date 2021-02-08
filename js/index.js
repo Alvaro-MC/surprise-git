@@ -80,10 +80,10 @@ function modal_mobile_panel(number, modal) {
             pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-huanchaco.jpg", "css/img/mapa-8.png", "css/img/panel-1.png", "Pórtico Huanchaco", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.Chan Chan Altura Camposanto Parque Eterno", "1024px X 384px", number, '<video src="ss/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')
             break;
         case 2:
-            pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-mallplaza.jpg", "css/img/mapa-6.png", "css/img/panel-1.png", "Pórtico Esperanza 01", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.José G. Condorcanqui Cdra 10 - LA ESPERANZA", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')
+            pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-laesperanza01.jpg", "css/img/mapa-6.png", "css/img/panel-1.png", "Pórtico Esperanza 01", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.José G. Condorcanqui Cdra 10 - LA ESPERANZA", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')
             break;
         case 3:
-            pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-mallplaza.jpg", "css/img/mapa-4.png", "css/img/panel-1.png", "Pórtico Esperanza 02", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.José G. Condorcanqui Cdra 12 - LA ESPERANZA", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')
+            pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-laesperanza02.jpg", "css/img/mapa-4.png", "css/img/panel-1.png", "Pórtico Esperanza 02", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.José G. Condorcanqui Cdra 12 - LA ESPERANZA", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')
             break;
         case 4:
             pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-mallplaza.jpg", "css/img/mapa-1.png", "css/img/panel-1.png", "Pórtico Mall Aventura", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.América oeste Cdra 7 - Frente a Mall Aventura", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-mall.mp4" autoplay loop></video>')
@@ -98,7 +98,7 @@ function modal_mobile_panel(number, modal) {
             pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-realplaza.jpg", "css/img/mapa-2.png", "css/img/panel-1.png", "Pórtico Real Plaza", "Horario: 7:00 a.m. - 9:00 p.m.", "Prol.Cesar Vallejo cuadra 13 - Frente a Real Plaza", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-realplaza.mp4" autoplay loop></video>')
             break;
         case 8:
-            pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-mallplaza.jpg", "css/img/mapa-5.png", "css/img/panel-1.png", "Pórtico El Porvenir", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.Pumacahua Cdra 13 - Porvenir", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-elporvenir.mp4" autoplay loop></video>')
+            pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-elporvenir.jpg", "css/img/mapa-5.png", "css/img/panel-1.png", "Pórtico El Porvenir", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.Pumacahua Cdra 13 - Porvenir", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-elporvenir.mp4" autoplay loop></video>')
             break;
     }
 }
