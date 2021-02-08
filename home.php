@@ -549,8 +549,6 @@ if (!empty($_POST)) {
                     url: "registrar_video.php",
                     method: "POST",
                     data: {
-                        nombre: $_SESSION['nombre'],
-                        correo: $_SESSION['correo'],
                         mensaje: mensaje,
                         panel: localStorage.getItem("panel"),
                         video: localStorage.getItem("boton2")

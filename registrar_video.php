@@ -10,8 +10,6 @@ $fecha = "2021-02-14";
 $resultAdd = false;
 
 if ($_POST['mensaje']) {
-    $nombre = $_POST['nombre'];
-    $correo = $_POST['correo'];
     $mensaje = $_POST['mensaje'];
     $panel = $_POST['panel'];
     $video = $_POST['video'];
@@ -52,12 +50,12 @@ if ($_POST['mensaje']) {
             'id_panel' => $panel
         ]);
 
-        $mensaje = 'Gracias ' . $nombre . ' por ser parte de la familia de SURPRISe';
+        $mensaje = 'Gracias ' . $_SESSION['nombre'] . ' por ser parte de la familia de SURPRISe';
         $subject = 'Has creado un nuevo video';
 
         $to = "hola@surprise.com.pe";
 
-        mail($to, $subject, $message, 'From: ' . $correo);
+        mail($to, $subject, $message, 'From: ' . $_SESSION['correo']);
     }
 } else {
     echo "No se pudo registrar el video";
