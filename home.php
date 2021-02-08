@@ -141,37 +141,6 @@ if (!empty($_POST)) {
                     </button>
                 </div>
             </div>
-            
-            <!-- PopUp Surprise -->
-            <div class="modal fade" id="ventanaPanelSurprise" tabindex="-1" role="dialog" aria-labelledby="">
-                <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center" role="document">
-                    <div class="modal-content mc-panel p-0" style="border:0; background-color:transparent">
-                        <div class="modal-body p-0">
-                            <div class="container-fluid cont-modal-panel p-0">
-                                <div class="row row-up">
-                                    <div class="col-12">
-                                        <div class="sombra-panel" style="
-                                        width: 100%;
-                                        background-color: transparent;
-                                        box-shadow: none;">
-                                            <script>
-                                                if(localStorage.getItem('panel')==1){document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-huanchaco.mp4" playsinline autoplay muted loop></video>')}
-                                                if(localStorage.getItem('panel')==2){document.write('<img src="css/video/videos-paneles/paradero-laesperanza01.jpg" style="width:100%; height:100%;">')}
-                                                if(localStorage.getItem('panel')==3){document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')}
-                                                if(localStorage.getItem('panel')==4){document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')}
-                                                if(localStorage.getItem('panel')==5){document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')}
-                                                if(localStorage.getItem('panel')==6){document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')}
-                                                if(localStorage.getItem('panel')==7){document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-realplaza.mp4" playsinline autoplay muted loop></video>')}
-                                                if(localStorage.getItem('panel')==8){document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-elporvenir.mp4" playsinline autoplay muted loop></video>')}
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Seccion Plantillas -->
             <div class="container">
@@ -457,6 +426,55 @@ if (!empty($_POST)) {
                                         }
                                     </script>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PopUp de Panel 1 -->
+    <div class="modal fade" id="ventanaPanelSurprise" tabindex="-1" role="dialog" aria-labelledby="">
+        <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center" role="document">
+            <div class="modal-content mc-panel p-0">
+                <div class="modal-body p-0">
+                    <div class="container-fluid cont-modal-panel p-0">
+                        <div class="row row-up">
+                            <div class="col-12">
+                                <div class="sombra-panel" style="
+                                width: 100%;
+                                background-color: #f5e2d3;">
+                                    <script>
+                                        switch(panel) {
+                                            case 1:
+                                                document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-huanchaco.mp4" playsinline autoplay muted loop></video>')
+                                                break;
+                                            case 2:
+                                                document.write('<img src="css/video/videos-paneles/paradero-laesperanza01.jpg" style="width:100%; height:100%;">')
+                                                break;
+                                            case 3:
+                                                document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')
+                                                break;
+                                            case 4:
+                                                document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')
+                                                break;
+                                            case 5:
+                                                document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')
+                                                break;
+                                            case 6:
+                                                document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')
+                                                break;
+                                            case 7:
+                                                document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-realplaza.mp4" playsinline autoplay muted loop></video>')
+                                                break;
+                                            case 8:
+                                                document.write('<video class="video-ini" style="height:80vh;" src="css/video/videos-paneles/portico-elporvenir.mp4" playsinline autoplay muted loop></video>')
+                                                break;
+                                        }      
+                                           
+                                    </script>
                                 </div>
                             </div>
                         </div>
