@@ -66,14 +66,14 @@ if (!empty($_POST)) {
     <header class="header content">
         <div class="header-video" id="header-video-container">
         <script>
-            if(localStorage.getItem('panel')==1){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==2){document.write('<video src="css/video/videos-paneles/paradero-laesperanza01.jpg" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==3){document.write('<video src="css/video/videos-paneles/paradero-laesperanza02.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==4){document.write('<video src="css/video/videos-paneles/portico-mall.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==5){document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==6){document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==7){document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==8){document.write('<video src="css/video/videos-paneles/portico-elporvenir.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==1){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" playsinline autoplay muted loop></video>')}
+            if(localStorage.getItem('panel')==2){document.write('<img src="css/video/videos-paneles/paradero-laesperanza01.jpg" style="width:100%; height:100%;></img>')}
+            if(localStorage.getItem('panel')==3){document.write('<video src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')}
+            if(localStorage.getItem('panel')==4){document.write('<video src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')}
+            if(localStorage.getItem('panel')==5){document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')}
+            if(localStorage.getItem('panel')==6){document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')}
+            if(localStorage.getItem('panel')==7){document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" playsinline autoplay muted loop></video>')}
+            if(localStorage.getItem('panel')==8){document.write('<video src="css/video/videos-paneles/portico-elporvenir.mp4" playsinline autoplay muted loop></video>')}
         </script>
         </div>
         <div class="header-overlay"></div>

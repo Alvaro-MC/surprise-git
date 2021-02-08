@@ -318,7 +318,7 @@ if (!empty($_POST)) {
                                         <h2><strong>4</strong></h2>
                                     </div>
                                     <div class="col-md-9 text-center">
-                                        <p class="mt-3"><strong>Acércate al panel y sube una historia</strong></p>
+                                        <p class="mt-1"><strong>Acércate al panel y sube una historia</strong></p>
                                     </div>
                                 </div>
                             </div>
