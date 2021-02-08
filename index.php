@@ -16,13 +16,6 @@ if (!empty($_POST)) {
     
     require_once 'modelo/conexion.php';
 
-    $prepared = $pdo->prepare("SELECT stock_videos as stock FROM panel");
-	$prepared->execute([]);
-		
-    while($pane = $prepared->fetch(PDO::FETCH_ASSOC)){
-        echo $pane['stock'];
-    }
-
     $query = "SELECT * FROM usuario WHERE correo = :correo";
     $prepared = $pdo->prepare($query);
     $prepared->execute([
@@ -45,7 +38,7 @@ if (!empty($_POST)) {
             else
                 $url = "index.php";
 
-            header("Location: /index.php");
+            header("Location: index.php");
         } else {
             $url = null;
         }
@@ -111,7 +104,7 @@ if (!empty($_POST)) {
                     } else {
                         ?>
                                 <div>
-                                    <p class="mb-0">Bienvenido <?php $_SESSION['nombre'];?>
+                                    <p class="mb-0">Bienvenido <?php echo $_SESSION['nombre'];?>
                         
                                 </p>
                                 <a href="cerrar.php">Cerrar Sesion</a>
