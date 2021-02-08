@@ -169,7 +169,7 @@ require_once 'modelo/conexion.php';
     <?php require_once 'footer.php'; ?>
 
     <script>
-        if (localStorage.getItem("res") == 'true') {
+        if (localStorage.getItem('res') == 'true') {
             document.getElementById('success').click()
         }
         $('.js-nav').click(function() {
