@@ -70,32 +70,29 @@ if (!empty($_POST)) {
                             <div class="col-12">
                                 <div id="panel-img" class="sombra-panel" style="background-color: #f5e2d3;">
                                     <script>
-                                        var panel = localStorage.getItem("panel")
-                                        switch (localStorage.getItem("panel")) {
-                                            case 1:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/portico-huanchaco.mp4" playsinline autoplay muted loop></video>')
-                                                break;
-                                            case 2:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')
-                                                break;
-                                            case 3:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/paradero-laesperanza02.mp4" playsinline autoplay muted loop></video>')
-                                                break;
-                                            case 4:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')
-                                                break;
-                                            case 5:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')
-                                                break;
-                                            case 6:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')
-                                                break;
-                                            case 7:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/portico-realplaza.mp4" playsinline autoplay muted loop></video>')
-                                                break;
-                                            case 8:
-                                                document.write('<video id="video-popup-panel" class="video-ini" style="width: 100%;" src="css/video/videos-paneles/portico-elporvenir.mp4" playsinline autoplay muted loop></video>')
-                                                break;
+                                        if (localStorage.getItem('panel') == 1) {
+                                            document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                        }
+                                        if (localStorage.getItem('panel') == 2) {
+                                            document.write('<video src="css/video/videos-paneles/paradero-laesperanza02.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                        }
+                                        if (localStorage.getItem('panel') == 3) {
+                                            document.write('<video src="css/video/videos-paneles/paradero-laesperanza02.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                        }
+                                        if (localStorage.getItem('panel') == 4) {
+                                            document.write('<video src="css/video/videos-paneles/portico-mall.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                        }
+                                        if (localStorage.getItem('panel') == 5) {
+                                            document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                        }
+                                        if (localStorage.getItem('panel') == 6) {
+                                            document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                        }
+                                        if (localStorage.getItem('panel') == 7) {
+                                            document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                        }
+                                        if (localStorage.getItem('panel') == 8) {
+                                            document.write('<video src="css/video/videos-paneles/portico-elporvenir.mp4" style="width:100%" playsinline autoplay muted loop></video>')
                                         }
                                     </script>
                                 </div>
@@ -207,8 +204,6 @@ if (!empty($_POST)) {
                         <i class="far fa-play-circle blanco"></i>
                     </button>
                 </div>
-
-                <button id="btn-pre-pan" class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaPanelSurprise" style="display:none;">ModalPop</button>
             </div>
 
             <!-- Seccion Plantillas -->
