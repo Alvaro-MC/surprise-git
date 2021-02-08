@@ -11,6 +11,18 @@ require_once 'modelo/conexion.php';
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1RNYPYEHC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-Z1RNYPYEHC');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise</title>
@@ -27,12 +39,6 @@ require_once 'modelo/conexion.php';
 </head>
 
 <body>
-
-    <script>
-        if (localStorage.getItem("res") == 'true') {
-            document.getElementById('success').click()
-        }
-    </script>
 
     <!-- Cabecera -->
     <header class="header content">
@@ -163,6 +169,9 @@ require_once 'modelo/conexion.php';
     <?php require_once 'footer.php'; ?>
 
     <script>
+        if (localStorage.getItem("res") == 'true') {
+            document.getElementById('success').click()
+        }
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
         });

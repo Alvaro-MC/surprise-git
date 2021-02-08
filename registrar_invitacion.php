@@ -73,11 +73,9 @@ if ($_POST['mensaje']) {
 ?>
     <script>
         localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
+        localStorage.setItem("res", true)
     </script>
-    <?php
-
-
-
+<?php
 
     if ($resultAdd) {
     ?>
