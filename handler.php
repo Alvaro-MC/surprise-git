@@ -28,6 +28,9 @@ switch(@parse_url($_SERVER['REQUEST_URI'])['path']){
     case '/registrar_invitacion.php':
         require 'registrar_invitacion.php';
         break;
+    case '/registrar_video.php':
+        require 'registrar_video.php';
+        break;
     case '/home.php':
         require 'home.php';
         break;

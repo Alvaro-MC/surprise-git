@@ -267,3 +267,6 @@ video {
     margin-top: -150px;
 }
 */
+.txtarea{
+    overflow: hidden;
+}

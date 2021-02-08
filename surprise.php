@@ -28,6 +28,12 @@ require_once 'modelo/conexion.php';
 
 <body>
 
+    <script>
+        if (localStorage.getItem("res") == 'true') {
+            document.getElementById('success').click()
+        }
+    </script>
+
     <!-- Cabecera -->
     <header class="header content">
         <div class="header-video">
@@ -39,7 +45,7 @@ require_once 'modelo/conexion.php';
             <div class="container-fluid container-nav">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <img src="css/img/iconos/logo-blanco.svg" alt="Logo Surprise" class="img-personal-fluid mt-3 mb-3">
+                        <a href="index.php"><img src="css/img/iconos/logo-blanco.svg" alt="Logo Surprise" class="img-personal-fluid mt-3 mb-3"></a>
                     </div>
                 </div>
             </div>
@@ -157,9 +163,6 @@ require_once 'modelo/conexion.php';
     <?php require_once 'footer.php'; ?>
 
     <script>
-        if (localStorage.getItem("res") == 'true') {
-            document.getElementById('success').click()
-        }
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
         });

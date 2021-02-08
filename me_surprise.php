@@ -53,7 +53,7 @@ if (!isset($resp['invitacion'])) {
             <div class="container-fluid container-nav">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <img src="css/img/iconos/logo-blanco.svg" alt="Logo Surprise" class="img-personal-fluid mt-3 mb-3">
+                        <a href="index.php"><img src="css/img/iconos/logo-blanco.svg" alt="Logo Surprise" class="img-personal-fluid mt-3 mb-3"></a>
                     </div>
                 </div>
             </div>

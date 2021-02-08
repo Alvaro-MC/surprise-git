@@ -59,7 +59,7 @@ if (!empty($_POST)) {
 			}
 
 		}else{
-			header('Location: https://www.surprise.com.peindex.php?r=0');
+			header('Location: https://www.surprise.com.pe/index.php?r=0');
 		}
 
 

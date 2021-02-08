@@ -16,11 +16,9 @@
     .texto-3-h {
         font-size: 70px !important;
     }
-    /*
-    .header-video video {
-        margin-top: -100px;
+    .texto {
+        margin: 6% 0 4% 0 !important;
     }
-    */
 }
 
 @media (max-width: 992px) {

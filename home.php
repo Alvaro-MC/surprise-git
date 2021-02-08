@@ -67,15 +67,14 @@ if (!empty($_POST)) {
         <div class="header-video" id="header-video-container">
         <script>
             if(localStorage.getItem('panel')==1){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==2){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')}
-            if(localStorage.getItem('panel')==3){document.write('<video src="css/video/videos-paneles/portico-huanchaco.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==2){document.write('<video src="css/video/videos-paneles/paradero-laesperanza.mp4" autoplay loop></video>')}
+            if(localStorage.getItem('panel')==3){document.write('<video src="css/video/videos-paneles/paradero-laesperanza.mp4" autoplay loop></video>')}
             if(localStorage.getItem('panel')==4){document.write('<video src="css/video/videos-paneles/portico-mall.mp4" autoplay loop></video>')}
             if(localStorage.getItem('panel')==5){document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" autoplay loop></video>')}
             if(localStorage.getItem('panel')==6){document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" autoplay loop></video>')}
             if(localStorage.getItem('panel')==7){document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" autoplay loop></video>')}
             if(localStorage.getItem('panel')==8){document.write('<video src="css/video/videos-paneles/portico-elporvenir.mp4" autoplay loop></video>')}
         </script>
-            <!--<video src="https://vimeo.com/508662668" autoplay loop></video>-->
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
@@ -106,7 +105,7 @@ if (!empty($_POST)) {
                     } else {
                         ?>
                                 <div>
-                                    <p class="mb-0">Bienvenido <?$_SESSION['nombre'];?>
+                                    <p class="mb-0">Bienvenido <? echo $_SESSION['nombre'];?>
                                     
                                 </p>
                                 <a href="cerrar.php">Cerrar Sesion</a>
@@ -336,33 +335,33 @@ if (!empty($_POST)) {
                                 case 1:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-1-v text-center">Escribe aqui tu mensaje</textarea>
+                                        <textarea class="txtarea" type="text" maxlength="25" id="texto-panel-v" class="texto-1-v text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     } else {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-1-h text-center">Escribe aqui tu mensaje</textarea>
+                                        <textarea class="txtarea" type="text" maxlength="25" id="texto-panel-h" class="texto-1-h text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     }
                                     break;
                                 case 2:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         ?>
-                                        <textarea type="text" maxlength="20" id="texto-panel-v" class="texto-2-v text-center">Escribe aqui tu mensaje</textarea>
+                                        <textarea class="txtarea" type="text" maxlength="20" id="texto-panel-v" class="texto-2-v text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     } else {
                                         ?>
-                                        <textarea type="text" maxlength="20" id="texto-panel-h" class="texto-2-h text-center">Escribe aqui tu mensaje</textarea>
+                                        <textarea class="txtarea" type="text" maxlength="20" id="texto-panel-h" class="texto-2-h text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     }
                                     break;
                                 case 3:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-3-v text-center">Escribe aqui tu mensaje</textarea>
+                                        <textarea class="txtarea" type="text" maxlength="25" id="texto-panel-v" class="texto-3-v text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     } else {
                                         ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-3-h text-center">Escribe aqui tu mensaje</textarea>
+                                        <textarea class="txtarea" type="text" maxlength="25" id="texto-panel-h" class="texto-3-h text-center">Escribe aqui tu mensaje</textarea>
                                         <?php
                                     }
                                     break;

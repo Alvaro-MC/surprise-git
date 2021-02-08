@@ -1,7 +1,7 @@
     <footer id="contacto" class="container-fluid mt-4 p-6">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-8 align-self-center text-md-left mt-3 mb-3 mt-md-0 mb-md-0">
-                <img src="css/img/iconos/logo-blanco.svg" class="img-foo img-personal-fluid ml-0 ml-md-2 ml-xl-3">
+                <a href="index.php"><img src="css/img/iconos/logo-blanco.svg" class="img-foo img-personal-fluid ml-0 ml-md-2 ml-xl-3"></a>
             </div>
             <div class="col-12 col-md-4 col-lg-3 align-self-center">
                 <ol class="social-list-inf mb-0 mt-0 pl-0 mt-3 mb-3">
