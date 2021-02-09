@@ -335,8 +335,8 @@ if (!empty($_POST)) {
                     </div>
                     <div class="row">
                         <div class="col-7 text-right">
-                            <a type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" <?php if (!isset($_SESSION['id_usuario'])) { ?> href="javascript:no_register()" <?php } else {
-                                                                                                                                                                                        $SESSION['panel'] = $_GET['p']; ?> href="javascript:send_message()" <?php }  ?>> Confirmar</a>
+                            <button type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" <?php if (!isset($_SESSION['id_usuario'])) { ?> onclick="no_register()" <?php } else {
+                                                                                                                                                                                        $SESSION['panel'] = $_GET['p']; ?> onclick="send_message()" <?php }  ?>> Confirmar</button>
                         </div>
                     </div>
                 </div>
