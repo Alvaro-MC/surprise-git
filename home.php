@@ -214,7 +214,7 @@ if (!empty($_POST)) {
                         var p = localStorage.getItem("panel")
                     </script>
                     <button type="button" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaPanelSurprise">
-                        <i class="far fa-play-circle blanco"></i>
+                        <i class="far fa-play-circle blanco play"></i>
                     </button>
                 </div>
             </div>
@@ -253,7 +253,7 @@ if (!empty($_POST)) {
                                         </div>
                                     </button>
                                     <div class="text-center">
-                                        <button class="btn btn-melon btn-pre-video" onclick=previsualizar(1,panel)>
+                                        <button class="btn btn-melon btn-pre-video style-melon" onclick=previsualizar(1,panel)>
                                             <i class="fas fa-eye"></i>
                                             Previsualizar
                                         </button>
@@ -277,7 +277,7 @@ if (!empty($_POST)) {
                                         </div>
                                     </button>
                                     <div class="text-center">
-                                        <button class="btn btn-melon btn-pre-video" onclick=previsualizar(2,panel)>
+                                        <button class="btn btn-melon btn-pre-video style-melon" onclick=previsualizar(2,panel)>
                                             <i class="fas fa-eye"></i>
                                             Previsualizar
                                         </button>
@@ -301,7 +301,7 @@ if (!empty($_POST)) {
                                         </div>
                                     </button>
                                     <div class="text-center">
-                                        <button class="btn btn-melon btn-pre-video" onclick=previsualizar(3,panel)>
+                                        <button class="btn btn-melon btn-pre-video style-melon" onclick=previsualizar(3,panel)>
                                             <i class="fas fa-eye"></i>
                                             Previsualizar
                                         </button>
@@ -335,7 +335,7 @@ if (!empty($_POST)) {
                     </div>
                     <div class="row">
                         <div class="col-7 text-right">
-                            <button type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor" <?php if (!isset($_SESSION['id_usuario'])) { ?> onclick="no_register()" <?php } else {
+                            <button type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor style-melon" <?php if (!isset($_SESSION['id_usuario'])) { ?> onclick="no_register()" <?php } else {
                                                                                                                                                                                         $SESSION['panel'] = $_GET['p']; ?> onclick="send_message()" <?php }  ?>> Confirmar</button>
                         </div>
                     </div>
@@ -464,7 +464,7 @@ if (!empty($_POST)) {
 
                         if ($resp_panel['stock'] < 10) {
                     ?>
-                            <button class="btn btn-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion">Programar</button>
+                            <button class="btn btn-melon style-melon" data-bs-toggle="modal" data-bs-target="#ventanaConfirmacion">Programar</button>
                         <?php
                         } else {
                         ?>

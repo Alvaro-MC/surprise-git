@@ -136,8 +136,8 @@ function pintar_modal(modal, ubicacion, mapa, panel, titulo, horario, direccion,
         success: function(data) {
             if (data < 10) {
                 //Si hay stock
-                document.getElementById('btn-stock-panel').innerHTML = '<a class="flex caja-btn-crear crear-panel" href="home.php?b=0"><p><strong>Crear</strong></p><img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg"></a>'
-                document.getElementById('btn-stock-panel-mobile').innerHTML = '<a class="flex caja-btn-crear crear-panel" href="home.php?b=0"><p><strong>Crear</strong></p><img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg"></a>'
+                document.getElementById('btn-stock-panel').innerHTML = '<a class="flex caja-btn-crear crear-panel style-melon" href="home.php?b=0"><p><strong>Crear</strong></p><img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg"></a>'
+                document.getElementById('btn-stock-panel-mobile').innerHTML = '<a class="flex caja-btn-crear crear-panel style-melon" href="home.php?b=0"><p><strong>Crear</strong></p><img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg"></a>'
             } else {
                 //Stock Agotado
                 document.getElementById('btn-stock-panel').innerHTML = '<p style="color:red;"><strong>Este panel ya alcanzó su máximo de videos</strong></p>'

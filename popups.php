@@ -29,7 +29,7 @@
                         <label for="checkpass">Mostrar Contraseña</label>
                     </div>
                     <div class="col-12 text-center">
-                        <button class="btn btn-primary btn-crear" type="submit" onclick="validateInput()">Ingresar</button>
+                        <button class="btn btn-primary btn-crear style-morado" type="submit" onclick="validateInput()">Ingresar</button>
                     </div>
                 </form>
             </div>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="col-12 text-center">
-                        <button class="btn btn-primary btn-crear" type="submit" onclick="validate()">Registrarme</button>
+                        <button class="btn btn-primary btn-crear style-morado" type="submit" onclick="validate()">Registrarme</button>
                     </div>
                 </form>
             </div>

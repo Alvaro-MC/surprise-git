@@ -68,7 +68,7 @@ require_once 'modelo/conexion.php';
                         <div class="col-12 mt-5 mb-2">
                             <h2><strong>COMPARTE</strong></h2>
                             <p>¡Y llena de alegria!</p>
-                            <a class="btn btn-melon text-center mt-2" href="#form-float">
+                            <a class="btn btn-melon text-center mt-2 style-melon" href="#form-float">
                                 <h3>Mensaje Sorpresa</h3>
                             </a>
                         </div>
@@ -124,7 +124,7 @@ require_once 'modelo/conexion.php';
                 <div class="text-center btn-special">14 de Febrero</div>
             </div>
             <div class="col-12 text-center">
-                <button class="btn btn-primary btn-crear" id="btn-compartir-inv" type="submit" onclick="compartir()">Compartir</button>
+                <button class="btn btn-primary btn-crear style-morado" id="btn-compartir-inv" type="submit" onclick="compartir()">Compartir</button>
             </div>
         </form>
     </div>
@@ -170,7 +170,7 @@ require_once 'modelo/conexion.php';
 
     <script>
         if (localStorage.getItem('res') == 'true') {
-            document.getElementById('success').click()
+            //document.getElementById('success').click()
         }
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
@@ -219,7 +219,7 @@ require_once 'modelo/conexion.php';
                         apellido_r.value = ""
                         telefono_r.value = ""
                         mensaje_r.value = ""
-                        location.reload()
+                        document.getElementById('success').click()
                     }
                 });
             }

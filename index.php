@@ -112,8 +112,8 @@ if (!empty($_POST)) {
                     if (!isset($_SESSION['id_usuario'])) {
                     ?>
                         <div>
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
-                            <button type="button" class="btn btn-primary btn-sm mx-0" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
+                            <button type="button" class="btn btn-primary btn-sm style-blanco" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
+                            <button type="button" class="btn btn-primary btn-sm mx-0 style-blanco" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
                         </div>
                     <?php
                     } else {
@@ -158,7 +158,7 @@ if (!empty($_POST)) {
                     </div>
                     <div class="col-12">
                         <button type="button" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaSurprise">
-                            <i class="far fa-play-circle"></i>
+                            <i class="far fa-play-circle play"></i>
                         </button>
                     </div>
                 </div>
@@ -170,7 +170,7 @@ if (!empty($_POST)) {
                         <a href="#paneles"><i class="fas fa-angle-double-down"></i></a>
                     </div>
                     <div class="col-md-4 text-center text-center text-xl-right disp-true-hide">
-                        <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4">
+                        <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4 style-morado">
                             <a href="#paneles" class="flex caja-btn-crear head-a">
                                 <p><strong>Crear</strong></p>
                                 <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
@@ -184,7 +184,7 @@ if (!empty($_POST)) {
             <div class="container mt-4 disp-none">
                 <div class="row">
                     <div class="col-12 text-center mb-3">
-                        <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4">
+                        <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4 style-morado">
                             <a href="#paneles-mobile" class="flex caja-btn-crear head-a">
                                 <p><strong>Crear</strong></p>
                                 <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
