@@ -216,7 +216,7 @@ if (!empty($_POST)) {
                                 <div class="row">
                                     <div class="col-md-8 align-self-center mt-4 text-left px-0">
                                         <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Sorprende Free</strong></h2>
-                                        <p class="carousel-card-par ml-0 ml-md-4">Este 14 de febrero inscribete en nuestra marcha blanca y sorprende gratis<br>Has que tus sentimientos repercutan en Trujillo</p>
+                                        <p class="carousel-card-par ml-0 ml-md-4">Este 14 de febrero inscribete en nuestra marcha blanca y sorprende gratis<br>Haz que tus sentimientos repercutan en Trujillo</p>
                                     </div>
                                     <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
                                         <img class="img-personal-fluid img-card-head" src="css/img/foto1.png" alt="First slide">
@@ -242,7 +242,7 @@ if (!empty($_POST)) {
                                 <div class="row">
                                     <div class="col-md-8 align-self-center mt-4 text-left px-0">
                                         <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Personaliza tu plantilla</strong></h2>
-                                        <p class="carousel-card-par ml-0 ml-md-4">Escribe tu saludo y has que sea único</p>
+                                        <p class="carousel-card-par ml-0 ml-md-4">Escribe tu saludo y haz que sea único</p>
                                     </div>
                                     <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
                                         <img class="img-personal-fluid img-card-head" src="css/img/foto3.png" alt="Third slide">

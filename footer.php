@@ -26,7 +26,7 @@
                             <div class="social-radius mx-auto"><a href="https://www.facebook.com/Surprisepe-106095851325583" target="_blank"><i class="fab fa-facebook-f mt-2 color-morado"></i></a></div>
                         </div>
                         <div class="col-6 col-md-12 text-center mt-0 mt-md-2">
-                            <div class="social-radius mx-auto"><a href="https://www.instagram.com/Surprise.pe_Oficial/" target="_blank"><i class="fab fa-instagram mt-2 color-morado"></i></a></div>
+                            <div class="social-radius mx-auto"><a href="https://instagram.com/surprise.itis?igshid=tqwc8mozqqrp" target="_blank"><i class="fab fa-instagram mt-2 color-morado"></i></a></div>
                         </div>
                     </div>
                 </div>

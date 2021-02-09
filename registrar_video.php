@@ -49,13 +49,6 @@ if ($_POST['mensaje']) {
         $prepared->execute([
             'id_panel' => $panel
         ]);
-
-        $mensaje = 'Gracias ' . $_SESSION['nombre'] . ' por ser parte de la familia de SURPRISe';
-        $subject = 'Has creado un nuevo video';
-
-        $to = "hola@surprise.com.pe";
-
-        mail($to, $subject, $message, 'From: ' . $_SESSION['correo']);
     }
 } else {
     echo "No se pudo registrar el video";
