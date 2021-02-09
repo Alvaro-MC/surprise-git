@@ -69,20 +69,23 @@ if ($_POST['mensaje']) {
         'url' => $url,
         'id_invitacion' => $invitacion['id_invitacion']
     ]);
-
+/*
 ?>
     <script>
         localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
         localStorage.setItem("res", true)
     </script>
 <?php
+*/
 
     if ($resultAdd) {
-    ?>
+    /*?>
         <script>
             localStorage.setItem("res", true)
         </script>
 <?php
+*/
+        echo $url;
     }
 } else {
     echo "No se pudo registrar la invitacion";

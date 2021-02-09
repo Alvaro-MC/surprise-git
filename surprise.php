@@ -153,7 +153,7 @@ require_once 'modelo/conexion.php';
                             <div class="col-12 pt-5">
                                 <ol class="social-link justify-content-center">
                                     <li><a href="#" onclick="copy('url-copy')" class="item-link cp"><i class="fas fa-copy"></i></a></li>
-                                    <li><a class="item-link wp" href="https://web.whatsapp.com/send?text=<?php echo $_SESSION['url-oficial'] ?>" data-action="share/whatsapp/share" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a id="enlace-wpp-envio" class="item-link wp" href="https://web.whatsapp.com/send?text=<?php echo $_SESSION['url-oficial'] ?>" data-action="share/whatsapp/share" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                 </ol>
                             </div>
                         </div>
@@ -219,7 +219,10 @@ require_once 'modelo/conexion.php';
                         apellido_r.value = ""
                         telefono_r.value = ""
                         mensaje_r.value = ""
+                        document.getElementsByClassName('url-copy').value = data
+                        document.getElementsByClassName('enlace-wpp-envio').href = data
                         document.getElementById('success').click()
+                        //location.href = "surprise.com.pe/surprise.php?m=y"
                     }
                 });
             }
