@@ -4,12 +4,12 @@
 }
 
 @font-face {
-    font-family: "amarillo";
-    src: url("../fonts/amarillo/Amarillo.ttf") format('truetype');
+    font-family: "tamarillo";
+    src: url("../fonts/tamarillo/tamarillo.ttf") format('truetype');
 }
 
 .header-content h1 {
-    font-family: "amarillo" !important;
+    font-family: "tamarillo" !important;
 }
 
 .header {
@@ -57,7 +57,7 @@ input[type=radio] {
 }
 
 .texto {
-    margin: 12% 0 6% 0;
+    margin: 12% 0 3% 0;
 }
 
 .nota-up {
@@ -71,10 +71,16 @@ input[type=radio] {
 }
 
 .caja-plantilla {
+    transition: 1s;
     background-color: #EC6460;
     border-radius: 20px;
     padding: 6px;
     border: 0;
+}
+
+.caja-plantilla:hover {
+    transform: scale(1.03);
+    transition: 1s;
 }
 
 .caja-plantilla:focus {
@@ -212,7 +218,7 @@ video {
 }
 
 .texto-2-v {
-    font-family: 'amarillo' !important;
+    font-family: 'tamarillo' !important;
     color: #E04A3B !important;
     font-size: 54px !important;
 }
@@ -242,7 +248,7 @@ video {
 }
 
 .texto-2-h {
-    font-family: 'amarillo' !important;
+    font-family: 'tamarillo' !important;
     color: #E04A3B !important;
     font-size: 50px !important;
 }

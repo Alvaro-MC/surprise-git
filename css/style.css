@@ -546,9 +546,8 @@ ul li {
 }
 
 .style-melon:hover {
-    background-color: #5a3a67 !important;
+    background-color: #c75c59;
     transform: scale(1.05);
-    border-color: #5a3a67!important;
 }
 
 .style-morado {
@@ -556,8 +555,9 @@ ul li {
 }
 
 .style-morado:hover {
-    background-color: #c75c59;
+    background-color: #5a3a67 !important;
     transform: scale(1.05);
+    border-color: #5a3a67!important;
 }
 
 .style-blanco {
@@ -577,9 +577,13 @@ ul li {
     animation-iteration-count: infinite;
 }
 
+.play:hover {
+    color: #ec6460 !important;
+}
+
 @keyframes play {
     50% {
-        transform: scale(1.3)
+        transform: scale(1.5)
     }
     100% {
         transform: scale(1)
