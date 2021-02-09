@@ -89,10 +89,10 @@ function modal_mobile_panel(number, modal) {
             pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-mallplaza.jpg", "css/img/mapa-1.png", "css/img/panel-1.png", "Pórtico Mall Aventura", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.América oeste Cdra 7 - Frente a Mall Aventura", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-mall.mp4" autoplay loop></video>')
             break;
         case 5:
-            pintar_modal((modal == 1) ? 1 : 2, "css/img/paradero-elgolf.jpg", "css/img/mapa-7.png", "css/img/panel-2.png", "Paradero El Golf", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.El golf cruce con Prol. César Vallejo", "540px de ancho x 1080px de alto", number, '<video src="css/video/videos-paneles/paradero-elgolf.mp4" autoplay loop></video>')
+            pintar_modal((modal == 1) ? 1 : 2, "css/img/paradero-larco.jpg", "css/img/mapa-3.png", "css/img/panel-2.png", "Paradero Av. Larco", "Horario: 7:00 a.m. - 9:00 p.m.", "Av. Larco cruce con Av.Fátima", "540px de ancho x 1080px de alto", number, '<video src="css/video/videos-paneles/paradero-larco.mp4" autoplay loop></video>')
             break;
         case 6:
-            pintar_modal((modal == 1) ? 1 : 2, "css/img/paradero-larco.jpg", "css/img/mapa-3.png", "css/img/panel-2.png", "Paradero Av. Larco", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.Larco cruce con A.Fátima", "540px de ancho x 1080px de alto", number, '<video src="css/video/videos-paneles/paradero-larco.mp4" autoplay loop></video>')
+            pintar_modal((modal == 1) ? 1 : 2, "css/img/paradero-elgolf.jpg", "css/img/mapa-7.png", "css/img/panel-2.png", "Paradero El Golf", "Horario: 7:00 a.m. - 9:00 p.m.", "Av.El golf cruce con Prol. César Vallejo", "540px de ancho x 1080px de alto", number, '<video src="css/video/videos-paneles/paradero-elgolf.mp4" autoplay loop></video>')
             break;
         case 7:
             pintar_modal((modal == 1) ? 1 : 2, "css/img/portico-realplaza.jpg", "css/img/mapa-2.png", "css/img/panel-1.png", "Pórtico Real Plaza", "Horario: 7:00 a.m. - 9:00 p.m.", "Prol.Cesar Vallejo cuadra 13 - Frente a Real Plaza", "1024px X 384px", number, '<video src="css/video/videos-paneles/portico-realplaza.mp4" autoplay loop></video>')
