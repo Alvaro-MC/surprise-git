@@ -96,10 +96,10 @@ if (!empty($_POST)) {
                                             document.write('<video src="css/video/videos-paneles/portico-mall.mp4" style="width:100%" playsinline autoplay muted loop></video>')
                                         }
                                         if (localStorage.getItem('panel') == 5) {
-                                            document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                            document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" style="width:100%" playsinline autoplay muted loop></video>')
                                         }
                                         if (localStorage.getItem('panel') == 6) {
-                                            document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" style="width:100%" playsinline autoplay muted loop></video>')
+                                            document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" style="width:100%" playsinline autoplay muted loop></video>')
                                         }
                                         if (localStorage.getItem('panel') == 7) {
                                             document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" style="width:100%" playsinline autoplay muted loop></video>')
