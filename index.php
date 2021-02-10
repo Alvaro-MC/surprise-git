@@ -25,7 +25,7 @@ if (!empty($_POST)) {
     ]);
     $user = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    if (isset($user['correo'])) {
+    if (isset($user['correo']) && $user['estado']=='activo' ) {
 
         if ($user['correo'] == $_POST['correo'] && password_verify($_POST['pass'], $user['contrasena'])) {
             session_start();
