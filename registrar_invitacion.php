@@ -59,8 +59,8 @@ if ($_POST['mensaje']) {
 
     $url = "https://www.surprise.com.pe/me_surprise.php?i={$code}";
 
-    //$url = "https://www.surprise.com.pe/me_surprise.php?i={$invitacion['id_invitacion']}";
     $_SESSION['url-oficial'] = $url;
+    $_SESSION['nro_invitacion'] = $invitacion['id_invitacion'];
 
 
     $query = "update invitacion i set url = :url where i.id_invitacion = :id_invitacion;";
@@ -69,22 +69,8 @@ if ($_POST['mensaje']) {
         'url' => $url,
         'id_invitacion' => $invitacion['id_invitacion']
     ]);
-/*
-?>
-    <script>
-        localStorage.setItem("link-oficial", <?php echo "" . $url . "" ?>)
-        localStorage.setItem("res", true)
-    </script>
-<?php
-*/
 
     if ($resultAdd) {
-    /*?>
-        <script>
-            localStorage.setItem("res", true)
-        </script>
-<?php
-*/
         echo $url;
     }
 } else {

@@ -22,7 +22,7 @@ require_once 'modelo/conexion.php';
         gtag('js', new Date());
         gtag('config', 'G-Z1RNYPYEHC');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise</title>
@@ -170,8 +170,10 @@ require_once 'modelo/conexion.php';
 
     <script>
         if (localStorage.getItem('res') == 'true') {
-            //document.getElementById('success').click()
+            console.log('Success')
+            document.getElementById('success').click()
         }
+        
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
         });
@@ -214,15 +216,13 @@ require_once 'modelo/conexion.php';
                     },
                     success: function(data) {
                         //Registrado
-                        localStorage.setItem("res", true)
                         nombre_r.value = ""
                         apellido_r.value = ""
                         telefono_r.value = ""
                         mensaje_r.value = ""
-                        document.getElementsByClassName('url-copy').value = data
-                        document.getElementsByClassName('enlace-wpp-envio').href = data
-                        document.getElementById('success').click()
-                        //location.href = "surprise.com.pe/surprise.php?m=y"
+                        console.log('TRUE')
+                        localStorage.setItem("res",true)
+                        location.reload()
                     }
                 });
             }
