@@ -231,8 +231,8 @@ video {
 }
 
 #texto-panel-h {
-    padding-top: 20px;
-    width: 50%;
+    /*padding-top: 20px;*/
+    width: 60%;
     margin: 4% 0 4% 0;
     border: 0px;
     height: 77%;
@@ -250,13 +250,13 @@ video {
 .texto-2-h {
     font-family: 'tamarillo' !important;
     color: #E04A3B !important;
-    font-size: 50px !important;
+    font-size: 75px !important;
 }
 
 .texto-3-h {
     font-family: 'Lavanderia' !important;
     color: #ffffff !important;
-    font-size: 90px !important;
+    font-size: 80px !important;
 }
 
 .mc-panel {
