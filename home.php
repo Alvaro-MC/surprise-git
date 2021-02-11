@@ -136,10 +136,10 @@ if (!empty($_POST)) {
                     document.write('<video src="css/video/videos-paneles/portico-mall.mp4" playsinline autoplay muted loop></video>')
                 }
                 if (localStorage.getItem('panel') == 5) {
-                    document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')
+                    document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')
                 }
                 if (localStorage.getItem('panel') == 6) {
-                    document.write('<video src="css/video/videos-paneles/paradero-larco.mp4" playsinline autoplay muted loop></video>')
+                    document.write('<video src="css/video/videos-paneles/paradero-elgolf.mp4" playsinline autoplay muted loop></video>')
                 }
                 if (localStorage.getItem('panel') == 7) {
                     document.write('<video src="css/video/videos-paneles/portico-realplaza.mp4" playsinline autoplay muted loop></video>')
@@ -413,33 +413,33 @@ if (!empty($_POST)) {
                                 case 1:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                             ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-1-v text-center txtarea">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="45" id="texto-panel-v" class="texto-1-v text-center txtarea">Escribe aqui tu mensaje</textarea>
                                     <?php
                                     } else {
                                     ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-1-h text-center txtarea">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="45" id="texto-panel-h" class="texto-1-h text-center txtarea">Escribe aqui tu mensaje</textarea>
                                     <?php
                                     }
                                     break;
                                 case 2:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                     ?>
-                                        <textarea type="text" maxlength="20" id="texto-panel-v" class="texto-2-v text-center txtarea">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="40" id="texto-panel-v" class="texto-2-v text-center txtarea">Escribe aqui tu mensaje</textarea>
                                     <?php
                                     } else {
                                     ?>
-                                        <textarea type="text" maxlength="20" id="texto-panel-h" class="texto-2-h text-center txtarea">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="40" id="texto-panel-h" class="texto-2-h text-center txtarea">Escribe aqui tu mensaje</textarea>
                                     <?php
                                     }
                                     break;
                                 case 3:
                                     if ($_GET['p'] == 5 || $_GET['p'] == 6) {
                                     ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-v" class="texto-3-v text-center txtarea">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="45" id="texto-panel-v" class="texto-3-v text-center txtarea">Escribe aqui tu mensaje</textarea>
                                     <?php
                                     } else {
                                     ?>
-                                        <textarea type="text" maxlength="25" id="texto-panel-h" class="texto-3-h text-center txtarea">Escribe aqui tu mensaje</textarea>
+                                        <textarea type="text" maxlength="45" id="texto-panel-h" class="texto-3-h text-center txtarea">Escribe aqui tu mensaje</textarea>
                             <?php
                                     }
                                     break;

@@ -16,7 +16,7 @@ if ($_POST['mensaje']) {
     $_SESSION['panel'] = $panel;
     $_SESSION['video'] = $video;
 
-    $mensaje = substr($mensaje, 0, 20);
+    $mensaje = substr($mensaje, 0, 45);
 
     $query = "SELECT count(*) FROM video";
     $prepared = $pdo->prepare($query);
