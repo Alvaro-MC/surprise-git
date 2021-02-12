@@ -25,7 +25,7 @@ if (!empty($_POST)) {
     ]);
     $user = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    if (isset($user['correo']) && $user['estado']=='activo' ) {
+    if (isset($user['correo']) && $user['estado'] == 'activo') {
 
         if ($user['correo'] == $_POST['correo'] && password_verify($_POST['pass'], $user['contrasena'])) {
             session_start();
@@ -67,7 +67,7 @@ if (!empty($_POST)) {
         gtag('js', new Date());
         gtag('config', 'G-Z1RNYPYEHC');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surprise</title>
@@ -114,6 +114,7 @@ if (!empty($_POST)) {
                         <div>
                             <button type="button" class="btn btn-primary btn-sm style-blanco" data-bs-toggle="modal" data-bs-target="#ventanaModalSesion">Iniciar Sesión</button>
                             <button type="button" class="btn btn-primary btn-sm mx-0 style-blanco" data-bs-toggle="modal" data-bs-target="#ventanaModalRegister">Registrarse</button>
+                            <button type="button" class="btn btn-primary btn-sm style-blanco" id="gracias" data-bs-toggle="modal" data-bs-target="#ventanaGracias" style="display:none;">Gracias</button>
                         </div>
                     <?php
                     } else {
@@ -202,6 +203,9 @@ if (!empty($_POST)) {
     <div class="container-fluid" id="carousel-fluid">
         <div class="row">
             <div class="col-12">
+                <a href="https://api.whatsapp.com/send?phone=+51 915157954" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
                 <div id="carouselExampleIndicators" class="col-12 carousel slide" data-ride="carousel">
 
                     <ol class="carousel-indicators">
@@ -476,6 +480,7 @@ if (!empty($_POST)) {
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
         });
+        document.getElementById('gracias').click()
     </script>
 
 </body>

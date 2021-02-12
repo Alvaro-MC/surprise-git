@@ -9,10 +9,12 @@
                         <div class="social-icon-inf mr-3 icon-footer text-center pt-1"><i class="fas fa-envelope socal-icon"></i></div>
                         <a href="mailto:hola@surprise.com" class="social-text-inf">hola@surprise.com</a>
                     </li>
+                    <!--
                     <li class="social-item-list-inf flex pl-4 pl-md-0 mb-2">
                         <div class="social-icon-inf mr-3 icon-footer text-center pt-1"><i class="fas fa-map-marker-alt"></i></div>
                         <a class="social-text-inf">Las Camelias 751 - El Golf</a>
                     </li>
+                    -->
                     <li class="social-item-list-inf flex pl-4 pl-md-0 mb-2">
                         <div class="social-icon-inf mr-3 icon-footer text-center pt-1"><i class="fas fa-phone-alt"></i></div>
                         <a href="telf:+51 915157954" class="social-text-inf">+51 915157954</a>

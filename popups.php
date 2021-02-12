@@ -14,7 +14,7 @@
                 <form action="index.php" method="post" class="row g-3 needs-validation" novalidate>
                     <div class="col-12 mb-3">
                         <label for="correo" class="form-label">Correo Electrónico</label>
-                        <input type="text" class="form-control" id="correo" name="correo" required>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
                         <div class="invalid-feedback">
                             Por favor ingresa tu correo electrónico
                         </div>
@@ -39,7 +39,7 @@
 
 <!-- PopUp de Registro -->
 <div class="modal fade" id="ventanaModalRegister" tabindex="-1" role="dialog" aria-labelledby="">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content modal-sesion">
             <div class="modal-header modal-sesion-header">
                 <div class="col-md-4"></div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-12 mb-3">
                         <label for="email_register" class="form-label">Correo Electrónico</label>
-                        <input type="text" class="form-control" id="email_register" name="correo" required>
+                        <input type="email" class="form-control" id="email_register" name="correo" required>
                         <div class="invalid-feedback">
                             Por favor asegurate de ingresar un correo válido
                         </div>
@@ -109,62 +109,62 @@
 </div>
 
 <!-- PopUp de Panel 1 -->
-    <div class="modal fade" id="ventanaModalPanel1" tabindex="-1" role="dialog" aria-labelledby="">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content mc-panel">
-                <div class="modal-body">
-                    <div class="container-fluid cont-modal-panel">
-                        <div class="row row-up">
-                            <div class="col-md-8">
-                                <div class="sombra-panel">
-                                    <img src="css/img/portico-mallplaza.jpg" class="img-fluid" id="img-left-popup-variable-web">
-                                </div>
-                            </div>
-                            <div class="col-md-4 ms-auto sombra-panel pt-3">
-                                <img id="img-right-popup-variable-web" src="css/img/mapa-1.png" class="img-fluid">
+<div class="modal fade" id="ventanaModalPanel1" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content mc-panel">
+            <div class="modal-body">
+                <div class="container-fluid cont-modal-panel">
+                    <div class="row row-up">
+                        <div class="col-md-8">
+                            <div class="sombra-panel">
+                                <img src="css/img/portico-mallplaza.jpg" class="img-fluid" id="img-left-popup-variable-web">
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-md-3 ms-auto">
-                                <div class="cont-modal-img-panel sombra-panel">
-                                    <img src="css/img/panel-1.png" class="img-fluid" id="img-down-popup-variable-web">
-                                </div>
-                            </div>
-                            <div class="col-md-9 ms-auto">
-                                <div class="div-list-panel sombra-panel">
-                                    <ol class="list-panel px-4 pt-4 pb-3">
-                                        <form action="home.php" method="post">
-                                            <li class="item-list-panel" style="display:none;">
-                                                <input class="item-pop-up mayus ml-0 ml-md-4 text-center" id="text-title-popup-variable-web" value="" name="titulo" disabled="">
-                                            </li>
-                                            <li class="item-list-panel">
-                                                <img src="css/img/iconos/ICONOS-01.svg">
-                                                <input class="item-pop-up" id="text-first-popup-variable-web" name="horario" value="" disabled="">
-                                            </li>
-                                            <li class="item-list-panel">
-                                                <img src="css/img/iconos/ICONOS-02.svg">
-                                                <input class="item-pop-up" id="text-second-popup-variable-web" name="direccion" value="" disabled="">
-                                            </li>
-                                            <li class="item-list-panel">
-                                                <img src="css/img/iconos/ICONOS-03.svg">
-                                                <input class="item-pop-up" id="text-third-popup-variable-web" name="tamano" value="" disabled="">
-                                            </li>
-                                        </form>
-                                    </ol>
-                                </div>
+                        <div class="col-md-4 ms-auto sombra-panel pt-3">
+                            <img id="img-right-popup-variable-web" src="css/img/mapa-1.png" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3 ms-auto">
+                            <div class="cont-modal-img-panel sombra-panel">
+                                <img src="css/img/panel-1.png" class="img-fluid" id="img-down-popup-variable-web">
                             </div>
                         </div>
-                        <div class="row pt-4">
-                            <div class="col-md-4"></div>
-                            <div class="col-4 text-center" id="btn-stock-panel">
+                        <div class="col-md-9 ms-auto">
+                            <div class="div-list-panel sombra-panel">
+                                <ol class="list-panel px-4 pt-4 pb-3">
+                                    <form action="home.php" method="post">
+                                        <li class="item-list-panel" style="display:none;">
+                                            <input class="item-pop-up mayus ml-0 ml-md-4 text-center" id="text-title-popup-variable-web" value="" name="titulo" disabled="">
+                                        </li>
+                                        <li class="item-list-panel">
+                                            <img src="css/img/iconos/ICONOS-01.svg">
+                                            <input class="item-pop-up" id="text-first-popup-variable-web" name="horario" value="" disabled="">
+                                        </li>
+                                        <li class="item-list-panel">
+                                            <img src="css/img/iconos/ICONOS-02.svg">
+                                            <input class="item-pop-up" id="text-second-popup-variable-web" name="direccion" value="" disabled="">
+                                        </li>
+                                        <li class="item-list-panel">
+                                            <img src="css/img/iconos/ICONOS-03.svg">
+                                            <input class="item-pop-up" id="text-third-popup-variable-web" name="tamano" value="" disabled="">
+                                        </li>
+                                    </form>
+                                </ol>
                             </div>
-                            <div class="col-md-4"></div>
                         </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="col-md-4"></div>
+                        <div class="col-4 text-center" id="btn-stock-panel">
+                        </div>
+                        <div class="col-md-4"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 <!-- PopPup Mobile Panel -->
 <div class="modal fade" id="modalMobilePanel" tabindex="-1" role="dialog" aria-labelledby="">
@@ -184,10 +184,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        
+
                         <div class="col-12">
                             <ol class="list-panel px-4 pt-4 pb-3 text-left">
-                                <form action="home.php" method="post" >
+                                <form action="home.php" method="post">
                                     <li class="item-list-panel item-list-panel-mobile">
                                         <input class="item-pop-up pop-mob mayus ml-0 ml-md-4 text-center" id="text-title-popup-variable-mobile" value="" name="titulo" disabled="">
                                     </li>
@@ -216,6 +216,29 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- PopUp Gracias -->
+<div class="modal fade" id="ventanaGracias" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-sesion">
+            <div class="modal-header modal-sesion-header justify-content-center">
+                <div class="col-12 col-md-6 col-lg-8 align-self-center text-center mt-3 mb-3 mt-md-0 mb-md-0">
+                    <a href="index.php"><img src="css/img/iconos/logo-blanco.svg" class="img-foo img-fluid ml-0 ml-md-2 ml-xl-3"></a>
+                    <h5 id="tituloVentana">Llegó para quedarse</h5>
+                </div>
+            </div>
+
+            <div class="modal-body modal-sesion-body">
+                <div class="row mb-3">
+                    <div class="col text-center">
+                        <p>Gracias por participar en nuestra campaña gratuita por San Valentin pronto estaremos abriendo más opciones para sorprender</p>
                     </div>
                 </div>
             </div>
