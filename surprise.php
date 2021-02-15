@@ -247,9 +247,9 @@ require_once 'modelo/conexion.php';
                         telefono_r.value = ""
                         mensaje_r.value = ""
                         localStorage.setItem("res", true)
-                        location.reload()
                     }
                 });
+                location.reload()
             }
 
             validateInput()

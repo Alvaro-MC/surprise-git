@@ -449,7 +449,6 @@ if (!empty($_POST)) {
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
         });
-        document.getElementById('gracias').click()
     </script>
 
 </body>
