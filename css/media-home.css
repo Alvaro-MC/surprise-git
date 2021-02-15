@@ -9,15 +9,15 @@
         width: 34%;
     }
     .texto-1-h {
-        font-family: "Enchanting_Celebrations" !important;
+        font-family: "jandaManateeSolid" !important;
         color: #D22344!important;
         font-size: 56px !important;
     }
     .texto-2-h {
-        font-size: 60px !important;
+        font-size: 70px !important;
     }
     .texto-3-h {
-        font-size: 65px !important;
+        font-size: 60px !important;
     }
     .texto {
         margin: 5% 0 2% 0 !important;
@@ -41,7 +41,7 @@
         font-size: 41px !important;
     }
     .texto-2-h {
-        font-size: 45px !important;
+        font-size: 50px !important;
     }
     .texto-3-h {
         font-size: 45px !important;
@@ -93,7 +93,7 @@
         font-size: 30px !important;
     }
     .texto-2-h {
-        font-size: 30px !important;
+        font-size: 40px !important;
     }
     .texto-3-h {
         font-size: 32px !important;
@@ -141,6 +141,9 @@
     .texto-1-h {
         font-size: 26px !important;
     }
+    .texto-2-h {
+        font-size: 32px !important;
+    }
     .texto-3-h {
         font-size: 26px !important;
     }
@@ -175,7 +178,7 @@
         font-size: 20px !important;
     }
     .texto-2-h {
-        font-size: 20px !important;
+        font-size: 26px !important;
     }
     .texto-3-h {
         font-size: 20px !important;
@@ -196,7 +199,8 @@
         font-size: 16px !important;
     }
     .texto-2-h {
-        font-size: 14px !important;
+        font-size: 18px !important;
+        margin: -5px 0 0 0;
     }
     .texto-3-h {
         font-size: 14px !important;

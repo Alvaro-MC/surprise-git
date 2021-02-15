@@ -5,6 +5,14 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .back-video {
+        background-image: url('img/cover-sec.png');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 @media (max-width: 1024px) {
     .disp-none {
         display: block;
@@ -21,6 +29,14 @@
     .texto {
         margin: 10% 0 3% 0;
     }
+    .back-video {
+        background-image: url('img/cover-sec.png');
+    }
+    @media (min-height: 1024px) {
+        .back-video {
+            background-image: url('img/cover-pri-ipad.png');
+        }
+    }
 }
 
 @media (min-width: 992px) {
@@ -30,10 +46,20 @@
     .paneles-standard {
         padding: 0;
     }
-    /*
-    .img-personal-fluid {
-        width: calc(100% - 30%) !important;
-    */
+}
+
+@media (max-width: 992px) {
+    .cont-p1 {
+        max-width: 1000px !important;
+    }
+    .paneles-standard {
+        padding: 0;
+    }
+    .back-video {
+        background-image: url('img/cover-pri-ipad.png');
+        background-size: 100% 105%;
+        background-position: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -51,6 +77,11 @@
     }
     .img-margin-n {
         margin-top: -25px !important;
+    }
+    .back-video {
+        background-image: url('img/cover-pri-ipad.png');
+        background-size: cover;
+        background-position: center;
     }
 }
 

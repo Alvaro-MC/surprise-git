@@ -1,15 +1,20 @@
 @font-face {
-    font-family: "Enchanting_Celebrations";
-    src: url("../fonts/enchanting_celebrations/Enchanting-Celebrations.ttf") format('truetype');
+    font-family: "jandaManateeSolid";
+    src: url("../fonts/jandaManateeSolid/JandaManateeSolid.ttf") format('truetype');
 }
 
 @font-face {
-    font-family: "tamarillo";
-    src: url("../fonts/tamarillo/tamarillo.ttf") format('truetype');
+    font-family: "CreamCake";
+    src: url("../fonts/CreamCake/CreamCake.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "autolova";
+    src: url("../fonts/autolova/autolova.ttf") format('truetype');
 }
 
 .header-content h1 {
-    font-family: "tamarillo" !important;
+    /*font-family: "tamarillo" !important;*/
 }
 
 .header {
@@ -211,21 +216,21 @@ video {
 }
 
 .texto-1-v {
-    font-family: "Enchanting_Celebrations" !important;
-    color: #D22344 !important;
+    font-family: "jandaManateeSolid" !important;
+    color: #ec2d44 !important;
     font-size: 60px !important;
     margin-top: 6%;
 }
 
 .texto-2-v {
-    font-family: 'tamarillo' !important;
-    color: #E04A3B !important;
+    font-family: 'CreamCake' !important;
+    color: #73442c !important;
     font-size: 60px !important;
 }
 
 .texto-3-v {
-    font-family: 'Lavanderia' !important;
-    color: #ffffff !important;
+    font-family: 'autolova' !important;
+    color: #ec2d44 !important;
     font-size: 58px !important;
     padding-right: 8% !important;
 }
@@ -242,21 +247,22 @@ video {
 }
 
 .texto-1-h {
-    font-family: "Enchanting_Celebrations" !important;
-    color: #D22344!important;
-    font-size: 80px !important;
+    font-family: "jandaManateeSolid" !important;
+    color: #ec2d44!important;
+    font-size: 70px !important;
 }
 
 .texto-2-h {
-    font-family: 'tamarillo' !important;
-    color: #E04A3B !important;
-    font-size: 75px !important;
+    font-family: 'CreamCake' !important;
+    color: #73442c !important;
+    font-size: 90px !important;
+    margin: -10px 0 0 0 !important;
 }
 
 .texto-3-h {
-    font-family: 'Lavanderia' !important;
-    color: #ffffff !important;
-    font-size: 80px !important;
+    font-family: 'autolova' !important;
+    color: #ec2d44 !important;
+    font-size: 70px !important;
 }
 
 .mc-panel {
@@ -266,13 +272,6 @@ video {
 .img-foo {
     margin-left: 0;
 }
-
-
-/*
-.header-video video {
-    margin-top: -150px;
-}
-*/
 
 .txtarea {
     overflow: hidden;

@@ -74,16 +74,47 @@ if (!empty($_POST)) {
 
     <?php require_once 'head.php'; ?>
 
+    <script>
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval: 3500
+            });
+        });
+    </script>
+
 </head>
 
 <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat" attribution="setup_tool" page_id="106095851325583" theme_color="#c75c59" logged_in_greeting="¡Hola! como podemos ayudarte?" logged_out_greeting="¡Hola! como podemos ayudarte?">
+    </div>
 
     <?php require_once 'popups.php'; ?>
 
     <!-- Cabecera -> Video - NavBar - SliderNotas -->
     <header id="hero" class="header content">
-        <div class="header-video">
-            <video src="css/video/caritas.mp4" autoplay loop></video>
+        <div class="header-video back-video">
+            <!--<img src="css/img/cover-pri.png" style="width:100%; height:100%; margin-top:30px"></img>-->
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
@@ -142,7 +173,7 @@ if (!empty($_POST)) {
                     </ul>
                 </div>
             </nav>
-
+            <!--
             <div class="texto container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -181,7 +212,7 @@ if (!empty($_POST)) {
                 </div>
             </div>
 
-            <!-- POSICION DEL CARD -->
+
             <div class="container mt-4 disp-none">
                 <div class="row">
                     <div class="col-12 text-center mb-3">
@@ -197,67 +228,61 @@ if (!empty($_POST)) {
                     </div>
                 </div>
             </div>
-
+-->
         </div>
     </header>
-    <div class="container-fluid" id="carousel-fluid">
-        <div class="row">
-            <div class="col-12">
-                <a href="https://api.whatsapp.com/send?phone=+51 915157954" target="_blank" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <div id="carouselExampleIndicators" class="col-12 carousel slide" data-ride="carousel">
 
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-                    </ol>
-
-                    <div class="carousel-inner carousel-cards">
-                        <div class="carousel-item active">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-8 align-self-center mt-4 text-left px-0">
-                                        <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Sorprende Free</strong></h2>
-                                        <p class="carousel-card-par ml-0 ml-md-4">Este 14 de febrero inscribete en nuestra marcha blanca y sorprende gratis<br>Haz que tus sentimientos repercutan en Trujillo</p>
-                                    </div>
-                                    <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
-                                        <img class="img-personal-fluid img-card-head" src="css/img/foto1.png" alt="First slide">
-                                    </div>
-                                </div>
-                            </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <a href="https://api.whatsapp.com/send?phone=+51 915157954" target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></li>
+        </ol>
+        <div class="carousel-inner carousel-cards">
+            <div class="carousel-item active carousel-item-head">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 align-self-center mt-4 text-left px-0">
+                            <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Sorprende Free</strong></h2>
+                            <p class="carousel-card-par ml-0 ml-md-4">Este verano sorprende a tu viejit@, a tu causa o a tu flac@ con tu spot personalizado<br>Inscribete en nuestra marcha blanca y sorprende gratis</p>
                         </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-8 align-self-center mt-4 text-left px-0">
-                                        <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>En Trujillo suena tu feeling</strong></h2>
-                                        <p class="carousel-card-par ml-0 ml-md-4">Hagamos juntos que este 14 de febrero, nuestro amor y amistad llene la ciudad de Trujillo de lindos mensajes</p>
-                                    </div>
-                                    <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
-                                        <img class="img-personal-fluid img-card-head" src="css/img/foto2.png" alt="Second slide">
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
+                            <img class="img-personal-fluid img-card-head" src="css/img/foto1.png" alt="First slide">
                         </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-8 align-self-center mt-4 text-left px-0">
-                                        <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Personaliza tu plantilla</strong></h2>
-                                        <p class="carousel-card-par ml-0 ml-md-4">Escribe tu saludo y haz que sea único</p>
-                                    </div>
-                                    <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
-                                        <img class="img-personal-fluid img-card-head" src="css/img/foto3.png" alt="Third slide">
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item carousel-item-head">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 align-self-center mt-4 text-left px-0">
+                            <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Mensajes positivos</strong></h2>
+                            <p class="carousel-card-par ml-0 ml-md-4">Este verano llena la ciudad de mensajes positivos y de paz para tu familia y amigos. Sorprende con <strong>Surprise</strong></p>
+                        </div>
+                        <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
+                            <img class="img-personal-fluid img-card-head" src="css/img/foto2.png" alt="Second slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item carousel-item-head">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 align-self-center mt-4 text-left px-0">
+                            <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Personaliza tu plantilla</strong></h2>
+                            <p class="carousel-card-par ml-0 ml-md-4">Escribe tu saludo y haz que sea único</p>
+                        </div>
+                        <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
+                            <img class="img-personal-fluid img-card-head" src="css/img/foto3.png" alt="Third slide">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- MATERIAL DE PANELES -->

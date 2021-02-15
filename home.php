@@ -53,7 +53,7 @@ if (!empty($_POST)) {
         gtag('js', new Date());
         gtag('config', 'G-Z1RNYPYEHC');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -72,6 +72,30 @@ if (!empty($_POST)) {
 </head>
 
 <body>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat" attribution="setup_tool" page_id="106095851325583" theme_color="#c75c59" logged_in_greeting="¡Hola! como podemos ayudarte?" logged_out_greeting="¡Hola! como podemos ayudarte?">
+    </div>
 
     <!-- PopUp de Panel 1 -->
     <div class="modal fade" id="ventanaPanelSurprise" tabindex="-1" role="dialog" aria-labelledby="">
@@ -336,7 +360,7 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-7 text-right">
                             <button type="button" class="btn btn-melon btn-mel-pop text-center btn-mess-sor style-melon" <?php if (!isset($_SESSION['id_usuario'])) { ?> onclick="no_register()" <?php } else {
-                                                                                                                                                                                        $SESSION['panel'] = $_GET['p']; ?> onclick="send_message()" <?php }  ?>> Confirmar</button>
+                                                                                                                                                                                                    $SESSION['panel'] = $_GET['p']; ?> onclick="send_message()" <?php }  ?>> Confirmar</button>
                         </div>
                     </div>
                 </div>

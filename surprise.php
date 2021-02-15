@@ -40,6 +40,30 @@ require_once 'modelo/conexion.php';
 
 <body>
 
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat" attribution="setup_tool" page_id="106095851325583" theme_color="#c75c59" logged_in_greeting="¡Hola! como podemos ayudarte?" logged_out_greeting="¡Hola! como podemos ayudarte?">
+    </div>
+
     <!-- Cabecera -->
     <header class="header content">
         <div class="header-video">
@@ -173,7 +197,7 @@ require_once 'modelo/conexion.php';
             console.log('Success')
             document.getElementById('success').click()
         }
-        
+
         $('.js-nav').click(function() {
             $(this).parent().find('.menu').toggleClass('active');
         });
@@ -221,7 +245,7 @@ require_once 'modelo/conexion.php';
                         telefono_r.value = ""
                         mensaje_r.value = ""
                         console.log('TRUE')
-                        localStorage.setItem("res",true)
+                        localStorage.setItem("res", true)
                         location.reload()
                     }
                 });

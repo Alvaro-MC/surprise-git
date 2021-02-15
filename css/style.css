@@ -50,7 +50,7 @@ body {
 
 .header {
     height: calc(100vh - 200px);
-    min-height: 520px;
+    min-height: 400px;
     display: flex;
     align-items: center;
     color: #fff;
@@ -77,12 +77,25 @@ body {
 
 .header-video {
     height: calc(100vh - 200px);
-    min-height: 520px;
+    min-height: 400px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
+}
+
+.back-video {
+    /*
+    background-image: url('img/cover-pri.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-y: 30px;
+    */
+    background-size: 100% 100%;
+    background-image: url(img/cover-pri.png);
+    background-repeat: no-repeat;
 }
 
 .header-video video {
@@ -142,7 +155,7 @@ body {
 }
 
 .carousel-cards {
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
     height: 25vh;
     min-height: 200px;
     background-color: #824A97;
@@ -622,4 +635,8 @@ ul li {
     align-self: center;
     padding: 0;
     font-size: 30px;
+}
+
+.carousel-item-head {
+    padding: 0 20px 0 20px;
 }
