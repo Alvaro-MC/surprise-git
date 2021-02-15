@@ -257,6 +257,9 @@ if (!empty($_POST)) {
     <div class="container-fluid" id="carousel-fluid">
         <div class="row">
             <div class="col-12">
+                <a href="https://api.whatsapp.com/send?phone=+51 915157954" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
                 <div class="container-fluid caja-plantilla-principal px-0">
                     <div id="container-plantilla" class="container px-0">
                         <div class="row justify-content-around">

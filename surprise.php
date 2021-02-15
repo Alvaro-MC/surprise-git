@@ -66,6 +66,9 @@ require_once 'modelo/conexion.php';
 
     <!-- Cabecera -->
     <header class="header content">
+        <a href="https://api.whatsapp.com/send?phone=+51 915157954" target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
         <div class="header-video">
             <video src="css/video/video.mp4" autoplay loop></video>
         </div>
@@ -194,7 +197,6 @@ require_once 'modelo/conexion.php';
 
     <script>
         if (localStorage.getItem('res') == 'true') {
-            console.log('Success')
             document.getElementById('success').click()
         }
 
@@ -244,7 +246,6 @@ require_once 'modelo/conexion.php';
                         apellido_r.value = ""
                         telefono_r.value = ""
                         mensaje_r.value = ""
-                        console.log('TRUE')
                         localStorage.setItem("res", true)
                         location.reload()
                     }

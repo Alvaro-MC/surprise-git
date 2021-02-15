@@ -173,62 +173,6 @@ if (!empty($_POST)) {
                     </ul>
                 </div>
             </nav>
-            <!--
-            <div class="texto container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="container px-md-5">
-                            <div class="row px-md-5">
-                                <div class="col-12 px-md-4">
-                                    <img class="img-fluid mx-md-5" src="css/img/iconos/logo.svg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <p>Sorprende en ese día especial</p>
-                    </div>
-                    <div class="col-12">
-                        <button type="button" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaSurprise">
-                            <i class="far fa-play-circle play"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid mb-4">
-                <div class="row disp-btn">
-                    <div class="col-4"></div>
-                    <div class="col-md-4 text-center disp-true head-a">
-                        <a href="#paneles"><i class="fas fa-angle-double-down"></i></a>
-                    </div>
-                    <div class="col-md-4 text-center text-center text-xl-right disp-true-hide">
-                        <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4 style-morado">
-                            <a href="#paneles" class="flex caja-btn-crear head-a">
-                                <p><strong>Crear</strong></p>
-                                <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
-                            </a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="container mt-4 disp-none">
-                <div class="row">
-                    <div class="col-12 text-center mb-3">
-                        <button type="button" class="btn btn-primary btn-sm btn-crear mr-md-4 style-morado">
-                            <a href="#paneles-mobile" class="flex caja-btn-crear head-a">
-                                <p><strong>Crear</strong></p>
-                                <img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
-                            </a>
-                        </button>
-                    </div>
-                    <div class="col-12 text-center head-a">
-                        <a href="#paneles-mobile"><i class="fas fa-angle-double-down"></i></a>
-                    </div>
-                </div>
-            </div>
--->
         </div>
     </header>
 
@@ -247,7 +191,7 @@ if (!empty($_POST)) {
                     <div class="row">
                         <div class="col-md-8 align-self-center mt-4 text-left px-0">
                             <h2 class="mayus ml-0 ml-md-4 text-md-left" style="color:#fff;"><strong>Sorprende Free</strong></h2>
-                            <p class="carousel-card-par ml-0 ml-md-4">Este verano sorprende a tu viejit@, a tu causa o a tu flac@ con tu spot personalizado<br>Inscribete en nuestra marcha blanca y sorprende gratis</p>
+                            <p class="carousel-card-par ml-0 ml-md-4">Este verano sorprende a tu viejit@, a tu causa o a tu flac@ con tu spot personalizado. Inscribete en nuestra marcha blanca y sorprende gratis</p>
                         </div>
                         <div class="col-md-4 mb-md-0 mb-4 text-align-right text-md-center img-margin-n">
                             <img class="img-personal-fluid img-card-head" src="css/img/foto1.png" alt="First slide">

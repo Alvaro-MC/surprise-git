@@ -218,21 +218,23 @@ video {
 .texto-1-v {
     font-family: "jandaManateeSolid" !important;
     color: #ec2d44 !important;
-    font-size: 60px !important;
-    margin-top: 6%;
+    font-size: 45px !important;
+    margin-top: 10%;
+    padding: 4% 14px 0 14px !important;
 }
 
 .texto-2-v {
     font-family: 'CreamCake' !important;
     color: #73442c !important;
     font-size: 60px !important;
+    padding: 40px 15px 0 15px !important;
 }
 
 .texto-3-v {
     font-family: 'autolova' !important;
     color: #ec2d44 !important;
-    font-size: 58px !important;
-    padding-right: 8% !important;
+    font-size: 52px !important;
+    padding: 20% 8px 0 8px !important;
 }
 
 #texto-panel-h {
