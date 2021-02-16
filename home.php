@@ -509,6 +509,13 @@ if (!empty($_POST)) {
         </div>
     </section>
 
+    <section class="container px-5 mt-3 mb-3">
+        <div class="row anuncio">
+            <div class="col-12 p-4">
+                <p>"Recuerde que su anuncio debe hacerlo <strong>antes de las 5 P.M.</strong> si quiere que aparezca <strong>el día siguiente.</strong> De no ser asi, se estará subiendo en un plazo de 48 horas."</p>
+            </div>
+        </div>
+    </section>
 
     <!-- PopUp de Panel 1 -->
     <div class="modal fade" id="ventanaPrevisualizar" tabindex="-1" role="dialog" aria-labelledby="">

@@ -7,7 +7,7 @@
                 <ol class="social-list-inf mb-0 mt-0 pl-0 mt-3 mb-3">
                     <li class="social-item-list-inf flex pl-4 pl-md-0 mb-2">
                         <div class="social-icon-inf mr-3 icon-footer text-center pt-1"><i class="fas fa-envelope socal-icon"></i></div>
-                        <a href="mailto:hola@surprise.com" class="social-text-inf">hola@surprise.com</a>
+                        <a href="mailto:hola@surprise.com" class="social-text-inf">hola@surprise.com.pe</a>
                     </li>
                     <!--
                     <li class="social-item-list-inf flex pl-4 pl-md-0 mb-2">
