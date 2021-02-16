@@ -173,6 +173,17 @@ if (!empty($_POST)) {
                     </ul>
                 </div>
             </nav>
+            <div class="container-fluid text-align-right">
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn">
+                            <a class="flex caja-btn-crear crear-panel style-melon mt-3" href="#paneles">
+                                <p><strong>Crear</strong></p><img class="img-fluid btn-carita-head" src="css/img/iconos/carita.svg">
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -414,6 +425,14 @@ if (!empty($_POST)) {
             </div>
         </div>
 
+    </section>
+
+    <section class="container px-5 mt-3 mb-3">
+        <div class="row anuncio">
+            <div class="col-12 p-4">
+                <p>"Recuerde que su anuncio debe hacerlo <strong>antes de las 5 P.M.</strong> si quiere que aparezca <strong>el día siguiente.</strong> De no ser asi, se estará subiendo en un plazo de 48 horas."</p>
+            </div>
+        </div>
     </section>
 
     <!-- PopUp Surprise -->

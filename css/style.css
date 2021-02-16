@@ -640,3 +640,8 @@ ul li {
 .carousel-item-head {
     padding: 0 20px 0 20px;
 }
+.anuncio{
+    background-color: #824a97;
+    color: #fff;
+    border-radius: 30px;
+}
