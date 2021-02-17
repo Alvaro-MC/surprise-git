@@ -31,6 +31,9 @@
                     <div class="col-12 text-center">
                         <button class="btn btn-primary btn-crear style-morado" type="submit" onclick="validateInput()">Ingresar</button>
                     </div>
+                    <div class="col-12 text-center">
+                        <a href="recovery.php" style="color:#824A97 !important; font-weight: 600;">¿Has olvidado tu contraseña?</a>
+                    </div>
                 </form>
             </div>
         </div>
