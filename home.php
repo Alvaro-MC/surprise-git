@@ -237,20 +237,20 @@ if (!empty($_POST)) {
                     <script>
                         var p = localStorage.getItem("panel")
                     </script>
-                    <button type="button" class="btn-surprise" data-bs-toggle="modal" data-bs-target="#ventanaPanelSurprise">
+                    <button type="button" class="btn-surprise col-12 mb-4" data-bs-toggle="modal" data-bs-target="#ventanaPanelSurprise">
                         <i class="far fa-play-circle blanco play"></i>
                     </button>
+                    <a href="#pre-panel"><i class="fas fa-angle-double-down blanco"></i></a>
                 </div>
             </div>
 
             <!-- Seccion Plantillas -->
-            <div class="container">
+            <!-- <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mt-2">
-                        <a href="#pre-panel"><i class="fas fa-angle-double-down blanco"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </header>
 
