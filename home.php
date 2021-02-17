@@ -357,7 +357,7 @@ if (!empty($_POST)) {
                 <div class="modal-body modal-sesion-body">
                     <div class="row mb-3">
                         <div class="col text-justify">
-                            <p>Al hacer click en confirmar, está aceptando que su saludo se publique este 14 de febrero, de querer hacer un mensaje personalizado para enviarlo por las distintas redes sociales de click en crear mensaje sorpresa</p>
+                            <p>Al hacer click en confirmar, está aceptando que su saludo sea publicado en un plazo maximo de 48 horas</p>
                         </div>
                     </div>
                     <div class="row">
