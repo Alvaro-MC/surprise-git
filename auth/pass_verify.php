@@ -1,26 +1,47 @@
 <?php
 
-// if (!isset($_GET['token'])) {
-//     header('Location: ../index.php');
-// }
+if (!isset($_GET['em']) && !isset($_GET['token'])) {
+    header('Location: ../index.php');
+}
 
 require_once '../modelo/conexion.php';
 
 $resp = null;
 
-$decode = urldecode($_GET['token']);
-$decod = base64_decode($decode);
+/* Variables para descifrado de correo */
+$method = 'aes128';
+$pass = "correo9para8cifrar7envio6por5la4url3";
+$iv = "e71865c3f21caf4a";
 
-$query = "select id_usuario from usuario where token = :token";
+
+$decodeEmail = urldecode($_GET['em']);
+$decodEmail = base64_decode($decodeEmail);
+$EmailDescifrado = openssl_decrypt($decodEmail, $method, $pass, false, $iv);
+
+$query = "select * from usuario where correo = :correo";
 $prepared = $pdo->prepare($query);
 $prepared->execute([
-    'token' => $decod
+    'correo' => $EmailDescifrado
 ]);
-$resp = $prepared->fetch(PDO::FETCH_ASSOC);
+$user = $prepared->fetch(PDO::FETCH_ASSOC);
 
-// if (!isset($resp['id_usuario'])) {
-//     header('Location: ../index.php');
-// }
+if (isset($user['id_usuario'])) {
+
+    /* Variables para descifrar el token */
+    $method = 'aes128';
+    $llaveDecrypt = $user['llave'];
+    $iv = $user['iv_token'];
+
+    $decodeToken = urldecode($_GET['token']);
+    $decodToken = base64_decode($decodeToken);
+    $TokenDescifrado = openssl_decrypt($decodToken, $method, $llaveDecrypt, false, $iv);
+
+    if (!password_verify($TokenDescifrado, $user['token'])) {
+        header('Location: ../index.php');
+    }
+} else {
+    header('Location: ../index.php');
+}
 
 ?>
 
@@ -68,9 +89,31 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <style>
-    ::placeholder{
-        color: #824A97 !important;
-    }
+        ::placeholder {
+            color: #824A97 !important;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(270deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -94,41 +137,116 @@ $resp = $prepared->fetch(PDO::FETCH_ASSOC);
                 <div class="container">
                     <div class="row" style="margin-top: 12%;">
                         <div class="col-12">
-                            <form action="index.php" method="post" class="g-3 needs-validation" novalidate>
-                                <div class="container">
-                                    <div class="row justify-content-center">
-                                        <div class="col-10 col-md-6 col-lg-4 mb-3">
-                                            <label for="pass" class="form-label">Contraseña</label>
-                                            <input type="password" placeholder="Escriba aqui su contraseña"  class="form-control" id="pass" name="pass" required>
-                                            <div class="invalid-feedback">
-                                                Por favor ingresa tu contraseña
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-10 col-md-6 col-lg-4 mb-3">
-                                            <label for="repeatpass" class="form-label" value="">Repita su contraseña</label>
-                                            <input type="password" placeholder="Escriba de nuevo su contraseña" class="form-control" id="repeatpass" name="repeatpass" required>
-                                            <div class="invalid-feedback">
-                                                Por favor ingresa tu contraseña
-                                            </div>
-                                            <input type="checkbox" onclick="ver_pass(true)" id="checkpass">
-                                            <label for="checkpass" class="mt-3">Mostrar Contraseña</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <button class="btn btn-primary btn-crear style-morado" type="submit" onclick="validateInput()">Confirmar</button>
+                            <div class="container" style="color:#824A97;">
+                                <div class="row justify-content-center">
+                                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                                        <label for="pass_new" class="form-label">Contraseña</label>
+                                        <input type="password" placeholder="Escriba aqui su contraseña" class="form-control" id="pass_new" name="pass" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa tu contraseña
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                                <div class="row justify-content-center">
+                                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                                        <label for="pass_repeat_new" class="form-label" value="">Repita su contraseña</label>
+                                        <input type="password" placeholder="Escriba de nuevo su contraseña" class="form-control" id="pass_repeat_new" name="repeatpass" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa tu contraseña
+                                        </div>
+                                        <input type="checkbox" onclick="v_pass()" id="checkpass">
+                                        <label for="checkpass" class="mt-3">Mostrar Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <button class="btn btn-primary btn-crear style-morado" type="submit" onclick="validatePass()">Confirmar</button>
+                                    </div>
+                                    <div class="col-12 text-center mt-4">
+                                        <div class="a" id="alertCh"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <script>
+        function v_pass() {
+            x = document.getElementById("pass_new")
+            y = document.getElementById("pass_repeat_new")
+
+            if (x.type === "password") {
+                x.type = "text";
+                y.type = "text";
+            } else {
+                x.type = "password";
+                y.type = "password";
+            }
+        }
+
+        function validatePass() {
+            pass_new = document.getElementById('pass_new')
+            pass_repeat = document.getElementById('pass_repeat_new')
+
+            document.getElementById('alertCh').classList.remove('alert')
+            document.getElementById('alertCh').classList.remove('alert-warning')
+            document.getElementById('alertCh').classList.remove('alert-danger')
+            document.getElementById('alertCh').classList.remove('alert-success')
+            document.getElementById('alertCh').innerHTML = '<div id="loading" class="mx-auto mt-2" style="width: 40px;height: 40px;border: 4px solid green;border-right: 4px solid transparent;border-radius: 20px;animation-name: loading;animation-duration: 1s;animation-iteration-count: infinite;animation-timing-function: linear;"></div>'
+
+            if (pass_new.value.length > 0 && pass_repeat.value.length > 0) {
+                if (pass_new.value == pass_repeat.value) {
+                    password = pass_new.value
+                    $.ajax({
+                        url: "cambio_pass.php",
+                        method: "POST",
+                        data: {
+                            usuario: <?php echo $user['id_usuario']; ?>,
+                            newpass: password
+                        },
+                        success: function(data) {
+                            console.log(data)
+                            if (data) {
+                                document.getElementById('alertCh').classList.remove('alert-warning')
+                                document.getElementById('alertCh').classList.remove('alert-danger')
+                                document.getElementById('alertCh').classList.add('alert')
+                                document.getElementById('alertCh').classList.add('alert-success')
+                                document.getElementById('alertCh').innerText = 'La contraseña ha sido cambiada'
+                                setTimeout(function() {
+                                    location.href = "../index.php"
+                                }, 3000);
+                            } else {
+                                document.getElementById('alertCh').classList.remove('alert-warning')
+                                document.getElementById('alertCh').classList.remove('alert-success')
+                                document.getElementById('alertCh').classList.add('alert')
+                                document.getElementById('alertCh').classList.add('alert-danger')
+                                document.getElementById('alertCh').innerText = 'La contraseña no ha sido cambiada, por farvor intenta de nuevo o comunicate con el área de soporte'
+                                setTimeout(function() {
+                                    location.href = "../index.php"
+                                }, 4000);
+                            }
+
+                        }
+                    });
+                } else {
+                    document.getElementById('alertCh').classList.remove('alert-warning')
+                    document.getElementById('alertCh').classList.remove('alert-success')
+                    document.getElementById('alertCh').classList.add('alert')
+                    document.getElementById('alertCh').classList.add('alert-danger')
+                    document.getElementById('alertCh').innerText = 'Las contraseñas no son iguales'
+                }
+            } else {
+                document.getElementById('alertCh').classList.remove('alert-danger')
+                document.getElementById('alertCh').classList.remove('alert-success')
+                document.getElementById('alertCh').classList.add('alert')
+                document.getElementById('alertCh').classList.add('alert-warning')
+                document.getElementById('alertCh').innerText = 'Por favor ingresa una contraseña válida'
+            }
+        }
+    </script>
 </body>
 
 </html>

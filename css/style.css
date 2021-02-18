@@ -86,15 +86,8 @@ body {
 }
 
 .back-video {
-    /*
-    background-image: url('img/cover-pri.png');
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-position-y: 30px;
-    */
-    background-size: 100% 100%;
-    background-image: url(img/cover-pri.png);
+    background-image: url(img/cover-pri.jpg);
     background-repeat: no-repeat;
 }
 
@@ -640,7 +633,8 @@ ul li {
 .carousel-item-head {
     padding: 0 20px 0 20px;
 }
-.anuncio{
+
+.anuncio {
     background-color: #824a97;
     color: #fff;
     border-radius: 30px;
